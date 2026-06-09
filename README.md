@@ -20,7 +20,7 @@ education  : B.Tech CSE @ GITAM University Bengaluru (2027) | CGPA: 8.9
 role       : Business Logic Domain Lead @ Project PRAJNA
              → 30-dev platform, peak 10K+ concurrent users, Module 13-18 owner
 focus      : Cloud-Native Backend Engineering · System Design · Event-Driven Architecture
-currently  : NeetCode 150 grind + campus placement prep (July 2026)
+currently  : Heavily intrested in Cloud orchestration and infrastructuring
 location   : Bangalore, India 🇮🇳
 interests  : Distributed systems, low-level programming, reverse engineering (Ghidra)
 ```
