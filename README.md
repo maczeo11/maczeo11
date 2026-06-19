@@ -17,21 +17,27 @@
 ```yaml
 name       : Bhanu Teja Komma
 education  : B.Tech CSE @ GITAM University Bengaluru (2027) | CGPA: 8.9
-role       : Business Logic Domain Lead @ Project PRAJNA
-             → 30-dev platform, peak 10K+ concurrent users, Module 13-18 owner
-focus      : Cloud-Native Backend Engineering · System Design · Event-Driven Architecture
-currently  : Heavily intrested in Cloud orchestration and infrastructuring
+role       : Business Logic Layer Lead — Project PRAJNA
+             → University product initiative; own Modules 13–18,
+             → personally building the Approval Workflow Engine (Module 13)
+focus      : Cloud-native backend engineering · System design · Event-driven architecture
+currently  : Building the Approval Workflow Engine for PRAJNA;
+             studying distributed systems and agentic AI patterns
 location   : Bangalore, India 🇮🇳
-interests  : Distributed systems, low-level programming, reverse engineering (Ghidra)
+interests  : Distributed systems, infrastructure as code, AI agents
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Languages**
+**Languages I work in**
 
-[![My Skills](https://skillicons.dev/icons?i=ts,python,java,rust,cpp,c,dart)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=ts,python,java)](https://skillicons.dev)
+
+**Exploring**
+
+[![My Skills](https://skillicons.dev/icons?i=cpp,go,rust)](https://skillicons.dev)
 
 **Cloud & Backend**
 
@@ -41,7 +47,7 @@ interests  : Distributed systems, low-level programming, reverse engineering (Gh
 
 [![My Skills](https://skillicons.dev/icons?i=git,linux,docker,vscode,powershell)](https://skillicons.dev)
 
-**AWS Services I actually use:**
+**AWS services I actually use:**
 
 ![AWS CDK](https://img.shields.io/badge/CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
 ![Lambda](https://img.shields.io/badge/Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white)
@@ -54,7 +60,28 @@ interests  : Distributed systems, low-level programming, reverse engineering (Gh
 
 ---
 
-## 🚀 Featured Projects
+## 🚀 Featured Work
+
+### 🏛️ Project PRAJNA — Approval Workflow Engine *(team repo, private)*
+
+University product initiative under **alumni mentorship**. I lead the Business Logic Layer (Modules 13–18) and personally build the **Approval Workflow Engine (Module 13)** — the single authority over approval state for every faculty submission across 3 campuses.
+
+- **Serverless, event-driven** — AWS Lambda + DynamoDB (single-table, 3 GSIs) + EventBridge, defined as IaC with AWS CDK in TypeScript
+- **Rank-based escalation ladder** that prevents self-loops on multi-step workflows
+- **Idempotent** workflow creation (safe under Lambda retries) + **optimistic locking** (no lost updates when an approver races the escalation cron)
+- **Cognito + JWT** auth scoped by role and campus; multi-tenant isolation across campuses
+- Hardened via a code-review pass that fixed 11 correctness/security issues; backed by 37 unit tests
+
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![AWS CDK](https://img.shields.io/badge/-AWS_CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![Lambda](https://img.shields.io/badge/-Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white)
+![DynamoDB](https://img.shields.io/badge/-DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white)
+![EventBridge](https://img.shields.io/badge/-EventBridge-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
+![Cognito](https://img.shields.io/badge/-Cognito-DD344C?style=flat-square&logo=amazonaws&logoColor=white)
+
+---
+
+## 🛠️ Personal Projects
 
 <table>
 <tr>
@@ -64,7 +91,7 @@ interests  : Distributed systems, low-level programming, reverse engineering (Gh
 Full-stack serverless maintenance system on AWS with role-based access (Resident / Admin).
 - **Automated SLA tracking** via EventBridge cron (every 15 min)
 - **Single-table DynamoDB** design + Cognito RBAC
-- **100% IaC** — deployed with AWS CDK (TypeScript)
+- **100% IaC** — defined with AWS CDK (TypeScript)
 
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![AWS CDK](https://img.shields.io/badge/-AWS_CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
@@ -128,8 +155,6 @@ Mobile-first safety application for travellers.
 ---
 
 ## 📊 GitHub Stats
-
-
 
 <div align="center">
 
