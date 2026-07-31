@@ -1,193 +1,156 @@
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=30&pause=1000&color=6E40C9&center=true&vCenter=true&width=700&lines=Hey+there%2C+I'm+Bhanu+Teja+%F0%9F%91%8B;Backend+%26+Cloud-Native+Engineer;AWS+CDK+%7C+TypeScript+%7C+DynamoDB;Building+systems+that+scale+%F0%9F%9A%80)](https://git.io/typing-svg)
+<img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-<img src="https://komarev.com/ghpvc/?username=maczeo11&style=for-the-badge&color=6E40C9&label=PROFILE+VIEWS" />
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Serverless+backends+on+AWS;Event-driven%2C+not+event-ual;Single-table+DynamoDB+design;Currently+leading+PRAJNA%27s+workflow+engine)](https://git.io/typing-svg)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:bhanu0005a@gmail.com)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/GB2023002633/)
+<a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
+<a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" /></a>
+<a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=black" /></a>
+<a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a>
 
 </div>
 
----
+<br/>
 
-## 🧠 About Me
+## About
 
 ```yaml
-name       : Bhanu Teja Komma
-education  : B.Tech CSE @ GITAM University Bengaluru (2027) | CGPA: 8.9
-role       : Business Logic Layer Lead — Project PRAJNA
-             → University product initiative; own Modules 13–18,
-             → personally building the Approval Workflow Engine (Module 13)
-focus      : Cloud-native backend engineering · System design · Event-driven architecture
-currently  : Building the Approval Workflow Engine for PRAJNA;
-             studying distributed systems and agentic AI patterns
-location   : Bangalore, India 🇮🇳
-interests  : Distributed systems, infrastructure as code, AI agents
+name:      Bhanu Teja Komma
+education: B.Tech CSE, GITAM University Bengaluru — Class of 2027
+role:      Business Logic Layer Lead, Project PRAJNA (team of 5)
+currently: Building the Approval Workflow Engine (Module 13)
+location:  Bengaluru, India
 ```
 
----
+I build backend systems where the interesting part isn't the CRUD, it's what happens when two requests race each other. Most of my time lives inside AWS Lambda, DynamoDB, and EventBridge — thinking through idempotency, optimistic locking, and single-table design instead of bolting them on after something breaks in production.
 
-## 🛠️ Tech Stack
+Right now I lead the Business Logic Layer on **PRAJNA**, a faculty performance management platform built under alumni mentorship, where I own the **Approval Workflow Engine** — the system every approval decision across three campuses has to pass through correctly, every time.
 
-**Languages I work in**
+<br/>
 
-[![My Skills](https://skillicons.dev/icons?i=ts,python,java)](https://skillicons.dev)
+## Tech Stack
 
-**Exploring**
+**Core**
 
-[![My Skills](https://skillicons.dev/icons?i=cpp,go,rust)](https://skillicons.dev)
+<img src="https://skillicons.dev/icons?i=ts,python,java,nodejs" />
 
-**Cloud & Backend**
+**AWS & Infrastructure**
 
-[![My Skills](https://skillicons.dev/icons?i=aws,nodejs,react,fastapi,spring)](https://skillicons.dev)
-
-**Tools & DevEnv**
-
-[![My Skills](https://skillicons.dev/icons?i=git,linux,docker,vscode,powershell)](https://skillicons.dev)
-
-**AWS services I actually use:**
-
-![AWS CDK](https://img.shields.io/badge/CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
 ![Lambda](https://img.shields.io/badge/Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white)
 ![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white)
+![CDK](https://img.shields.io/badge/CDK_(TypeScript)-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
 ![EventBridge](https://img.shields.io/badge/EventBridge-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
 ![Cognito](https://img.shields.io/badge/Cognito-DD344C?style=flat-square&logo=amazonaws&logoColor=white)
 ![API Gateway](https://img.shields.io/badge/API_Gateway-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
 ![S3](https://img.shields.io/badge/S3-569A31?style=flat-square&logo=amazons3&logoColor=white)
-![SSM](https://img.shields.io/badge/SSM-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
 
----
+**Databases & Backend Frameworks**
 
-## 🚀 Featured Work
+<img src="https://skillicons.dev/icons?i=postgres,fastapi,go" />
 
-### 🏛️ Project PRAJNA — Approval Workflow Engine *(team repo, private)*
+**Tools**
 
-University product initiative under **alumni mentorship**. I lead the Business Logic Layer (Modules 13–18) and personally build the **Approval Workflow Engine (Module 13)** — the single authority over approval state for every faculty submission across 3 campuses.
+<img src="https://skillicons.dev/icons?i=git,linux,docker,vscode" />
 
-- **Serverless, event-driven** — AWS Lambda + DynamoDB (single-table, 3 GSIs) + EventBridge, defined as IaC with AWS CDK in TypeScript
-- **Rank-based escalation ladder** that prevents self-loops on multi-step workflows
-- **Idempotent** workflow creation (safe under Lambda retries) + **optimistic locking** (no lost updates when an approver races the escalation cron)
-- **Cognito + JWT** auth scoped by role and campus; multi-tenant isolation across campuses
-- Hardened via a code-review pass that fixed 11 correctness/security issues; backed by 37 unit tests
+**Currently learning**
 
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![AWS CDK](https://img.shields.io/badge/-AWS_CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![Lambda](https://img.shields.io/badge/-Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white)
-![DynamoDB](https://img.shields.io/badge/-DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white)
-![EventBridge](https://img.shields.io/badge/-EventBridge-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
-![Cognito](https://img.shields.io/badge/-Cognito-DD344C?style=flat-square&logo=amazonaws&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white) — memory ownership and systems programming, as a hobby track alongside backend work.
 
----
+<sub>I split these by how much production weight I'd put behind them, not by what I've merely touched — happy to go deep on any of the AWS/core row in an interview.</sub>
 
-## 🛠️ Personal Projects
+<br/>
+
+## What I Actually Think About
 
 <table>
-<tr>
-<td width="50%">
-
-### 🏠 Serverless Apartment Portal
-Full-stack serverless maintenance system on AWS with role-based access (Resident / Admin).
-- **Automated SLA tracking** via EventBridge cron (every 15 min)
-- **Single-table DynamoDB** design + Cognito RBAC
-- **100% IaC** — defined with AWS CDK (TypeScript)
-
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![AWS CDK](https://img.shields.io/badge/-AWS_CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![DynamoDB](https://img.shields.io/badge/-DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white)
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
-
-[![Repo](https://img.shields.io/badge/View_Repo-181717?style=flat-square&logo=github)](https://github.com/maczeo11/serverless-apartment-manager)
-
-</td>
-<td width="50%">
-
-### 📄 Universal Text Extractor
-Solves the "Dark Data" problem — extracts from PDF, Word, Excel, Images & HTML into standardized JSON.
-- **Strategy Pattern** backend (Open/Closed Principle)
-- **Hybrid OCR pipeline** — OpenCV pre-processing + Tesseract LSTM
-- **Smart frontend queue** for free-tier memory management
-
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![OpenCV](https://img.shields.io/badge/-OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
-![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-
-[![Repo](https://img.shields.io/badge/View_Repo-181717?style=flat-square&logo=github)](https://github.com/maczeo11/File_extractor)
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🤖 TechBot — AI Lab Assistant
-Terminal-based AI agent for IT troubleshooting & live system diagnostics.
-- **LangChain LCEL** agent with Groq `llama-3.3-70b`
-- **Live psutil diagnostics** — CPU, RAM, Disk, Processes
-- **Whitelisted shell execution** (`ping`, `netstat`, `df`)
-- Rich terminal UI
-
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![LangChain](https://img.shields.io/badge/-LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![Groq](https://img.shields.io/badge/-Groq-F55036?style=flat-square&logoColor=white)
-
-[![Repo](https://img.shields.io/badge/View_Repo-181717?style=flat-square&logo=github)](https://github.com/maczeo11/sys-ai)
-
-</td>
-<td width="50%">
-
-### ✈️ Tourism Safety App
-Mobile-first safety application for travellers.
-- Cross-platform **Flutter** frontend
-- Python backend for safety data
-
-![Flutter](https://img.shields.io/badge/-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/-Dart-0175C2?style=flat-square&logo=dart&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-
-[![Repo](https://img.shields.io/badge/View_Repo-181717?style=flat-square&logo=github)](https://github.com/maczeo11/tourism_safety_app)
-
-</td>
-</tr>
+<tr><td width="30%"><b>Idempotency</b></td><td>Designing writes so a Lambda retry can't double-create or double-charge anything.</td></tr>
+<tr><td><b>Optimistic locking</b></td><td>Version-checked conditional writes so two approvers racing the same record don't silently clobber each other.</td></tr>
+<tr><td><b>Single-table DynamoDB design</b></td><td>Modeling access patterns first, then collapsing entities into one table with GSIs instead of one table per entity.</td></tr>
+<tr><td><b>Event-driven workflows</b></td><td>EventBridge as the backbone for state changes, instead of services polling each other for status.</td></tr>
+<tr><td><b>Multi-tenant isolation</b></td><td>Scoping every query by role and campus at the auth layer, not trusting the client to ask nicely.</td></tr>
 </table>
 
----
+<br/>
 
-## 📊 GitHub Stats
+## Featured Work
+
+### PRAJNA — Approval Workflow Engine
+<sub>Team repo, private — see the architecture below instead of the source</sub>
+
+The single authority for approval state on every faculty submission across three campuses. If this system is wrong, someone's approval either gets stuck forever or gets approved twice — so correctness under concurrent access was the actual design brief, not a nice-to-have.
 
 <div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=maczeo11&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
-
+<img src="assets/architecture.svg" alt="PRAJNA Approval Workflow Engine architecture diagram" width="85%" />
 </div>
 
+**The engineering problem:** approvers escalate submissions up a rank ladder, a scheduled Lambda escalates anything past its SLA, and a human can act on a record at the exact moment the escalation cron fires on it. That's a straightforward race condition if you're not careful.
+
+**How it's handled:**
+- Workflow creation is idempotent, so a Lambda retry after a timeout can't spin up a duplicate approval chain
+- Every state update is optimistic-locked — a version mismatch fails the write instead of silently overwriting a concurrent change
+- The escalation ladder is rank-based with cycle checks, so a misconfigured hierarchy can't loop a request back to someone who already approved it
+- Auth is Cognito + JWT, scoped by role and campus, so the isolation between campuses is enforced server-side, not assumed client-side
+
+**Result:** hardened through a dedicated review pass that surfaced and fixed 11 correctness/security issues, and backed by 37 unit tests at 92% coverage on the core module.
+
+`TypeScript` `AWS CDK` `Lambda` `DynamoDB` `EventBridge` `Cognito`
+
 ---
 
-## 🏆 Trophies
+### Serverless Apartment Maintenance Portal
+Full-stack maintenance-request system for 50+ residents and 15+ admins across 3 campuses — the project I used to get single-table DynamoDB design and CDK-as-IaC right before bringing them to PRAJNA.
+
+- SLA tracking runs on an EventBridge cron firing every 15 minutes, not a human checking a dashboard
+- Single-table DynamoDB design with Cognito-backed role-based access
+- 100% infrastructure-as-code via AWS CDK (TypeScript) — no console-clicked resources
+
+`TypeScript` `AWS CDK` `DynamoDB` `React` — **[Repository →](https://github.com/maczeo11/serverless-apartment-manager)**
+
+### Universal Text Extractor
+A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, and HTML into one standardized JSON shape — built to handle the "dark data" problem of documents that don't come pre-structured.
+
+- Strategy pattern on the backend, so adding a new file format doesn't touch existing extractors (Open/Closed Principle)
+- Hybrid OCR pipeline: OpenCV preprocessing feeding Tesseract's LSTM engine, for scanned documents that plain text extraction can't touch
+- Queue-managed frontend to keep memory bounded on free-tier hosting
+
+`Python` `OpenCV` `Docker` `JavaScript` — **[Repository →](https://github.com/maczeo11/File_extractor)**
+
+<details>
+<summary><b>Other projects</b> — smaller in scope, still shipped</summary>
+<br/>
+
+- **[TechBot](https://github.com/maczeo11/sys-ai)** — terminal AI agent for IT troubleshooting; LangChain LCEL agent (Groq `llama-3.3-70b`) with live `psutil` diagnostics and whitelisted shell execution (`ping`, `netstat`, `df`).
+- **[Tourism Safety App](https://github.com/maczeo11/tourism_safety_app)** — cross-platform Flutter app with a Python backend aggregating traveller safety data.
+
+</details>
+
+<br/>
+
+## Timeline
+
+```
+2023 ── Started B.Tech CSE @ GITAM University Bengaluru
+2024 ── Built first serverless projects (Apartment Portal, Text Extractor)
+2025 ── Joined PRAJNA — now leading the Business Logic Layer
+2026 ── Owning the Approval Workflow Engine · applying for backend / SDE roles
+2027 ── Graduating — looking for full-time backend / cloud-native roles
+```
+
+<br/>
+
+## GitHub Activity
 
 <div align="center">
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=maczeo11&theme=tokyonight&column=7&margin-w=10&no-frame=true)](https://github.com/ryo-ma/github-profile-trophy)
-
+<img src="https://github-readme-stats.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&hide_title=true&count_private=true" width="65%" alt="GitHub stats for maczeo11" />
 </div>
 
----
-
-## 📈 Contribution Activity
+<br/>
 
 <div align="center">
-
-[![Bhanu's Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=maczeo11&theme=tokyo-night&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-</div>
-
----
-
-<div align="center">
-
-*"Build systems that scale, write code that lasts."*
-
-![Wave](https://capsule-render.vercel.app/api?type=waving&color=6E40C9&height=80&section=footer)
-
+<img src="assets/footer.svg" width="100%" alt="" />
+<br/>
+<img src="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Contribution snake animation" />
+<br/><br/>
+<sub>Build systems that scale, write code that lasts.</sub>
 </div>
