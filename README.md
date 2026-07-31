@@ -138,8 +138,8 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 ## GitHub Activity
 
 <div align="center">
-<img src="https://github-readme-stats-sigma.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&hide_title=true&count_private=true&include_all_commits=true" width="48%" alt="GitHub stats for maczeo11" />
-<img src="https://github-readme-stats-sigma.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true" width="48%" alt="Top languages for maczeo11" />
+<img src="https://github-readme-stats-anuraghazra.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&hide_title=true&count_private=true&include_all_commits=true" width="48%" alt="GitHub stats for maczeo11" />
+<img src="https://github-readme-stats-anuraghazra.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true" width="48%" alt="Top languages for maczeo11" />
 </div>
 
 <div align="center">
