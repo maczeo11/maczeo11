@@ -55,11 +55,9 @@ async function getStats() {
     `https://api.github.com/users/${USER}/repos?type=owner`
   );
 
-  let totalStars = 0;
   const langBytes = {};
 
   for (const repo of repos) {
-    totalStars += repo.stargazers_count;
     try {
       const langs = await fetchJSON(repo.languages_url);
       for (const [lang, bytes] of Object.entries(langs)) {
@@ -91,11 +89,9 @@ async function getStats() {
   } catch {}
 
   return {
-    stars: totalStars,
     commits,
     prs,
     repos: user.public_repos,
-    followers: user.followers,
     languages: Object.entries(langBytes)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 6),
@@ -113,54 +109,25 @@ function formatBytes(bytes) {
 }
 
 function generateStatsSVG(stats) {
-  const maxLang = stats.languages.length > 0 ? stats.languages[0][1] : 1;
-
-  const langBars = stats.languages
-    .map(
-      ([lang, bytes], i) => {
-        const pct = Math.max((bytes / maxLang) * 100, 2);
-        const color = LANG_COLORS[lang] || "#8b8b8b";
-        const y = 135 + i * 26;
-        return `
-      <text x="25" y="${y + 4}" fill="#c9d1d9" font-size="13" font-family="Segoe UI, Ubuntu, sans-serif">${escapeXml(lang)}</text>
-      <rect x="140" y="${y - 7}" width="280" height="14" rx="7" fill="#2a2d3e"/>
-      <rect x="140" y="${y - 7}" width="${(280 * pct) / 100}" height="14" rx="7" fill="${color}"/>
-      <text x="430" y="${y + 4}" fill="#8b8b8b" font-size="11" font-family="Segoe UI, Ubuntu, sans-serif">${escapeXml(formatBytes(bytes))}</text>`;
-      }
-    )
-    .join("");
-
-  return `<svg width="576" height="${155 + stats.languages.length * 26}" viewBox="0 0 576 ${155 + stats.languages.length * 26}" xmlns="http://www.w3.org/2000/svg">
+  return `<svg width="576" height="145" viewBox="0 0 576 145" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title { font: 600 18px 'Segoe UI', Ubuntu, sans-serif; fill: #a371f7; }
     .stat-label { font: 500 12px 'Segoe UI', Ubuntu, sans-serif; fill: #8b8b8b; }
-    .stat-value { font: 700 20px 'Segoe UI', Ubuntu, sans-serif; fill: #c9d1d9; }
-    .section { font: 600 13px 'Segoe UI', Ubuntu, sans-serif; fill: #a371f7; }
+    .stat-value { font: 700 26px 'Segoe UI', Ubuntu, sans-serif; fill: #c9d1d9; }
   </style>
   <rect width="576" height="100%" rx="8" fill="#1a1b27"/>
   <rect x="0.5" y="0.5" width="575" height="99%" rx="7.5" fill="none" stroke="#2a2d3e"/>
 
-  <text x="25" y="35" class="title">GitHub Stats</text>
+  <text x="25" y="40" class="title">Code in Motion</text>
 
-  <text x="25" y="75" class="stat-label">Stars</text>
-  <text x="25" y="95" class="stat-value">${stats.stars}</text>
+  <text x="25" y="95" class="stat-value">${stats.commits}</text>
+  <text x="25" y="115" class="stat-label">Commits this year</text>
 
-  <text x="130" y="75" class="stat-label">Commits</text>
-  <text x="130" y="95" class="stat-value">${stats.commits}</text>
+  <text x="210" y="95" class="stat-value">${stats.prs}</text>
+  <text x="210" y="115" class="stat-label">Pull requests</text>
 
-  <text x="265" y="75" class="stat-label">PRs</text>
-  <text x="265" y="95" class="stat-value">${stats.prs}</text>
-
-  <text x="360" y="75" class="stat-label">Repos</text>
-  <text x="360" y="95" class="stat-value">${stats.repos}</text>
-
-  <text x="455" y="75" class="stat-label">Followers</text>
-  <text x="455" y="95" class="stat-value">${stats.followers}</text>
-
-  <line x1="25" y1="115" x2="551" y2="115" stroke="#2a2d3e" stroke-width="1"/>
-
-  <text x="25" y="128" class="section">Top Languages</text>
-  ${langBars}
+  <text x="395" y="95" class="stat-value">${stats.repos}</text>
+  <text x="395" y="115" class="stat-label">Public repos</text>
 </svg>`;
 }
 
