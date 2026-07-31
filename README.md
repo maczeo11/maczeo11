@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Serverless+backends+on+AWS;Event-driven%2C+not+event-ual;Single-table+DynamoDB+design;Idempotent+by+default;Optimistic+locks%2C+not+hopeful+ones;Leading+PRAJNA%27s+workflow+engine)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Serverless+backends+on+AWS;Event-driven%2C+not+event-ual;Single-table+DynamoDB+design;Idempotent+by+default;Optimistic+locks%2C+not+hopeful+ones;Leading+PRAJNA%27s+workflow+engine;Go+for+backend%2C+Rust+for+fun)](https://git.io/typing-svg)
 
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
@@ -49,15 +49,18 @@ Right now I lead the Business Logic Layer on **PRAJNA**, a faculty performance m
 
 **Databases & Backend Frameworks**
 
-<img src="https://skillicons.dev/icons?i=postgres,fastapi,go" />
+<img src="https://skillicons.dev/icons?i=postgres,fastapi" />
 
-**Tools**
+**Languages I Reach For**
 
-<img src="https://skillicons.dev/icons?i=git,linux,docker,vscode" />
+<img src="https://skillicons.dev/icons?i=go,rust" /> <sub>Go for backend services, Rust for systems-level projects — both because I care about how things actually run.</sub>
 
-**Currently learning**
+**Tools & Workflow**
 
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white) — memory ownership and systems programming, as a hobby track alongside backend work.
+<img src="https://skillicons.dev/icons?i=git,linux,docker,vscode,neovim" />
+
+![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-0D597F?style=flat-square&logo=alpinelinux&logoColor=white)
+![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white)
 
 <sub>I split these by how much production weight I'd put behind them, not by what I've merely touched — happy to go deep on any of the AWS/core row in an interview.</sub>
 
@@ -135,12 +138,8 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 ## GitHub Activity
 
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&hide_title=true&count_private=true&include_all_commits=true" width="65%" alt="GitHub stats for maczeo11" />
-<img src="https://streak-stats.demolab.com?user=maczeo11&theme=tokyonight&hide_border=true" width="65%" alt="GitHub streak for maczeo11" />
-</div>
-
-<div align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=maczeo11&layout=donut&theme=tokyonight&hide_border=true&langs_count=8" width="40%" alt="Top languages for maczeo11" />
+<img src="https://github-readme-stats-sigma.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&hide_title=true&count_private=true&include_all_commits=true" width="48%" alt="GitHub stats for maczeo11" />
+<img src="https://github-readme-stats-sigma.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true" width="48%" alt="Top languages for maczeo11" />
 </div>
 
 <div align="center">
