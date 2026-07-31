@@ -80,6 +80,22 @@ Right now I lead the Business Logic Layer on **PRAJNA**, a faculty performance m
 
 ## Featured Work
 
+<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=MagicStream%20%E2%80%94%20Movie%20Streaming%20Server&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="MagicStream — Movie Streaming Server" />
+
+A Go movie streaming server with a React frontend — JWT auth with httpOnly cookies, MongoDB data layer, token-bucket rate limiting, HTTP Range media streaming, and graceful shutdown. Not a toy CRUD scaffold; it's built to show how a real Go API is wired.
+
+- **Rate limiting** — token-bucket limiter, tighter on auth routes, with per-client isolation (burst, refill, isolation all unit-tested)
+- **Streaming** — `/media` serves video with HTTP Range support so `<video>` seeks without downloading the whole file
+- **Auth** — JWT access + refresh tokens in httpOnly cookies, bcrypt-hashed passwords, token rotation
+- **Production habits** — request-ID tracing, `log/slog` structured logs, health endpoint, Docker + Makefile, graceful shutdown
+- **AI curator reviews** — admins write a review and the server calls OpenAI (via `langchaingo`) to rank it on the scale
+
+Full API spec, architecture, data model, and security docs live in the repo's `docs/` folder — the standard I hold every project to.
+
+`Go` `Gin` `MongoDB` `JWT` `React` `TypeScript` — **[Repository →](https://github.com/maczeo11/go-movie-streaming)**
+
+---
+
 <img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:1a1030,50:3b1f6e,100:6e40c9&text=PRAJNA%20%E2%80%94%20Approval%20Workflow%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="PRAJNA — Approval Workflow Engine" />
 
 <sub>Team repo, private — see the architecture below instead of the source</sub>
