@@ -2,12 +2,14 @@
 
 <img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Serverless+backends+on+AWS;Event-driven%2C+not+event-ual;Single-table+DynamoDB+design;Currently+leading+PRAJNA%27s+workflow+engine)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Serverless+backends+on+AWS;Event-driven%2C+not+event-ual;Single-table+DynamoDB+design;Idempotent+by+default;Optimistic+locks%2C+not+hopeful+ones;Leading+PRAJNA%27s+workflow+engine)](https://git.io/typing-svg)
 
-<a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
-<a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" /></a>
-<a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=black" /></a>
-<a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a>
+<a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
+<a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+
+![](https://komarev.com/ghpvc/?username=maczeo11&style=for-the-badge&color=A371F7)
 
 </div>
 
@@ -17,10 +19,10 @@
 
 ```yaml
 name:      Bhanu Teja Komma
-education: B.Tech CSE, GITAM University Bengaluru — Class of 2027
 role:      Business Logic Layer Lead, Project PRAJNA (team of 5)
 currently: Building the Approval Workflow Engine (Module 13)
 location:  Bengaluru, India
+openTo:    Backend / cloud-native roles
 ```
 
 I build backend systems where the interesting part isn't the CRUD, it's what happens when two requests race each other. Most of my time lives inside AWS Lambda, DynamoDB, and EventBridge — thinking through idempotency, optimistic locking, and single-table design instead of bolting them on after something breaks in production.
@@ -75,7 +77,8 @@ Right now I lead the Business Logic Layer on **PRAJNA**, a faculty performance m
 
 ## Featured Work
 
-### PRAJNA — Approval Workflow Engine
+<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:1a1030,50:3b1f6e,100:6e40c9&text=PRAJNA%20%E2%80%94%20Approval%20Workflow%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="PRAJNA — Approval Workflow Engine" />
+
 <sub>Team repo, private — see the architecture below instead of the source</sub>
 
 The single authority for approval state on every faculty submission across three campuses. If this system is wrong, someone's approval either gets stuck forever or gets approved twice — so correctness under concurrent access was the actual design brief, not a nice-to-have.
@@ -98,7 +101,8 @@ The single authority for approval state on every faculty submission across three
 
 ---
 
-### Serverless Apartment Maintenance Portal
+<img src="https://capsule-render.vercel.app/api?type=rect&height=60&color=0:1a1030,100:2d1a5c&text=Serverless%20Apartment%20Maintenance%20Portal&fontSize=17&fontColor=e6e9f0&fontAlignY=58&animation=fadeIn" width="100%" alt="Serverless Apartment Maintenance Portal" />
+
 Full-stack maintenance-request system for 50+ residents and 15+ admins across 3 campuses — the project I used to get single-table DynamoDB design and CDK-as-IaC right before bringing them to PRAJNA.
 
 - SLA tracking runs on an EventBridge cron firing every 15 minutes, not a human checking a dashboard
@@ -107,7 +111,8 @@ Full-stack maintenance-request system for 50+ residents and 15+ admins across 3 
 
 `TypeScript` `AWS CDK` `DynamoDB` `React` — **[Repository →](https://github.com/maczeo11/serverless-apartment-manager)**
 
-### Universal Text Extractor
+<img src="https://capsule-render.vercel.app/api?type=rect&height=60&color=0:1a1030,100:2d1a5c&text=Universal%20Text%20Extractor&fontSize=17&fontColor=e6e9f0&fontAlignY=58&animation=fadeIn" width="100%" alt="Universal Text Extractor" />
+
 A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, and HTML into one standardized JSON shape — built to handle the "dark data" problem of documents that don't come pre-structured.
 
 - Strategy pattern on the backend, so adding a new file format doesn't touch existing extractors (Open/Closed Principle)
@@ -127,22 +132,19 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 
 <br/>
 
-## Timeline
-
-```
-2023 ── Started B.Tech CSE @ GITAM University Bengaluru
-2024 ── Built first serverless projects (Apartment Portal, Text Extractor)
-2025 ── Joined PRAJNA — now leading the Business Logic Layer
-2026 ── Owning the Approval Workflow Engine · applying for backend / SDE roles
-2027 ── Graduating — looking for full-time backend / cloud-native roles
-```
-
-<br/>
-
 ## GitHub Activity
 
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&hide_title=true&count_private=true" width="65%" alt="GitHub stats for maczeo11" />
+<img src="https://github-readme-stats.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&hide_title=true&count_private=true&include_all_commits=true" width="65%" alt="GitHub stats for maczeo11" />
+<img src="https://streak-stats.demolab.com?user=maczeo11&theme=tokyonight&hide_border=true" width="65%" alt="GitHub streak for maczeo11" />
+</div>
+
+<div align="center">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=maczeo11&layout=donut&theme=tokyonight&hide_border=true&langs_count=8" width="40%" alt="Top languages for maczeo11" />
+</div>
+
+<div align="center">
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=maczeo11&theme=tokyo-night&hide_border=true&area=true&height=300" width="100%" alt="Contribution graph for maczeo11" />
 </div>
 
 <br/>
