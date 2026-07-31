@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Serverless+backends+on+AWS;Event-driven%2C+not+event-ual;Single-table+DynamoDB+design;Idempotent+by+default;Optimistic+locks%2C+not+hopeful+ones;Building+approval+workflows+that+scale;Go+for+backend%2C+Rust+for+fun)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Event-driven%2C+not+event-ual;Single-table+design+patterns;Idempotent+by+default;Optimistic+locks%2C+not+hopeful+ones;Building+approval+workflows+that+scale;Go+for+backend%2C+Rust+for+fun)](https://git.io/typing-svg)
 
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
