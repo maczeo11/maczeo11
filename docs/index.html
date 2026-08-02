@@ -476,34 +476,18 @@
       <article class="proj-card reveal">
         <div class="proj-top">
           <span class="proj-ico">🎬</span>
-          <a class="proj-link" href="https://github.com/maczeo11" target="_blank" rel="noopener" title="Open">↗</a>
+          <a class="proj-link" href="https://github.com/maczeo11/go-movie-streaming" target="_blank" rel="noopener" title="Open">↗</a>
         </div>
         <h3 class="proj-name">cineFund — Short-Film Crowdfunding</h3>
-        <p class="proj-desc">Event-driven Go backend for crowdfunding short films — transactional outbox, async video transcoding, and money handled with idempotency guarantees.</p>
+        <p class="proj-desc">Event-driven Go backend for crowdfunding short films — transactional outbox, async video transcoding, and money handled with idempotency guarantees. Grew out of MagicStream, a movie streaming server: JWT auth with httpOnly cookies, MongoDB data layer, and HTTP Range streaming were the base I built this on.</p>
         <ul class="proj-highlights">
           <li>Transactional Outbox → Mongo Change Streams → Kafka for async FFmpeg/HLS transcoding workers</li>
           <li>MinIO/S3 presigned uploads, HTTP Range streaming, gRPC (Protobuf) worker communication</li>
           <li>Redis SETNX idempotency guards on payment webhooks + token-bucket rate limiting</li>
+          <li>Token-bucket limiter tighter on auth routes, request-ID tracing, Docker + Makefile, graceful shutdown</li>
         </ul>
         <div class="proj-tags">
-          <span class="tag">Go</span><span class="tag">Kafka</span><span class="tag">gRPC</span><span class="tag">Redis</span><span class="tag">MongoDB</span><span class="tag">Docker</span>
-        </div>
-      </article>
-
-      <article class="proj-card reveal">
-        <div class="proj-top">
-          <span class="proj-ico">🍿</span>
-          <a class="proj-link" href="https://github.com/maczeo11/go-movie-streaming" target="_blank" rel="noopener" title="Open">↗</a>
-        </div>
-        <h3 class="proj-name">MagicStream — Movie Streaming Server</h3>
-        <p class="proj-desc">The Go backend that cineFund grew out of — JWT auth in httpOnly cookies, MongoDB data layer, HTTP Range streaming. Extended into cineFund with presigned uploads, outbox, and payments.</p>
-        <ul class="proj-highlights">
-          <li>Token-bucket rate limiter, tighter on auth routes, per-client isolation — unit tested</li>
-          <li>HTTP Range media streaming so <code>&lt;video&gt;</code> seeks without full downloads</li>
-          <li>Request-ID tracing, log/slog, health endpoint, Docker + Makefile, graceful shutdown</li>
-        </ul>
-        <div class="proj-tags">
-          <span class="tag">Go</span><span class="tag">Gin</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">React</span><span class="tag">TypeScript</span>
+          <span class="tag">Go</span><span class="tag">Kafka</span><span class="tag">gRPC</span><span class="tag">Redis</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">Docker</span>
         </div>
       </article>
 
