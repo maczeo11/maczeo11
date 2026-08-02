@@ -388,8 +388,8 @@
 
       <p class="hero-tagline">
         Backend engineer building <b>cloud-native serverless systems on AWS</b> — Lambda, DynamoDB, EventBridge, CDK.
-        Currently leading the Business Logic Layer of <b>PRAJNA</b>, a 30-module faculty platform where correctness under
-        concurrency isn't a nice-to-have, it's the design brief.
+        Led the Business Logic Layer of <b>PRAJNA</b>, a 30-module faculty platform built by a 24-developer team, owning six
+        serverless modules and the event contracts five partner teams build against.
       </p>
 
       <div class="hero-meta">
@@ -432,30 +432,30 @@
   <div class="container">
     <p class="eyebrow reveal">// experience</p>
     <h2 class="sec-title reveal">Business Logic Layer Lead, PRAJNA</h2>
-    <p class="sec-sub reveal">Faculty performance platform for GITAM University — a 30-module build by a 24-developer team. I own six modules and the event contracts five partner teams build against.</p>
+    <p class="sec-sub reveal">Faculty performance platform for GITAM University — a 30-module build by a 24-developer team. Led six serverless modules and the event contracts five partner teams build against.</p>
 
     <div class="exp-card reveal">
       <div class="exp-head">
         <div class="exp-title">Business Logic Layer Lead, <span>PRAJNA</span></div>
-        <div class="exp-date">May 2026 – Present</div>
+        <div class="exp-date">May 2026 – Jul 2026</div>
       </div>
       <div class="exp-sub">AWS serverless (Lambda · DynamoDB · EventBridge · CDK) · TypeScript · 3 campuses</div>
 
       <div class="stats">
         <div class="stat"><div class="num">6/30</div><div class="lbl">modules owned</div></div>
-        <div class="stat"><div class="num">567+</div><div class="lbl">tests passing</div></div>
-        <div class="stat"><div class="num">48</div><div class="lbl">test suites</div></div>
-        <div class="stat"><div class="num">82%</div><div class="lbl">of 250 commits</div></div>
+        <div class="stat"><div class="num">92%</div><div class="lbl">test coverage</div></div>
+        <div class="stat"><div class="num">51</div><div class="lbl">unit tests</div></div>
+        <div class="stat"><div class="num">24</div><div class="lbl">developer team</div></div>
         <div class="stat"><div class="num">5</div><div class="lbl">partner teams</div></div>
         <div class="stat"><div class="num">3</div><div class="lbl">campuses</div></div>
       </div>
 
       <ul class="exp-list">
-        <li>Lead the business logic layer — <b>six of the platform's thirty modules</b> — coordinating five contributors and the integration contracts with the core platform, faculty data, AI, and dashboard teams.</li>
+        <li>Led the business logic layer for <b>six serverless modules</b> of a 30-module campus platform. Engineered the core workflow engine to <b>92% test coverage (51 unit tests)</b> and governed integration contracts for 5 partner teams.</li>
         <li>Built the <b>approval workflow engine</b> on Lambda, DynamoDB (single-table, 3 GSIs) and EventBridge, defined end-to-end as CDK infrastructure, with <b>tenant isolation</b> enforced across three campuses.</li>
-        <li>Made the approval state machine <b>safe under Lambda retries</b> using rank-based escalation, optimistic locking on version attributes, and idempotent TransactWrites — removing concurrent overwrite collisions.</li>
-        <li>Froze the <b>EventBridge event payloads</b> five downstream modules consume, and put a dead-letter queue and CloudWatch alarm on every rule before deploying to live AWS.</li>
-        <li>Caught an <b>IDOR vulnerability</b> during code review of a peer module and drove the fix. Consolidated six divergent authentication implementations into one shared helper used platform-wide.</li>
+        <li>Architected the approval state machine for <b>Lambda retry safety</b> using rank-based escalation, optimistic locking, and idempotent TransactWrites — eliminating concurrent overwrite collisions.</li>
+        <li>Froze <b>EventBridge payloads</b> for five downstream modules and deployed a dead-letter queue with a CloudWatch alarm on every rule before releasing to live AWS.</li>
+        <li>Caught an <b>IDOR vulnerability</b> during code review and drove the fix, consolidating six divergent authentication implementations into one shared platform-wide helper.</li>
       </ul>
 
       <div class="arch-wrap">
@@ -496,7 +496,7 @@
           <a class="proj-link" href="https://github.com/maczeo11/go-movie-streaming" target="_blank" rel="noopener" title="Open">↗</a>
         </div>
         <h3 class="proj-name">MagicStream — Movie Streaming Server</h3>
-        <p class="proj-desc">Go API with a React frontend — JWT auth in httpOnly cookies, MongoDB data layer, HTTP Range streaming, and production habits you can defend.</p>
+        <p class="proj-desc">The Go backend that cineFund grew out of — JWT auth in httpOnly cookies, MongoDB data layer, HTTP Range streaming. Extended into cineFund with presigned uploads, outbox, and payments.</p>
         <ul class="proj-highlights">
           <li>Token-bucket rate limiter, tighter on auth routes, per-client isolation — unit tested</li>
           <li>HTTP Range media streaming so <code>&lt;video&gt;</code> seeks without full downloads</li>
@@ -559,6 +559,7 @@
         <div class="skill-row"><div class="lbl"><span>Go (Golang)</span><span class="pct">80%</span></div><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
         <div class="skill-row"><div class="lbl"><span>Java</span><span class="pct">75%</span></div><div class="bar"><div class="bar-fill" data-w="75"></div></div></div>
         <div class="skill-row"><div class="lbl"><span>SQL</span><span class="pct">70%</span></div><div class="bar"><div class="bar-fill" data-w="70"></div></div></div>
+        <div class="skill-row"><div class="lbl"><span>Bash</span><span class="pct">65%</span></div><div class="bar"><div class="bar-fill" data-w="65"></div></div></div>
       </div>
 
       <div class="skill-card reveal">
@@ -592,10 +593,10 @@
         <h3><span class="dot"></span>Concepts</h3>
         <div class="chip-cloud">
           <span class="tag">Event-driven architecture</span><span class="tag">Transactional Outbox</span>
-          <span class="tag">Idempotency & retries</span><span class="tag">Optimistic concurrency</span>
-          <span class="tag">Multi-tenant isolation</span><span class="tag">IaC</span>
-          <span class="tag">Dead-letter queues</span><span class="tag">JWT auth</span>
-          <span class="tag">REST & gRPC design</span>
+          <span class="tag">pub/sub messaging</span><span class="tag">Idempotency & retries</span>
+          <span class="tag">Optimistic concurrency</span><span class="tag">Multi-tenant isolation</span>
+          <span class="tag">IaC</span><span class="tag">Dead-letter queues</span><span class="tag">JWT authentication</span>
+          <span class="tag">REST & gRPC design</span><span class="tag">Kafka</span>
         </div>
       </div>
 
