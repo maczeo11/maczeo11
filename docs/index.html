@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bhanu Teja Komma — Backend Engineer | Cloud-Native Systems on AWS</title>
-<meta name="description" content="Backend engineer building cloud-native serverless systems on AWS. Business Logic Layer Lead at PRAJNA — event-driven, idempotent, single-table DynamoDB. Go, TypeScript, AWS CDK." />
+<meta name="description" content="Backend engineer building cloud-native serverless systems on AWS. Business Logic Layer Lead at PRAJNA — six serverless modules, a 70-parameter scoring engine, event-driven and idempotent by default. Go, TypeScript, AWS CDK." />
 <meta property="og:title" content="Bhanu Teja Komma — Backend Engineer" />
 <meta property="og:description" content="Cloud-native backend systems on AWS. Event-driven, not event-ual." />
 <meta property="og:type" content="website" />
@@ -397,7 +397,7 @@
       <p class="hero-tagline">
         Backend engineer building <b>cloud-native serverless systems on AWS</b> — Lambda, DynamoDB, EventBridge, CDK.
         Led the Business Logic Layer of <b>PRAJNA</b>, a 30-module faculty platform built by a 24-developer team, owning six
-        serverless modules and the event contracts five partner teams build against.
+        serverless modules, a <b>70-parameter scoring engine</b>, and the event contracts five partner teams build against.
       </p>
 
       <div class="hero-meta">
@@ -440,7 +440,7 @@
   <div class="container">
     <p class="eyebrow reveal">// experience</p>
     <h2 class="sec-title reveal">Business Logic Layer Lead, PRAJNA</h2>
-    <p class="sec-sub reveal">Faculty performance platform for GITAM University — a 30-module build by a 24-developer team. Led six serverless modules and the event contracts five partner teams build against.</p>
+    <p class="sec-sub reveal">Faculty performance platform for GITAM University — a 30-module build by a 24-developer team. Led six serverless modules, the FEI-1000 scoring engine, and the event contracts five partner teams build against.</p>
 
     <div class="exp-card reveal">
       <div class="exp-head">
@@ -451,17 +451,20 @@
 
       <div class="stats">
         <div class="stat"><div class="num">6/30</div><div class="lbl">modules owned</div></div>
-        <div class="stat"><div class="num">92%</div><div class="lbl">test coverage</div></div>
-        <div class="stat"><div class="num">51</div><div class="lbl">unit tests</div></div>
+        <div class="stat"><div class="num">36</div><div class="lbl">Lambda handlers</div></div>
+        <div class="stat"><div class="num">70</div><div class="lbl">scoring parameters</div></div>
         <div class="stat"><div class="num">24</div><div class="lbl">developer team</div></div>
         <div class="stat"><div class="num">5</div><div class="lbl">partner teams</div></div>
         <div class="stat"><div class="num">3</div><div class="lbl">campuses</div></div>
       </div>
 
       <ul class="exp-list">
-        <li>Led the business logic layer for <b>six serverless modules</b> of a 30-module campus platform. Engineered the core workflow engine to <b>92% test coverage (51 unit tests)</b> and governed integration contracts for 5 partner teams.</li>
+        <li>Led the business logic layer for <b>six serverless modules</b> of a 30-module campus platform — 36 Lambda handlers across approvals, scoring, leaderboards, notifications, accreditation reporting and appraisals — and governed the integration contracts five partner teams build against.</li>
         <li>Built the <b>approval workflow engine</b> on Lambda, DynamoDB (single-table, 3 GSIs) and EventBridge, defined end-to-end as CDK infrastructure, with <b>tenant isolation</b> enforced across three campuses.</li>
         <li>Architected the approval state machine for <b>Lambda retry safety</b> using rank-based escalation, optimistic locking, and idempotent TransactWrites — eliminating concurrent overwrite collisions.</li>
+        <li>Designed and shipped <b>FEI-1000</b>, a faculty excellence scoring engine — <b>9 weighted clusters, 70 rubric-driven parameters, a 1000-point scale</b>. Encoded the rubrics as <b>data rather than branching logic</b>, so a policy change from the framework author is a data edit, not a code change, and the frontend contract is generated from the same source the engine scores from.</li>
+        <li>Made the scoring weights <b>runtime-tunable without a deploy</b> — an administrator re-weights the framework and a largest-remainder normaliser keeps the ceilings summing to exactly 1000. Completed academic years are frozen, so a re-weighting can never retroactively move someone's score.</li>
+        <li>Built an append-only <b>contribution ledger</b> so every score is explainable — which submission earned what, under which rubric rung and which config version — turning "why is my score 842?" into an answerable question and satisfying NAAC/NBA audit requirements.</li>
         <li>Froze <b>EventBridge payloads</b> for five downstream modules and deployed a dead-letter queue with a CloudWatch alarm on every rule before releasing to live AWS.</li>
         <li>Caught an <b>IDOR vulnerability</b> during code review and drove the fix, consolidating six divergent authentication implementations into one shared platform-wide helper.</li>
       </ul>

@@ -19,15 +19,18 @@
 
 ```yaml
 name:      Bhanu Teja Komma
-role:      Business Logic Layer Lead, Project PRAJNA (team of 5)
-currently: Building the Approval Workflow Engine (Module 13)
+role:      Business Logic Layer Lead, Project PRAJNA
+owns:      6 of 30 modules · 36 Lambda handlers · contracts for 5 partner teams
+currently: FEI-1000 — a 9-cluster, 70-parameter faculty scoring engine
 location:  Bengaluru, India
 openTo:    Backend / cloud-native roles
 ```
 
 I build backend systems where the interesting part isn't the CRUD, it's what happens when two requests race each other. Most of my time lives inside AWS Lambda, DynamoDB, and EventBridge — thinking through idempotency, optimistic locking, and single-table design instead of bolting them on after something breaks in production.
 
-Right now I lead the Business Logic Layer on **PRAJNA**, a faculty performance management platform built under alumni mentorship, where I own the **Approval Workflow Engine** — the system every approval decision across three campuses has to pass through correctly, every time.
+I lead the Business Logic Layer on **PRAJNA**, a faculty performance platform built by a 24-developer team under alumni mentorship. I own six serverless modules — approvals, scoring, leaderboards, notifications, accreditation reporting and appraisals — and the frozen event contracts five partner teams build against.
+
+The two pieces I'd point at first: the **Approval Workflow Engine**, which every approval decision across three campuses passes through and has to get right under concurrent access; and **FEI-1000**, the scoring engine that turns those approvals into a defensible 0–1000 faculty score.
 
 <br/>
 
@@ -74,6 +77,8 @@ Right now I lead the Business Logic Layer on **PRAJNA**, a faculty performance m
 <tr><td><b>Single-table DynamoDB design</b></td><td>Modeling access patterns first, then collapsing entities into one table with GSIs instead of one table per entity.</td></tr>
 <tr><td><b>Event-driven workflows</b></td><td>EventBridge as the backbone for state changes, instead of services polling each other for status.</td></tr>
 <tr><td><b>Multi-tenant isolation</b></td><td>Scoping every query by role and campus at the auth layer, not trusting the client to ask nicely.</td></tr>
+<tr><td><b>Policy as data</b></td><td>Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract can be generated from the same source the engine runs on.</td></tr>
+<tr><td><b>Explainable state</b></td><td>Keeping an append-only record of <i>why</i> a number is what it is — a running balance can't answer questions six months later, and the inputs can't be reconstructed after the fact.</td></tr>
 </table>
 
 <br/>
@@ -98,25 +103,39 @@ The single authority for approval state on every faculty submission across three
 - The escalation ladder is rank-based with cycle checks, so a misconfigured hierarchy can't loop a request back to someone who already approved it
 - Auth is Cognito + JWT, scoped by role and campus, so the isolation between campuses is enforced server-side, not assumed client-side
 
-**Result:** hardened through a dedicated review pass that surfaced and fixed 11 correctness/security issues, and backed by 37 unit tests at 92% coverage on the core module.
+**Result:** hardened through a dedicated review pass that surfaced and fixed 11 correctness/security issues, including an IDOR that let any authenticated user act as any faculty member in any campus.
 
 `TypeScript` `AWS CDK` `Lambda` `DynamoDB` `EventBridge` `Cognito`
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=MagicStream%20%E2%80%94%20Movie%20Streaming%20Server&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="MagicStream — Movie Streaming Server" />
+<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:1a1030,50:3b1f6e,100:6e40c9&text=FEI-1000%20%E2%80%94%20Faculty%20Scoring%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="FEI-1000 — Faculty Scoring Engine" />
 
-A Go movie streaming server with a React frontend — JWT auth with httpOnly cookies, MongoDB data layer, token-bucket rate limiting, HTTP Range media streaming, and graceful shutdown. Not a toy CRUD scaffold; it's built to show how a real Go API is wired.
+<sub>Team repo, private</sub>
 
-- **Rate limiting** — token-bucket limiter, tighter on auth routes, with per-client isolation (burst, refill, isolation all unit-tested)
-- **Streaming** — `/media` serves video with HTTP Range support so `<video>` seeks without downloading the whole file
-- **Auth** — JWT access + refresh tokens in httpOnly cookies, bcrypt-hashed passwords, token rotation
-- **Production habits** — request-ID tracing, `log/slog` structured logs, health endpoint, Docker + Makefile, graceful shutdown
-- **AI curator reviews** — admins write a review and the server calls OpenAI (via `langchaingo`) to rank it on the scale
+Turning approved evidence into a defensible 0–1000 faculty score across **9 weighted clusters and 70 rubric-driven parameters**. The hard part isn't the arithmetic — it's that the output decides promotions and feeds NAAC/NBA accreditation, so every number has to be explainable years later.
+
+- **Rubrics are data, not code** — 70 parameters live in a registry with declarative conditions, so a policy change from the framework author is a data edit. If I'm writing `if (parameterId === 20)`, I've modelled it wrong. The frontend contract is *generated* from that same registry, so the UI can't drift from the engine.
+- **Weights are runtime-tunable without a deploy** — an admin re-weights the framework and a largest-remainder normaliser keeps nine cluster ceilings summing to exactly 1000 (nine `Math.round()` calls sum to 999 or 1001). Completed academic years are frozen, so a re-weighting can never retroactively move someone's score.
+- **Append-only contribution ledger** — every score records which submission earned what, under which rubric rung, with which multipliers and config version. "Why is my score 842?" becomes answerable, and rubric changes become recomputable.
+- **The framework contradicted itself in three places** — parameter maxima summing to 1072 rather than 1000, a cover page disagreeing with its own tables. I documented each assumption and pinned it with invariant tests instead of silently picking a number.
+
+`TypeScript` `AWS Lambda` `DynamoDB` `EventBridge`
+
+---
+
+<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=cineFund%20%E2%80%94%20Short-Film%20Crowdfunding&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="cineFund — Short-Film Crowdfunding" />
+
+Event-driven Go backend for crowdfunding short films — money handled with idempotency guarantees and video transcoding pushed off the request path. Grew out of MagicStream, a movie streaming server whose JWT/httpOnly-cookie auth, MongoDB layer and HTTP Range streaming became the foundation here.
+
+- **Transactional outbox** → Mongo Change Streams → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf)
+- **Payments** — Redis `SETNX` idempotency guards on webhooks, so a retried callback can't double-charge or double-credit a pledge
+- **Streaming** — MinIO/S3 presigned uploads and HTTP Range serving, so `<video>` seeks without downloading the whole file
+- **Production habits** — token-bucket rate limiting (tighter on auth routes), request-ID tracing, `log/slog` structured logs, Docker + Makefile, graceful shutdown
 
 Full API spec, architecture, data model, and security docs live in the repo's `docs/` folder — the standard I hold every project to.
 
-`Go` `Gin` `MongoDB` `JWT` `React` `TypeScript` — **[Repository →](https://github.com/maczeo11/go-movie-streaming)**
+`Go` `Kafka` `gRPC` `Redis` `MongoDB` `JWT` `Docker` — **[Repository →](https://github.com/maczeo11/go-movie-streaming)**
 
 ---
 
