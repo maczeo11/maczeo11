@@ -1,0 +1,56 @@
+<svg width="900" height="440" viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="box" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c2333"/>
+      <stop offset="100%" stop-color="#131829"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a371f7"/>
+    </marker>
+  </defs>
+  <rect width="900" height="440" fill="#0d1117" rx="14"/>
+  <text x="450" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#e6e9f0">PRAJNA — Approval Workflow Engine (Module 13)</text>
+
+  <!-- Client -->
+  <rect x="30" y="180" width="120" height="60" rx="8" fill="url(#box)" stroke="#3b3f68"/>
+  <text x="90" y="215" text-anchor="middle" font-size="13" fill="#c9d1d9">Client App</text>
+
+  <!-- API Gateway -->
+  <rect x="200" y="180" width="130" height="60" rx="8" fill="url(#box)" stroke="#3b3f68"/>
+  <text x="265" y="208" text-anchor="middle" font-size="13" fill="#c9d1d9">API Gateway</text>
+  <text x="265" y="224" text-anchor="middle" font-size="11" fill="#8b90a8">+ Cognito JWT</text>
+
+  <!-- Lambda core -->
+  <rect x="380" y="150" width="170" height="120" rx="8" fill="url(#box)" stroke="#a371f7" stroke-width="1.5"/>
+  <text x="465" y="180" text-anchor="middle" font-size="13" font-weight="600" fill="#f0f3fa">Workflow Lambda</text>
+  <text x="465" y="200" text-anchor="middle" font-size="11" fill="#8b90a8">Idempotent create</text>
+  <text x="465" y="217" text-anchor="middle" font-size="11" fill="#8b90a8">Optimistic-lock update</text>
+  <text x="465" y="234" text-anchor="middle" font-size="11" fill="#8b90a8">Rank-based escalation</text>
+  <text x="465" y="251" text-anchor="middle" font-size="11" fill="#8b90a8">logic</text>
+
+  <!-- DynamoDB -->
+  <rect x="600" y="80" width="160" height="70" rx="8" fill="url(#box)" stroke="#3b3f68"/>
+  <text x="680" y="108" text-anchor="middle" font-size="13" fill="#c9d1d9">DynamoDB</text>
+  <text x="680" y="125" text-anchor="middle" font-size="11" fill="#8b90a8">single-table, 3 GSIs</text>
+
+  <!-- EventBridge -->
+  <rect x="600" y="270" width="160" height="70" rx="8" fill="url(#box)" stroke="#3b3f68"/>
+  <text x="680" y="298" text-anchor="middle" font-size="13" fill="#c9d1d9">EventBridge</text>
+  <text x="680" y="315" text-anchor="middle" font-size="11" fill="#8b90a8">state-change events</text>
+
+  <!-- Escalation cron -->
+  <rect x="600" y="370" width="200" height="55" rx="8" fill="url(#box)" stroke="#3b3f68"/>
+  <text x="700" y="403" text-anchor="middle" font-size="12" fill="#c9d1d9">Scheduled Escalation Lambda</text>
+
+  <!-- arrows -->
+  <line x1="150" y1="210" x2="196" y2="210" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="330" y1="210" x2="376" y2="210" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="185" x2="596" y2="130" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="235" x2="596" y2="300" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="680" y1="340" x2="680" y2="366" stroke="#3b3f68" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="700" y1="370" x2="465" y2="271" stroke="#3b3f68" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+
+  <text x="450" y="425" text-anchor="middle" font-size="10.5" fill="#6b7089">
+    Dashed line = escalation cron re-invokes the workflow Lambda on SLA breach
+  </text>
+</svg>
