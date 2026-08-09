@@ -311,7 +311,7 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 <br/>
 
 <div align="center">
-<img src="https://github-profile-3d-contrib.vercel.app/api/username/maczeo11?theme=dark&bg_color=0d1117&custom_title=Contribution%20Grid&hide_border=true" width="100%" alt="3D isometric contribution grid" />
+<img src="https://skylinegithub.com/maczeo11/2024" width="100%" alt="3D isometric contribution skyline" />
 </div>
 
 <br/>
