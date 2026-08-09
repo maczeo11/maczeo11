@@ -1,0 +1,99 @@
+<svg width="760" height="360" viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="termBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b2e"/>
+    </linearGradient>
+    <linearGradient id="titleBarBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#161b2e"/>
+      <stop offset="100%" stop-color="#1f1147"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a371f7"/>
+      <stop offset="100%" stop-color="#6e40c9"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Window background -->
+  <rect width="760" height="360" rx="12" fill="url(#termBg)"/>
+  <rect x="1" y="1" width="758" height="358" rx="11" fill="none" stroke="#2a2d3e" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect width="760" height="44" rx="12" fill="url(#titleBarBg)"/>
+  <rect x="1" y="1" width="758" height="42" rx="11" fill="none" stroke="#2a2d3e" stroke-width="1.5"/>
+
+  <!-- Traffic lights / window controls -->
+  <circle cx="20" cy="22" r="7" fill="#ff5f57"/>
+  <circle cx="44" cy="22" r="7" fill="#ffbd2e"/>
+  <circle cx="68" cy="22" r="7" fill="#28ca42"/>
+
+  <!-- Title text -->
+  <text x="760" y="28" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', 'Monospace'" font-size="13" font-weight="500" fill="#8b90a8">
+    maczeo@cachyos  •  ~
+  </text>
+
+  <!-- Terminal content area -->
+  <g font-family="'JetBrains Mono', 'Fira Code', 'Monospace'" font-size="13" fill="#c9d1d9">
+    <!-- Line 1: prompt + systemctl -->
+    <g id="line1" opacity="0">
+      <text x="24" y="76"><tspan fill="#a371f7">$</tspan><tspan fill="#8b90a8"> </tspan>systemctl status bpftune</text>
+    </g>
+    <g id="line1out" opacity="0" fill="#8b90a8">
+      <text x="24" y="100">● bpftune.service — eBPF kernel auto-tuner</text>
+      <text x="24" y="122">   Active: <tspan fill="#2ea043">active (running)</tspan> since 09:00:00</text>
+      <text x="24" y="144">   Status: <tspan fill="#a371f7">"auto-tuned: tcp_congestion=bbr"</tspan></text>
+    </g>
+
+    <!-- Line 2: firewall-cmd -->
+    <g id="line2" opacity="0">
+      <text x="24" y="180"><tspan fill="#a371f7">$</tspan><tspan fill="#8b90a8"> </tspan>firewall-cmd --get-default-zone</text>
+    </g>
+    <g id="line2out" opacity="0" fill="#8b90a8">
+      <text x="24" y="204">home</text>
+    </g>
+
+    <!-- Line 3: neofetch-style summary -->
+    <g id="line3" opacity="0">
+      <text x="24" y="240"><tspan fill="#a371f7">$</tspan><tspan fill="#8b90a8"> </tspan>neofetch --off</text>
+    </g>
+    <g id="line3out" opacity="0" fill="#8b90a8">
+      <text x="24" y="264">OS:        CachyOS x86-64-v4</text>
+      <text x="24" y="286">Kernel:    6.x-cachyos</text>
+      <text x="24" y="308">DE:        KDE Plasma 6</text>
+      <text x="24" y="330">Init:      systemd (PID 1)  •  Firewall: firewalld  •  Tuning: bpftune</text>
+    </g>
+
+    <!-- Line 4: build line -->
+    <g id="line4" opacity="0">
+      <text x="24" y="356"><tspan fill="#a371f7">$</tspan><tspan fill="#8b90a8"> </tspan>go build ./...  <tspan fill="#2ea043">✓</tspan>   cargo build --release  <tspan fill="#2ea043">✓</tspan>   fastapi dev  <tspan fill="#2ea043">✓</tspan></text>
+    </g>
+  </g>
+
+  <!-- Blinking cursor at the end -->
+  <rect id="cursor" x="24" y="340" width="8" height="16" fill="#a371f7" opacity="1">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" begin="4.5s"/>
+  </rect>
+
+  <!-- Sequential reveal animations (SMIL) -->
+  <!-- Line 1 prompt -->
+  <animate xlink:href="#line1" attributeName="opacity" from="0" to="1" dur="0.15s" begin="0.3s" fill="freeze"/>
+  <!-- Line 1 output -->
+  <animate xlink:href="#line1out" attributeName="opacity" from="0" to="1" dur="0.2s" begin="0.8s" fill="freeze"/>
+  <!-- Line 2 prompt -->
+  <animate xlink:href="#line2" attributeName="opacity" from="0" to="1" dur="0.15s" begin="2.0s" fill="freeze"/>
+  <!-- Line 2 output -->
+  <animate xlink:href="#line2out" attributeName="opacity" from="0" to="1" dur="0.2s" begin="2.5s" fill="freeze"/>
+  <!-- Line 3 prompt -->
+  <animate xlink:href="#line3" attributeName="opacity" from="0" to="1" dur="0.15s" begin="3.2s" fill="freeze"/>
+  <!-- Line 3 output -->
+  <animate xlink:href="#line3out" attributeName="opacity" from="0" to="1" dur="0.25s" begin="3.7s" fill="freeze"/>
+  <!-- Line 4 prompt -->
+  <animate xlink:href="#line4" attributeName="opacity" from="0" to="1" dur="0.15s" begin="4.5s" fill="freeze"/>
+</svg>

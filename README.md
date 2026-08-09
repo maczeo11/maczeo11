@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Event-driven%2C+not+event-ual;Single-table+design+patterns;Idempotent+by+default;Optimistic+locks%2C+not+hopeful+ones;Building+approval+workflows+that+scale;Go+for+backend%2C+Rust+for+fun)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+for+backend%2C+Rust+for+fun%2C+FastAPI+for+speed;CachyOS+%2B+x86-64-v4;systemd+timers%2C+not+cron;bpftune+tunes%3B+I+supervise;firewalld%3A+default+zone+is+home;Single-table+design+patterns;Idempotent+by+default;Event-driven%2C+not+event-ual)](https://git.io/typing-svg)
 
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
@@ -37,8 +37,12 @@ The two pieces I'd point at first: the **Approval Workflow Engine**, which every
 ## Tech Stack
 
 **Core**
-
 <img src="https://skillicons.dev/icons?i=ts,python,java,nodejs" />
+
+**Backend & Data — what I lean on**
+
+<img src="https://skillicons.dev/icons?i=go,fastapi,postgres,redis" />
+<sub>Go for the hot path, FastAPI when Python fits, Postgres when I need a real database, Redis for the speed layer.</sub>
 
 **AWS & Infrastructure**
 
@@ -50,13 +54,10 @@ The two pieces I'd point at first: the **Approval Workflow Engine**, which every
 ![API Gateway](https://img.shields.io/badge/API_Gateway-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
 ![S3](https://img.shields.io/badge/S3-569A31?style=flat-square&logo=amazons3&logoColor=white)
 
-**Databases & Backend Frameworks**
-
-<img src="https://skillicons.dev/icons?i=postgres,fastapi" />
-
 **Languages I Reach For**
 
-<img src="https://skillicons.dev/icons?i=go,rust" /> <sub>Go for backend services, Rust for systems-level projects — both because I care about how things actually run.</sub>
+<img src="https://skillicons.dev/icons?i=rust" />
+<sub>Rust for systems-level projects — for the fun of it.</sub>
 
 **Tools & Workflow**
 
@@ -65,7 +66,65 @@ The two pieces I'd point at first: the **Approval Workflow Engine**, which every
 ![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-0D597F?style=flat-square&logo=alpinelinux&logoColor=white)
 ![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white)
 
-<sub>I split these by how much production weight I'd put behind them, not by what I've merely touched — happy to go deep on any of the AWS/core row in an interview.</sub>
+<br/>
+
+<div align="center">
+<img src="assets/divider.svg" width="100%" alt="divider" />
+</div>
+
+<br/>
+
+## The Linux Tinkerer
+
+<div align="center">
+<img src="assets/terminal.svg" width="100%" alt="Animated terminal session — CachyOS tinkerer" />
+</div>
+
+<br/>
+
+Rolling-release, x86-64-v4, systemd at PID 1. When I'm not shipping serverless APIs, I'm the guy in `/usr/src/linux` making the box run faster.
+
+**The rig:**
+
+```text
+OS:        CachyOS x86-64-v4
+KERNEL:    6.x-cachyos
+SHELL:     zsh
+DE:        KDE Plasma 6
+INIT:      systemd (PID 1)
+FIREWALL:  firewalld
+TUNING:    bpftune (eBPF)
+PACKAGES:  ~2000 (pacman)
+```
+
+**Badges:**
+
+<p align="center">
+<img src="https://img.shields.io/badge/CachyOS-1793D1?style=for-the-badge&logo=cachyos&logoColor=white" />
+<img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=archlinux&logoColor=white" />
+<img src="https://img.shields.io/badge/KDE_Plasma-1DC3FF?style=for-the-badge&logo=kdeplasma&logoColor=white" />
+<img src="https://img.shields.io/badge/systemd-0B3D2E?style=for-the-badge&logo=linux&logoColor=white" />
+<img src="https://img.shields.io/badge/firewalld-C5102E?style=for-the-badge&logo=linux&logoColor=white" />
+<img src="https://img.shields.io/badge/eBPF-003DA5?style=for-the-badge&logo=linux&logoColor=white" />
+<img src="https://img.shields.io/badge/bpftune-FF6E40?style=for-the-badge&logo=oracle&logoColor=white" />
+<img src="https://img.shields.io/github/stars/oracle/bpftune?style=for-the-badge&label=bpftune&logo=oracle" />
+</p>
+
+**Things I've tinkered with**
+
+- systemd timer replacing cron (`OnCalendar=*-*-* 03:00:00`, `Persistent=true`)
+- bpftune auto-tuning TCP congestion control — it chose BBR
+- firewalld zone juggling — default is `home`, work happens in `dmz`
+- Plasma KDE theming until 3 AM (and breaking it, then fixing it)
+- CachyOS repos: x86-64-v4 optimized packages, `-O3 -march=x86-64-v4`
+- systemd unit hardening: `NoNewPrivileges=yes`, `ProtectSystem=strict`, `PrivateTmp=yes`
+- eBPF programs for custom observability — because `perf` isn't enough
+
+<br/>
+
+<div align="center">
+<img src="assets/divider.svg" width="100%" alt="divider" />
+</div>
 
 <br/>
 
@@ -80,6 +139,12 @@ The two pieces I'd point at first: the **Approval Workflow Engine**, which every
 <tr><td><b>Policy as data</b></td><td>Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract can be generated from the same source the engine runs on.</td></tr>
 <tr><td><b>Explainable state</b></td><td>Keeping an append-only record of <i>why</i> a number is what it is — a running balance can't answer questions six months later, and the inputs can't be reconstructed after the fact.</td></tr>
 </table>
+
+<br/>
+
+<div align="center">
+<img src="assets/divider.svg" width="100%" alt="divider" />
+</div>
 
 <br/>
 
@@ -107,7 +172,13 @@ The single authority for approval state on every faculty submission across three
 
 `TypeScript` `AWS CDK` `Lambda` `DynamoDB` `EventBridge` `Cognito`
 
----
+<br/>
+
+<div align="center">
+<img src="assets/divider.svg" width="100%" alt="divider" />
+</div>
+
+<br/>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:1a1030,50:3b1f6e,100:6e40c9&text=FEI-1000%20%E2%80%94%20Faculty%20Scoring%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="FEI-1000 — Faculty Scoring Engine" />
 
@@ -167,6 +238,12 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 - **[Tourism Safety App](https://github.com/maczeo11/tourism_safety_app)** — cross-platform Flutter app with a Python backend aggregating traveller safety data.
 
 </details>
+
+<br/>
+
+<div align="center">
+<img src="assets/divider.svg" width="100%" alt="divider" />
+</div>
 
 <br/>
 

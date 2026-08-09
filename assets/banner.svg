@@ -6,13 +6,24 @@
       <stop offset="100%" stop-color="#1f1147"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a371f7"/>
-      <stop offset="100%" stop-color="#6e40c9"/>
+      <stop offset="0%" stop-color="#a371f7">
+        <animate attributeName="stop-color" values="#a371f7;#6e40c9;#a371f7" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#6e40c9">
+        <animate attributeName="stop-color" values="#6e40c9;#a371f7;#6e40c9" dur="6s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a371f7" stop-opacity="0.55"/>
+      <stop offset="0%" stop-color="#a371f7" stop-opacity="0.55">
+        <animate attributeName="stop-opacity" values="0.55;0.25;0.55" dur="4s" repeatCount="indefinite"/>
+      </stop>
       <stop offset="100%" stop-color="#a371f7" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a371f7" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a371f7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#a371f7" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
   <rect width="1200" height="300" rx="18" fill="url(#bg)"/>
@@ -33,21 +44,39 @@
     <circle cx="870" cy="200" r="5"/>
     <circle cx="1090" cy="200" r="5"/>
     <circle cx="1130" cy="110" r="4"/>
-    <circle cx="960" cy="220" r="6" fill="#c9b3ff">
-      <animate attributeName="r" values="6;9;6" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="1;0.5;1" dur="2.4s" repeatCount="indefinite"/>
+    <!-- Central pulsing node -->
+    <circle id="centerNode" cx="960" cy="220" r="6" fill="#c9b3ff">
+      <animate attributeName="r" values="6;10;6" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.4;1" dur="2.4s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="930" cy="120" r="7" fill="#ffffff">
-      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    <!-- Orbiting particle -->
+    <circle id="orbiter" cx="960" cy="100" r="4" fill="#ffffff" opacity="0.9">
+      <animateTransform attributeName="transform" type="rotate" from="0 960 140" to="360 960 140" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle id="orbiter2" cx="960" cy="140" r="3" fill="#a371f7" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="90 960 140" to="450 960 140" dur="10s" repeatCount="indefinite"/>
     </circle>
   </g>
-  <circle cx="960" cy="140" r="120" fill="url(#glow)"/>
+  <!-- Central glow -->
+  <circle cx="960" cy="140" r="120" fill="url(#glow)">
+    <animate attributeName="r" values="110;130;110" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Scanning beam across network -->
+  <g id="scanBeam" opacity="0.6">
+    <rect x="800" y="40" width="340" height="180" fill="url(#scanGrad)">
+      <animate attributeName="x" values="800;1140;800" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
 
   <!-- text block -->
   <text x="60" y="115" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="46" font-weight="700" fill="#f0f3fa">
     Bhanu Teja Komma
   </text>
-  <rect x="62" y="132" width="230" height="4" rx="2" fill="url(#accent)"/>
+  <!-- Animated underline -->
+  <rect id="underline" x="62" y="132" width="0" height="4" rx="2" fill="url(#accent)">
+    <animate attributeName="width" values="0;230;230;0" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+  </rect>
 
   <text x="60" y="175" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="500" fill="#c9d1d9">
     Backend Engineer · Cloud-Native Systems on AWS
