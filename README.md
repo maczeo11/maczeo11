@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+for+backend%2C+Rust+for+fun%2C+FastAPI+for+speed;CachyOS+%2B+x86-64-v4;systemd+timers%2C+not+cron;bpftune+tunes%3B+I+supervise;firewalld%3A+default+zone+is+home;Single-table+design+patterns;Idempotent+by+default;Event-driven%2C+not+event-ual)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+for+backend%2C+Rust+for+fun%2C+FastAPI+for+speed;Kafka+event+streaming;Spring+Boot+JVM+services;React+TS+frontends;CachyOS+%2B+x86-64-v4;systemd+timers%2C+not+cron;bpftune+tunes%3B+I+supervise;firewalld%3A+default+zone+is+home;Single-table+design+patterns;Idempotent+by+default;Event-driven%2C+not+event-ual)](https://git.io/typing-svg)
 
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
@@ -19,18 +19,22 @@
 
 ```yaml
 name:      Bhanu Teja Komma
-role:      Business Logic Layer Lead, Project PRAJNA
-owns:      6 of 30 modules · 36 Lambda handlers · contracts for 5 partner teams
-currently: FEI-1000 — a 9-cluster, 70-parameter faculty scoring engine
+role:      Backend Engineer — Cloud-Native / Distributed Systems
+focus:     Go, Rust, FastAPI, AWS, Kafka, Spring Boot, React
 location:  Bengaluru, India
-openTo:    Backend / cloud-native roles
+openTo:    Backend / cloud-native / platform roles
 ```
 
-I build backend systems where the interesting part isn't the CRUD, it's what happens when two requests race each other. Most of my time lives inside AWS Lambda, DynamoDB, and EventBridge — thinking through idempotency, optimistic locking, and single-table design instead of bolting them on after something breaks in production.
+I build backend systems where the interesting part isn't the CRUD — it's what happens when two requests race each other. Most of my time lives inside **AWS** (Lambda, DynamoDB, EventBridge, CDK, Step Functions), **Kafka** for event streaming, and **Postgres/Redis** for data — thinking through idempotency, optimistic locking, single-table design, and event-driven workflows instead of bolting them on after something breaks in production.
 
-I lead the Business Logic Layer on **PRAJNA**, a faculty performance platform built by a 24-developer team under alumni mentorship. I own six serverless modules — approvals, scoring, leaderboards, notifications, accreditation reporting and appraisals — and the frozen event contracts five partner teams build against.
+Recent work spans:
+- **Serverless approval workflow engine** — 6 modules, 36 Lambda handlers, frozen event contracts across 5 partner teams; correctness under concurrent access was the design brief
+- **FEI-1000 scoring engine** — 9 weighted clusters, 70 rubric parameters, append-only contribution ledger; output feeds accreditation, so every number must be explainable years later
+- **Event-driven Go/Kafka services** — transactional outbox → Mongo Change Streams → Kafka → gRPC/FFmpeg workers; Redis `SETNX` idempotency on payments
+- **Spring Boot JVM services** — DI, transaction boundaries, domain-driven structure
+- **React/TypeScript frontends** — when the backend needs a UI
 
-The two pieces I'd point at first: the **Approval Workflow Engine**, which every approval decision across three campuses passes through and has to get right under concurrent access; and **FEI-1000**, the scoring engine that turns those approvals into a defensible 0–1000 faculty score.
+The common thread: distributed systems that stay correct under load, with observable, explainable state.
 
 <br/>
 
@@ -41,8 +45,8 @@ The two pieces I'd point at first: the **Approval Workflow Engine**, which every
 
 **Backend & Data — what I lean on**
 
-<img src="https://skillicons.dev/icons?i=go,fastapi,postgres,redis" />
-<sub>Go for the hot path, FastAPI when Python fits, Postgres when I need a real database, Redis for the speed layer.</sub>
+<img src="https://skillicons.dev/icons?i=go,fastapi,postgres,redis,kafka" />
+<sub>Go for the hot path, FastAPI when Python fits, Postgres when I need a real database, Redis for the speed layer, Kafka for event streaming.</sub>
 
 **AWS & Infrastructure**
 
@@ -53,6 +57,18 @@ The two pieces I'd point at first: the **Approval Workflow Engine**, which every
 ![Cognito](https://img.shields.io/badge/Cognito-DD344C?style=flat-square&logo=amazonaws&logoColor=white)
 ![API Gateway](https://img.shields.io/badge/API_Gateway-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
 ![S3](https://img.shields.io/badge/S3-569A31?style=flat-square&logo=amazons3&logoColor=white)
+![SQS](https://img.shields.io/badge/SQS-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
+![Step Functions](https://img.shields.io/badge/Step_Functions-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
+
+**JVM / Spring**
+
+<img src="https://skillicons.dev/icons?i=spring" />
+<sub>Spring Boot for JVM services — dependency injection, transaction boundaries, and the ecosystem.</sub>
+
+**Frontend**
+
+<img src="https://skillicons.dev/icons?i=react" />
+<sub>React + TypeScript when the backend needs a UI.</sub>
 
 **Languages I Reach For**
 
