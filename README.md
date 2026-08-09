@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+for+backend%2C+Rust+for+fun%2C+FastAPI+for+speed;Kafka+event+streaming;Spring+Boot+JVM+services;React+TS+frontends;Docker+%2B+Kubernetes;PyTorch%3A+training%2C+LoRA%2C+RAG;CachyOS+%2B+x86-64-v4;systemd+timers%2C+not+cron;bpftune+tunes%3B+I+supervise;firewalld%3A+default+zone+is+home;Single-table+design+patterns;Idempotent+by+default;Event-driven%2C+not+event-ual)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+for+backend%2C+Rust+for+fun%2C+FastAPI+for+speed;Kafka+event+streaming;Spring+Boot+JVM+services;React+TS+frontends;Docker+%2B+Kubernetes;PyTorch%3A+RAG%2C+vector+search;CachyOS+%2B+x86-64-v4;systemd+timers%2C+not+cron;bpftune+tunes%3B+I+supervise;firewalld%3A+default+zone+is+home;Single-table+design+patterns;Idempotent+by+default;Event-driven%2C+not+event-ual)](https://git.io/typing-svg)
 
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
@@ -85,71 +85,57 @@ The common thread: distributed systems that stay correct under load, with observ
 **Deep Learning**
 
 <img src="https://skillicons.dev/icons?i=pytorch" />
-<sub>Training, fine-tuning (LoRA/QLoRA), RAG pipelines — model work when the problem calls for it.</sub>
+<sub>RAG pipelines (LangChain/LlamaIndex), vector search, embedding models — applied LLMs when the problem calls for it.</sub>
 
 <br/>
 
-<div align="center">
-<img src="assets/divider.svg" width="100%" alt="divider" />
-</div>
-
-<br/>
 
 > **Open source by default.** If it's not a secret, it's public — issues, PRs, and docs welcome.
 
 <br/>
 
+
 ## Linux Admin Toolkit
 
 <p align="center">
 <img src="https://img.shields.io/badge/systemd-0B3D2E?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/journalctl-0B3D2E?style=for-the-badge&logo=linux&logoColor=white" />
 <img src="https://img.shields.io/badge/firewalld-C5102E?style=for-the-badge&logo=linux&logoColor=white" />
 <img src="https://img.shields.io/badge/nftables-C5102E?style=for-the-badge&logo=linux&logoColor=white" />
 <img src="https://img.shields.io/badge/podman-003DA5?style=for-the-badge&logo=podman&logoColor=white" />
-<img src="https://img.shields.io/badge/buildah-003DA5?style=for-the-badge&logo=podman&logoColor=white" />
-<img src="https://img.shields.io/badge/kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
 <img src="https://img.shields.io/badge/kubectl-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-<img src="https://img.shields.io/badge/helm-0F1689?style=for-the-badge&logo=helm&logoColor=white" />
-<img src="https://img.shields.io/badge/k9s-2F2F2F?style=for-the-badge&logo=k9s&logoColor=white" />
-<img src="https://img.shields.io/badge/ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white" />
 <img src="https://img.shields.io/badge/terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
 <img src="https://img.shields.io/badge/tmux-1BB0E6?style=for-the-badge&logo=tmux&logoColor=white" />
 <img src="https://img.shields.io/badge/fzf-0F0F0F?style=for-the-badge&logo=fzf&logoColor=white" />
 <img src="https://img.shields.io/badge/ripgrep-0F0F0F?style=for-the-badge&logo=rust&logoColor=white" />
-<img src="https://img.shields.io/badge/btop-0F0F0F?style=for-the-badge&logo=linux&logoColor=white" />
 </p>
 
-<sub>Daily drivers: systemd/journalctl for services, firewalld/nftables for network policy, podman/buildah for containers, kubectl/helm/k9s for clusters, ansible/terraform for IaC, tmux/fzf/rg/btop for the terminal.</sub>
+<sub>Daily drivers: systemd for services, firewalld/nftables for network policy, podman for containers, kubectl for managed K8s (EKS/GKE), Terraform for IaC, tmux/fzf/rg in the terminal.</sub>
 
 <br/>
+
 
 ## Distributed Systems Toolkit
 
 <p align="center">
 <img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
-<img src="https://img.shields.io/badge/Kafka_Streams-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
 <img src="https://img.shields.io/badge/gRPC-4285F4?style=for-the-badge&logo=grpc&logoColor=white" />
 <img src="https://img.shields.io/badge/Protocol_Buffers-4285F4?style=for-the-badge&logo=protobuf&logoColor=white" />
-<img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" />
 <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" />
-<img src="https://img.shields.io/badge/Loki-000000?style=for-the-badge&logo=grafana&logoColor=white" />
-<img src="https://img.shields.io/badge/Tempo-000000?style=for-the-badge&logo=grafana&logoColor=white" />
-<img src="https://img.shields.io/badge/Jaeger-000000?style=for-the-badge&logo=jaeger&logoColor=white" />
-<img src="https://img.shields.io/badge/OpenTelemetry-4285F4?style=for-the-badge&logo=opentelemetry&logoColor=white" />
+<img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" />
 <img src="https://img.shields.io/badge/Redis_Cluster-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
-<img src="https://img.shields.io/badge/Redis_Sentinel-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 </p>
 
-<sub>Event streaming with Kafka/Kafka Streams, gRPC+Protobuf for service contracts, full observability (Prometheus/Grafana/Loki/Tempo/Jaeger + OpenTelemetry), Redis Cluster/Sentinel for distributed caching.</sub>
+<sub>Event streaming with Kafka, gRPC+Protobuf for service contracts, Grafana dashboards + Elasticsearch for observability, Redis Cluster for distributed caching.</sub>
 
 <br/>
+
 
 <div align="center">
 <img src="assets/divider.svg" width="100%" alt="divider" />
 </div>
 
 <br/>
+
 
 ## The Linux Tinkerer
 
