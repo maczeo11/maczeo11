@@ -232,10 +232,10 @@ The single authority for approval state on every faculty submission across three
 - Auth is Cognito + JWT, scoped by role and campus, so the isolation between campuses is enforced server-side, not assumed client-side
 
 **Result:** hardened through a dedicated review pass that surfaced and fixed 11 correctness/security issues, including an IDOR that let any authenticated user act as any faculty member in any campus.
-
 `TypeScript` `AWS CDK` `Lambda` `DynamoDB` `EventBridge` `Cognito`
 
 <br/>
+
 
 <div align="center">
 <img src="assets/divider.svg" width="100%" alt="divider" />
@@ -243,23 +243,8 @@ The single authority for approval state on every faculty submission across three
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:1a1030,50:3b1f6e,100:6e40c9&text=FEI-1000%20%E2%80%94%20Faculty%20Scoring%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="FEI-1000 — Faculty Scoring Engine" />
-
-<sub>Team repo, private</sub>
-
-Turning approved evidence into a defensible 0–1000 faculty score across **9 weighted clusters and 70 rubric-driven parameters**. The hard part isn't the arithmetic — it's that the output decides promotions and feeds NAAC/NBA accreditation, so every number has to be explainable years later.
-
-- **Rubrics are data, not code** — 70 parameters live in a registry with declarative conditions, so a policy change from the framework author is a data edit. If I'm writing `if (parameterId === 20)`, I've modelled it wrong. The frontend contract is *generated* from that same registry, so the UI can't drift from the engine.
-- **Weights are runtime-tunable without a deploy** — an admin re-weights the framework and a largest-remainder normaliser keeps nine cluster ceilings summing to exactly 1000 (nine `Math.round()` calls sum to 999 or 1001). Completed academic years are frozen, so a re-weighting can never retroactively move someone's score.
-- **Append-only contribution ledger** — every score records which submission earned what, under which rubric rung, with which multipliers and config version. "Why is my score 842?" becomes answerable, and rubric changes become recomputable.
-- **The framework contradicted itself in three places** — parameter maxima summing to 1072 rather than 1000, a cover page disagreeing with its own tables. I documented each assumption and pinned it with invariant tests instead of silently picking a number.
-
-`TypeScript` `AWS Lambda` `DynamoDB` `EventBridge`
-
----
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=cineFund%20%E2%80%94%20Short-Film%20Crowdfunding&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="cineFund — Short-Film Crowdfunding" />
-
 Event-driven Go backend for crowdfunding short films — money handled with idempotency guarantees and video transcoding pushed off the request path. Grew out of MagicStream, a movie streaming server whose JWT/httpOnly-cookie auth, MongoDB layer and HTTP Range streaming became the foundation here.
 
 - **Transactional outbox** → Mongo Change Streams → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf)
