@@ -299,13 +299,17 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 ## GitHub Activity
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/maczeo11/maczeo11/stats/stats.svg" width="48%" alt="GitHub stats for maczeo11" />
-<img src="https://raw.githubusercontent.com/maczeo11/maczeo11/stats/top-langs.svg" width="48%" alt="Top languages for maczeo11" />
+<img src="https://github-readme-stats.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" width="48%" alt="GitHub stats for maczeo11" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5" width="48%" alt="Top languages for maczeo11" />
+</div>
+
+<div align="center>
+<img src="https://github-readme-stats.vercel.app/api/wakatime?username=maczeo11&theme=tokyonight&hide_border=true" width="48%" alt="WakaTime coding stats" />
+<img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="48%" alt="GitHub streak stats" />
 </div>
 
 <div align="center">
-<img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyo-night&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="48%" alt="GitHub streak stats" />
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=maczeo11&theme=tokyo-night&hide_border=true&area=true&height=300" width="48%" alt="Contribution graph for maczeo11" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=maczeo11&theme=tokyo-night&hide_border=true&area=true&height=300" width="100%" alt="Contribution graph for maczeo11" />
 </div>
 
 <br/>
