@@ -23,6 +23,7 @@ role:      Backend Engineer — Cloud-Native / Distributed Systems
 focus:     Go, Rust, FastAPI, AWS, Kafka, Spring Boot, React, Docker, Kubernetes, PyTorch
 location:  Bengaluru, India
 openTo:    Backend / cloud-native / platform roles
+currently: Building event-driven platforms; exploring RAG architectures; hardening Linux systems
 ```
 
 I build backend systems where the interesting part isn't the CRUD — it's what happens when two requests race each other. Most of my time lives inside **AWS** (Lambda, DynamoDB, EventBridge, CDK, Step Functions), **Kafka** for event streaming, and **Postgres/Redis** for data — thinking through idempotency, optimistic locking, single-table design, and event-driven workflows instead of bolting them on after something breaks in production.
@@ -303,7 +304,8 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 </div>
 
 <div align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=maczeo11&theme=tokyo-night&hide_border=true&area=true&height=300" width="100%" alt="Contribution graph for maczeo11" />
+<img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyo-night&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="48%" alt="GitHub streak stats" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=maczeo11&theme=tokyo-night&hide_border=true&area=true&height=300" width="48%" alt="Contribution graph for maczeo11" />
 </div>
 
 <br/>
