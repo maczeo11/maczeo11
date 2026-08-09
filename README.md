@@ -309,9 +309,13 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 <br/>
 
 <div align="center">
-<img src="assets/footer.svg" width="100%" alt="" />
+<img src="https://github-profile-3d-contrib.vercel.app/api/username/maczeo11?theme=dark&bg_color=0d1117&custom_title=Contribution%20Grid&hide_border=true" width="100%" alt="3D isometric contribution grid" />
+</div>
+
 <br/>
-<img src="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Contribution snake animation" />
+
+<div align="center">
+<img src="assets/footer.svg" width="100%" alt="" />
 <br/><br/>
 <sub>Build systems that scale, write code that lasts.</sub>
 </div>
