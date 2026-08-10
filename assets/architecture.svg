@@ -7,9 +7,12 @@
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#a371f7"/>
     </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b3f68"/>
+    </marker>
   </defs>
   <rect width="900" height="440" fill="#0d1117" rx="14"/>
-  <text x="450" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#e6e9f0">PRAJNA — Approval Workflow Engine (Module 13)</text>
+  <text x="450" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#e6e9f0">PRAJNA — Approval Workflow Engine</text>
 
   <!-- Client -->
   <rect x="30" y="180" width="120" height="60" rx="8" fill="url(#box)" stroke="#3b3f68"/>
@@ -26,7 +29,6 @@
   <text x="465" y="200" text-anchor="middle" font-size="11" fill="#8b90a8">Idempotent create</text>
   <text x="465" y="217" text-anchor="middle" font-size="11" fill="#8b90a8">Optimistic-lock update</text>
   <text x="465" y="234" text-anchor="middle" font-size="11" fill="#8b90a8">Rank-based escalation</text>
-  <text x="465" y="251" text-anchor="middle" font-size="11" fill="#8b90a8">logic</text>
 
   <!-- DynamoDB -->
   <rect x="600" y="80" width="160" height="70" rx="8" fill="url(#box)" stroke="#3b3f68"/>
@@ -38,17 +40,41 @@
   <text x="680" y="298" text-anchor="middle" font-size="13" fill="#c9d1d9">EventBridge</text>
   <text x="680" y="315" text-anchor="middle" font-size="11" fill="#8b90a8">state-change events</text>
 
-  <!-- Escalation cron -->
+  <!-- Escalation Lambda -->
   <rect x="600" y="370" width="200" height="55" rx="8" fill="url(#box)" stroke="#3b3f68"/>
   <text x="700" y="403" text-anchor="middle" font-size="12" fill="#c9d1d9">Scheduled Escalation Lambda</text>
 
-  <!-- arrows -->
-  <line x1="150" y1="210" x2="196" y2="210" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="330" y1="210" x2="376" y2="210" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="550" y1="185" x2="596" y2="130" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="550" y1="235" x2="596" y2="300" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="680" y1="340" x2="680" y2="366" stroke="#3b3f68" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="700" y1="370" x2="465" y2="271" stroke="#3b3f68" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <!-- ANIMATED ARROWS using paths with stroke-dashoffset animation -->
+
+  <!-- Arrow 1: Client → API Gateway -->
+  <path id="a1" d="M150,210 L196,210" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+  <path d="M150,210 L196,210" fill="none" stroke="#c9b3ff" stroke-width="1.5" stroke-dasharray="4 42" stroke-dashoffset="0" opacity="0.9">
+    <animate attributeName="stroke-dashoffset" values="0;-46" dur="1.2s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Arrow 2: API Gateway → Lambda -->
+  <path id="a2" d="M330,210 L376,210" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+  <path d="M330,210 L376,210" fill="none" stroke="#c9b3ff" stroke-width="1.5" stroke-dasharray="4 42" stroke-dashoffset="0" opacity="0.9">
+    <animate attributeName="stroke-dashoffset" values="0;-46" dur="1.2s" begin="0.3s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Arrow 3: Lambda → DynamoDB -->
+  <path id="a3" d="M550,185 L596,130" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+  <path d="M550,185 L596,130" fill="none" stroke="#c9b3ff" stroke-width="1.5" stroke-dasharray="4 65" stroke-dashoffset="0" opacity="0.9">
+    <animate attributeName="stroke-dashoffset" values="0;-70" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Arrow 4: Lambda → EventBridge -->
+  <path id="a4" d="M550,235 L596,300" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+  <path d="M550,235 L596,300" fill="none" stroke="#c9b3ff" stroke-width="1.5" stroke-dasharray="4 65" stroke-dashoffset="0" opacity="0.9">
+    <animate attributeName="stroke-dashoffset" values="0;-70" dur="1.5s" begin="0.9s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Arrow 5: EventBridge → Escalation Lambda (gray, static) -->
+  <line x1="680" y1="340" x2="680" y2="366" stroke="#3b3f68" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+
+  <!-- Arrow 6: Escalation Lambda → Workflow Lambda (dashed, gray) -->
+  <path d="M700,370 L465,271" fill="none" stroke="#3b3f68" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#arrowGray)"/>
 
   <text x="450" y="425" text-anchor="middle" font-size="10.5" fill="#6b7089">
     Dashed line = escalation cron re-invokes the workflow Lambda on SLA breach

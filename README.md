@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+for+backend%2C+Rust+for+fun%2C+FastAPI+for+speed;Kafka+event+streaming;Spring+Boot+JVM+services;React+TS+frontends;Docker+%2B+Kubernetes;PyTorch%3A+RAG%2C+vector+search;CachyOS+%2B+x86-64-v4;systemd+timers%2C+not+cron;bpftune+tunes%3B+I+supervise;firewalld%3A+default+zone+is+home;Single-table+design+patterns;Idempotent+by+default;Event-driven%2C+not+event-ual)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+%C2%B7+Kafka+%C2%B7+AWS+Lambda+%C2%B7+DynamoDB;Idempotent+by+default%2C+event-driven+by+design;Distributed+systems+that+stay+correct+under+load;CachyOS+%2B+x86-64-v4+%2B+systemd+at+PID+1;Build+systems+that+scale%2C+write+code+that+lasts)](https://git.io/typing-svg)
 
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
@@ -41,52 +41,31 @@ The common thread: distributed systems that stay correct under load, with observ
 
 ## Tech Stack
 
-**Core**
-<img src="https://skillicons.dev/icons?i=ts,python,java,nodejs" />
+| | |
+|---|---|
+| **Languages** | <img src="https://skillicons.dev/icons?i=ts,python,java,go,rust,nodejs" /> |
+| **Backend & Data** | <img src="https://skillicons.dev/icons?i=fastapi,spring,postgres,redis,mongodb,kafka" /> |
+| **Frontend** | <img src="https://skillicons.dev/icons?i=react" /> |
+| **Infra & Tools** | <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,linux,git,neovim" /> |
+| **AI / ML** | <img src="https://skillicons.dev/icons?i=pytorch" /> |
 
-**Backend & Data — what I lean on**
+<sub>Go for the hot path, FastAPI when Python fits, Spring Boot for JVM services, Postgres when I need a real database, Redis for the speed layer, Kafka for event streaming, React + TS when the backend needs a UI, Rust for systems-level projects, and PyTorch for applied LLM/RAG work.</sub>
 
-<img src="https://skillicons.dev/icons?i=go,fastapi,postgres,redis,kafka" />
-<sub>Go for the hot path, FastAPI when Python fits, Postgres when I need a real database, Redis for the speed layer, Kafka for event streaming.</sub>
+**AWS services I lean on**
 
-**AWS & Infrastructure**
+<p>
+<img src="https://img.shields.io/badge/Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white" />
+<img src="https://img.shields.io/badge/DynamoDB-4053D6?style=for-the-badge&logo=amazondynamodb&logoColor=white" />
+<img src="https://img.shields.io/badge/CDK_(TypeScript)-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/EventBridge-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/Cognito-DD344C?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/API_Gateway-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white" />
+<img src="https://img.shields.io/badge/SQS-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/Step_Functions-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
+</p>
 
-![Lambda](https://img.shields.io/badge/Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white)
-![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white)
-![CDK](https://img.shields.io/badge/CDK_(TypeScript)-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![EventBridge](https://img.shields.io/badge/EventBridge-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
-![Cognito](https://img.shields.io/badge/Cognito-DD344C?style=flat-square&logo=amazonaws&logoColor=white)
-![API Gateway](https://img.shields.io/badge/API_Gateway-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
-![S3](https://img.shields.io/badge/S3-569A31?style=flat-square&logo=amazons3&logoColor=white)
-![SQS](https://img.shields.io/badge/SQS-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
-![Step Functions](https://img.shields.io/badge/Step_Functions-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white)
-
-**JVM / Spring**
-
-<img src="https://skillicons.dev/icons?i=spring" />
-<sub>Spring Boot for JVM services — dependency injection, transaction boundaries, and the ecosystem.</sub>
-
-**Frontend**
-
-<img src="https://skillicons.dev/icons?i=react" />
-<sub>React + TypeScript when the backend needs a UI.</sub>
-
-**Languages I Reach For**
-
-<img src="https://skillicons.dev/icons?i=rust" />
-<sub>Rust for systems-level projects — for the fun of it.</sub>
-
-**Tools & Workflow**
-
-<img src="https://skillicons.dev/icons?i=git,linux,docker,kubernetes,vscode,neovim" />
-
-![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-0D597F?style=flat-square&logo=alpinelinux&logoColor=white)
-![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white)
-
-**Deep Learning**
-
-<img src="https://skillicons.dev/icons?i=pytorch" />
-<sub>RAG pipelines (LangChain/LlamaIndex), vector search, embedding models — applied LLMs when the problem calls for it.</sub>
+<sub>Plus a personal Linux touch: Alpine & Arch for lightweight and rolling environments.</sub>
 
 <br/>
 
@@ -164,11 +143,9 @@ PACKAGES:  ~2000 (pacman)
 **Badges:**
 
 <p align="center">
-<img src="https://img.shields.io/badge/CachyOS-1793D1?style=for-the-badge&logo=cachyos&logoColor=white" />
-<img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=archlinux&logoColor=white" />
+<img src="https://img.shields.io/badge/CachyOS-1793D1?style=for-the-badge&logo=archlinux&logoColor=white" />
 <img src="https://img.shields.io/badge/KDE_Plasma-1DC3FF?style=for-the-badge&logo=kdeplasma&logoColor=white" />
-<img src="https://img.shields.io/badge/systemd-0B3D2E?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/firewalld-C5102E?style=for-the-badge&logo=linux&logoColor=white" />
+<img src="https://img.shields.io/badge/zsh-333333?style=for-the-badge&logo=gnubash&logoColor=white" />
 <img src="https://img.shields.io/badge/eBPF-003DA5?style=for-the-badge&logo=linux&logoColor=white" />
 <img src="https://img.shields.io/badge/bpftune-FF6E40?style=for-the-badge&logo=oracle&logoColor=white" />
 <img src="https://img.shields.io/github/stars/oracle/bpftune?style=for-the-badge&label=bpftune&logo=oracle" />
@@ -194,6 +171,10 @@ PACKAGES:  ~2000 (pacman)
 
 ## What I Actually Think About
 
+<details>
+<summary><b>7 distributed systems principles I actually apply day-to-day</b> — click to expand</summary>
+<br/>
+
 <table>
 <tr><td width="30%"><b>Idempotency</b></td><td>Designing writes so a Lambda retry can't double-create or double-charge anything.</td></tr>
 <tr><td><b>Optimistic locking</b></td><td>Version-checked conditional writes so two approvers racing the same record don't silently clobber each other.</td></tr>
@@ -203,6 +184,8 @@ PACKAGES:  ~2000 (pacman)
 <tr><td><b>Policy as data</b></td><td>Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract can be generated from the same source the engine runs on.</td></tr>
 <tr><td><b>Explainable state</b></td><td>Keeping an append-only record of <i>why</i> a number is what it is — a running balance can't answer questions six months later, and the inputs can't be reconstructed after the fact.</td></tr>
 </table>
+
+</details>
 
 <br/>
 
@@ -216,7 +199,7 @@ PACKAGES:  ~2000 (pacman)
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:1a1030,50:3b1f6e,100:6e40c9&text=PRAJNA%20%E2%80%94%20Approval%20Workflow%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="PRAJNA — Approval Workflow Engine" />
 
-<sub>Team repo, private — see the architecture below instead of the source</sub>
+<sub>Team repo, private — see the architecture and engineering breakdown below</sub>
 
 The single authority for approval state on every faculty submission across three campuses. If this system is wrong, someone's approval either gets stuck forever or gets approved twice — so correctness under concurrent access was the actual design brief, not a nice-to-have.
 
@@ -245,7 +228,31 @@ The single authority for approval state on every faculty submission across three
 <br/>
 
 
+<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0d2b1a,50:1a5c3a,100:2d8a5e&text=FEI-1000%20%E2%80%94%20Accreditation%20Scoring%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="FEI-1000 — Accreditation Scoring Engine" />
+
+<sub>Team repo, private — see the design below</sub>
+
+The scoring authority for institutional accreditation across 9 weighted clusters and 70 rubric parameters. The hard constraint: every number the system outputs must be explainable years later by anyone auditing the accreditation record — so a mutable running total was never an option.
+
+- **Append-only contribution ledger** — every score event is immutable; recomputing from the log must produce the same answer every time
+- **9 weighted clusters, 70 rubric parameters** — the weight registry is data, not code; a policy change is a config edit, not a deployment
+- **Explainability-first output** — the score is a derived view, not a stored value; the inputs are always reconstructable from the event log
+- **Accreditation-grade auditability** — designed so a third-party auditor six months later can trace any number to its exact inputs and calculation path
+
+`Python` `PostgreSQL` `Event Sourcing` `Domain-Driven Design`
+
+<br/>
+
+
+<div align="center">
+<img src="assets/divider.svg" width="100%" alt="divider" />
+</div>
+
+<br/>
+
+
 <img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=cineFund%20%E2%80%94%20Short-Film%20Crowdfunding&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="cineFund — Short-Film Crowdfunding" />
+
 Event-driven Go backend for crowdfunding short films — money handled with idempotency guarantees and video transcoding pushed off the request path. Grew out of MagicStream, a movie streaming server whose JWT/httpOnly-cookie auth, MongoDB layer and HTTP Range streaming became the foundation here.
 
 - **Transactional outbox** → Mongo Change Streams → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf)
@@ -299,12 +306,11 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 ## GitHub Activity
 
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" width="48%" alt="GitHub stats for maczeo11" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5" width="48%" alt="Top languages for maczeo11" />
+<img src="https://gh-readme-stats-liart.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" width="48%" alt="GitHub stats for maczeo11" />
+<img src="https://gh-readme-stats-liart.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5" width="48%" alt="Top languages for maczeo11" />
 </div>
 
-<div align="center>
-<img src="https://github-readme-stats.vercel.app/api/wakatime?username=maczeo11&theme=tokyonight&hide_border=true" width="48%" alt="WakaTime coding stats" />
+<div align="center">
 <img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="48%" alt="GitHub streak stats" />
 </div>
 
@@ -315,7 +321,17 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 <br/>
 
 <div align="center">
-<img src="https://skylinegithub.com/maczeo11/2024" width="100%" alt="3D isometric contribution skyline" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake.svg">
+  <img alt="Contribution snake animation" width="100%" src="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake.svg">
+</picture>
+</div>
+
+<br/>
+
+<div align="center">
+<img src="https://gitcity-azure.vercel.app/api/svg?username=maczeo11&theme=violet" width="100%" alt="3D isometric contribution skyline" />
 </div>
 
 <br/>
