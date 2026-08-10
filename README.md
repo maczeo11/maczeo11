@@ -30,7 +30,6 @@ I build backend systems where the interesting part isn't the CRUD — it's what 
 
 Recent work spans:
 - **Serverless approval workflow engine** — 6 modules, 36 Lambda handlers, frozen event contracts across 5 partner teams; correctness under concurrent access was the design brief
-- **FEI-1000 scoring engine** — 9 weighted clusters, 70 rubric parameters, append-only contribution ledger; output feeds accreditation, so every number must be explainable years later
 - **Event-driven Go/Kafka services** — transactional outbox → Mongo Change Streams → Kafka → gRPC/FFmpeg workers; Redis `SETNX` idempotency on payments
 - **Spring Boot JVM services** — DI, transaction boundaries, domain-driven structure
 - **React/TypeScript frontends** — when the backend needs a UI
@@ -53,7 +52,7 @@ The common thread: distributed systems that stay correct under load, with observ
 
 **AWS services I lean on**
 
-<p>
+<p align="center">
 <img src="https://img.shields.io/badge/Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white" />
 <img src="https://img.shields.io/badge/DynamoDB-4053D6?style=for-the-badge&logo=amazondynamodb&logoColor=white" />
 <img src="https://img.shields.io/badge/CDK_(TypeScript)-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" />
@@ -148,7 +147,7 @@ PACKAGES:  ~2000 (pacman)
 <img src="https://img.shields.io/badge/zsh-333333?style=for-the-badge&logo=gnubash&logoColor=white" />
 <img src="https://img.shields.io/badge/eBPF-003DA5?style=for-the-badge&logo=linux&logoColor=white" />
 <img src="https://img.shields.io/badge/bpftune-FF6E40?style=for-the-badge&logo=oracle&logoColor=white" />
-<img src="https://img.shields.io/github/stars/oracle/bpftune?style=for-the-badge&label=bpftune&logo=oracle" />
+<img src="https://img.shields.io/github/stars/oracle/bpftune?style=for-the-badge&label=⭐%20bpftune&logo=oracle&logoColor=white" />
 </p>
 
 **Things I've tinkered with**
@@ -228,29 +227,6 @@ The single authority for approval state on every faculty submission across three
 <br/>
 
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0d2b1a,50:1a5c3a,100:2d8a5e&text=FEI-1000%20%E2%80%94%20Accreditation%20Scoring%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="FEI-1000 — Accreditation Scoring Engine" />
-
-<sub>Team repo, private — see the design below</sub>
-
-The scoring authority for institutional accreditation across 9 weighted clusters and 70 rubric parameters. The hard constraint: every number the system outputs must be explainable years later by anyone auditing the accreditation record — so a mutable running total was never an option.
-
-- **Append-only contribution ledger** — every score event is immutable; recomputing from the log must produce the same answer every time
-- **9 weighted clusters, 70 rubric parameters** — the weight registry is data, not code; a policy change is a config edit, not a deployment
-- **Explainability-first output** — the score is a derived view, not a stored value; the inputs are always reconstructable from the event log
-- **Accreditation-grade auditability** — designed so a third-party auditor six months later can trace any number to its exact inputs and calculation path
-
-`Python` `PostgreSQL` `Event Sourcing` `Domain-Driven Design`
-
-<br/>
-
-
-<div align="center">
-<img src="assets/divider.svg" width="100%" alt="divider" />
-</div>
-
-<br/>
-
-
 <img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=cineFund%20%E2%80%94%20Short-Film%20Crowdfunding&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="cineFund — Short-Film Crowdfunding" />
 
 Event-driven Go backend for crowdfunding short films — money handled with idempotency guarantees and video transcoding pushed off the request path. Grew out of MagicStream, a movie streaming server whose JWT/httpOnly-cookie auth, MongoDB layer and HTTP Range streaming became the foundation here.
@@ -307,11 +283,12 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 
 <div align="center">
 <img src="https://gh-readme-stats-liart.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" width="48%" alt="GitHub stats for maczeo11" />
-<img src="https://gh-readme-stats-liart.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5" width="48%" alt="Top languages for maczeo11" />
+<img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="48%" alt="GitHub streak stats" />
 </div>
 
 <div align="center">
-<img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="48%" alt="GitHub streak stats" />
+<img src="https://gh-readme-stats-liart.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5" width="48%" alt="Top languages for maczeo11" />
+<img src="https://github-readme-stats.vercel.app/api/wakatime?username=maczeo11&theme=tokyonight&hide_border=true&layout=compact" width="48%" alt="WakaTime coding stats" />
 </div>
 
 <div align="center">
