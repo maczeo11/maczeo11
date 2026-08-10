@@ -24,7 +24,7 @@ jobs:
       - name: Generate stats SVGs
         run: node scripts/generate-stats.js
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_1 }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to stats branch
         uses: crazy-max/ghaction-github-pages@v4
