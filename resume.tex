@@ -1,0 +1,177 @@
+%-------------------------
+% Resume in LaTeX - MERGED (resume_fixed layout + resume.tex content + live bench metrics)
+% Author : Komma Bhanu Teja
+% Based off of: https://github.com/jakeryang/resume (Harshibar template)
+% License : MIT
+%
+% !! COMPILE WITH pdfLaTeX !!
+% Overleaf: Menu -> Settings -> Compiler -> pdfLaTeX
+% XeLaTeX / LuaLaTeX will skip glyphtounicode and ATS search breaks.
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+% --- GEOMETRY: replaces fullpage + manual \addtolength (was cramming) ---
+\usepackage[margin=0.45in, top=0.40in, bottom=0.40in, includefoot]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage{microtype} % fixes overfull hboxes / tight justification
+\usepackage{setspace}
+
+% Colors
+\definecolor{navy}{HTML}{1F3864}
+\definecolor{dark-grey}{HTML}{555555}
+\definecolor{text-grey}{gray}{.08}
+
+% Helvetica-style sans base font
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\hypersetup{
+  pdftitle    = {Komma Bhanu Teja - Resume},
+  pdfauthor   = {Komma Bhanu Teja},
+  pdfsubject  = {Backend and Serverless Engineer},
+  pdfkeywords = {backend, serverless, AWS, Lambda, DynamoDB, EventBridge,
+                 API Gateway, Cognito, CDK, TypeScript, Python, Go, Golang,
+                 FastAPI, Pydantic, pytest, SQL, PostgreSQL, Redis, Kafka, Docker, Linux,
+                 Bash, CI/CD, GitHub Actions, JWT, REST APIs,
+                 Microservices, distributed systems,
+                 event-driven architecture, infrastructure as code, SDE intern}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\parskip}{0pt}
+\setstretch{0.96}
+
+% --- Section formatting: controlled spacing ---
+\titleformat{\section}{
+    \bfseries\raggedright\large\color{black}
+}{}{0em}{}[\color{black}{\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      \textbf{#1} & {\color{dark-grey}\small #2}\\
+      \textit{\color{dark-grey}\small #3} & {\color{dark-grey}\small #4}\\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      #1 & {\color{dark-grey}\small #2} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=2pt, parsep=0pt, topsep=3pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=1pt, parsep=0pt, topsep=2pt, leftmargin=14pt, label=\textbullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{1pt}}
+
+\color{text-grey}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\color{navy}\textbf{\huge KOMMA BHANU TEJA}} \\ \vspace{4pt}
+    \small
+    Bengaluru, India \hspace{4pt}$|$\hspace{4pt}
+    +91 63030 54954 \hspace{4pt}$|$\hspace{4pt}
+    \href{mailto:bhanu0005a@gmail.com}{bhanu0005a@gmail.com} \hspace{4pt}$|$\hspace{4pt}
+    \href{https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/}{linkedin.com/in/bhanu-teja-komma} \hspace{4pt}$|$\hspace{4pt}
+    \href{https://github.com/maczeo11}{github.com/maczeo11} \hspace{4pt}$|$\hspace{4pt}
+    \href{https://maczeo.me}{maczeo.me}
+\end{center}
+\vspace{-6pt}
+
+%-----------SUMMARY-----------
+\section{SUMMARY}
+{\small Backend Engineer (Go, Python, AWS) — core contributor to PRAJNA, a 30-module campus platform built by a 24-member student team at GIT{}AM, owning business logic across 6 serverless modules and event contracts used by 5 downstream teams. Distributed Systems, REST APIs, Event-Driven Architecture, Infrastructure as Code (IaC) on AWS (Lambda, DynamoDB, EventBridge, CDK) in T{}ypeScript. B.Tech CSE, GIT{}AM University, 2027.}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {B.Tech, Computer Science \& Engineering, GIT{}AM University}{Aug 2023 -- Apr 2027}
+      {Bengaluru, India $\cdot$ GPA: 8.88/10}{}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Backend Engineer --- PRAJNA (University Platform)}{May 2026 -- Present}
+      {Campus platform, GIT{}AM University — 24-member student team $\cdot$ Bengaluru, India}{}
+      \resumeItemListStart
+        \resumeItem{Built approval workflow module on AWS Lambda, DynamoDB (single-table, 3 GSIs) and EventBridge via CDK, enforcing campus-scoped tenant isolation across 3 campuses; covered by 51 unit + integration tests; live health p50 37\,ms p95 115\,ms (20c2, hey, 0 errors).}
+        \resumeItem{Implemented approval state machine for Lambda retry safety — rank-based escalation with cycle checks, optimistic locking on version, and idempotent TransactWrites to prevent concurrent overwrite races.}
+        \resumeItem{Stabilized EventBridge integration for 5 downstream teams by freezing versioned payload contracts and adding dead-letter queues with CloudWatch alarms on every rule before production.}
+        \resumeItem{Fixed IDOR discovered in team code review by consolidating 6 divergent auth implementations into a single shared Cognito/JWT helper, enforcing role + campus scope server-side.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{CineFund --- Crowdfunding \& Streaming Platform} $|$ \textit{\small Go, PostgreSQL, Kafka, Redis, FFmpeg} $|$ \small{\href{https://github.com/maczeo11/cinefund}{\underline{GitHub}}}}{Jun 2026 -- Aug 2026}
+          \resumeItemListStart
+            \resumeItem{Made payment webhooks idempotent with Redis \texttt{SETNX} guards plus a Postgres unique constraint; verified with 50 concurrent duplicate deliveries for the same payment — exactly 1 credited, 49 correctly deduped, 0 double-credits.}
+            \resumeItem{Benchmarked webhook latency: p95 0.4\,ms in-process vs.\ p95 467\,ms / p99 645\,ms against real Postgres + Redis in Docker (100 req, 20 concurrent, 95 req/s, 0 failures).}
+            \resumeItem{Wrote a basic double-entry ledger for pledges and payouts (not production-hardened, but debits/credits balance and are auditable).}
+            \resumeItem{Used Kafka for a transactional outbox: domain writes and outbox events go in one DB transaction, with a \texttt{SKIP LOCKED} dispatcher for delivery.}
+            \resumeItem{Built an FFmpeg pipeline transcoding uploads into HLS for adaptive streaming, with presigned S3 uploads and retry-safe worker leasing.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Universal Text Extractor} $|$ \textit{\small Python, FastAPI, Tesseract, Docker} $|$ \small{\href{https://github.com/maczeo11/universal-text-extractor}{\underline{GitHub}}}}{Oct 2025 -- Dec 2025}
+          \resumeItemListStart
+            \resumeItem{Built a FastAPI service normalizing PDF, DOCX, XLSX, images, and HTML into one JSON schema, using magic-byte checks to catch spoofed file extensions.}
+            \resumeItem{Combined native PDF text parsing with OpenCV preprocessing (grayscale, Otsu binarization) feeding Tesseract LSTM OCR for scanned pages.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \small{\item{
+     \textbf{Languages}{: Go (Golang), Python, T{}ypeScript, Java, SQL, Bash} \\
+     \textbf{Backend}{: REST APIs, FastAPI, Pydantic, pytest, React, Jest} \\
+     \textbf{Databases \& Streaming}{: PostgreSQL, DynamoDB (single-table design), Redis, Kafka} \\
+     \textbf{Cloud \& DevOps}{: AWS (Lambda, DynamoDB, EventBridge, API Gateway, Cognito, S3, CloudFront, SNS, SSM, CloudWatch), AWS CDK, Docker, Linux, Git, GitHub Actions (CI/CD)} \\
+     \textbf{Architecture}{: Distributed systems, event-driven design, microservices, Infrastructure as Code, multi-tenant isolation, JWT authentication, unit/integration testing}
+    }}
+ \end{itemize}
+
+\end{document}
