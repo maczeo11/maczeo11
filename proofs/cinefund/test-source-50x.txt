@@ -1,0 +1,40 @@
+
+> func TestHandleWebhook_SameEvent50xConcurrent(t *testing.T) {
+  	fq := newFakeQueries()
+  	c := liveCampaign(uuid.New(), time.Now().Add(24*time.Hour))
+  	fq.seedCampaign(c)
+  	svc, gw, _ := testService(fq)
+  
+  	p, err := svc.CreatePledge(context.Background(), CreateInput{
+  		CampaignID: c.ID, BackerID: uuid.New(), Amount: 100000,
+  	})
+  	if err != nil {
+  		t.Fatalf("CreatePledge: %v", err)
+  	}
+  
+  	body, _ := captureBody(t, gw, p.ProviderOrderID, 100000, testSecret)
+  
+  	const n = 50
+  	var wg sync.WaitGroup
+  	errs := make(chan error, n)
+  	for i := 0; i < n; i++ {
+  		wg.Add(1)
+  		go func() {
+  			defer wg.Done()
+  			errs <- svc.HandleWebhook(context.Background(), body)
+  		}()
+  	}
+  	wg.Wait()
+  	close(errs)
+  
+  	dups, failures := 0, 0
+  	for err := range errs {
+  		switch {
+  		case err == nil:
+  		case errors.Is(err, ErrDuplicateEvent):
+  			dups++
+  		default:
+  			failures++
+
+
+

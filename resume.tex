@@ -134,10 +134,10 @@
       {Backend Engineer --- PRAJNA (University Platform)}{May 2026 -- Present}
       {Campus platform, GIT{}AM University — 24-member student team $\cdot$ Bengaluru, India}{}
       \resumeItemListStart
-        \resumeItem{Built approval workflow module on AWS Lambda, DynamoDB (single-table, 3 GSIs) and EventBridge via CDK, enforcing campus-scoped tenant isolation across 3 campuses; covered by 51 unit + integration tests; live health p50 37\,ms p95 115\,ms (20c2, hey, 0 errors).}
-        \resumeItem{Implemented approval state machine for Lambda retry safety — rank-based escalation with cycle checks, optimistic locking on version, and idempotent TransactWrites to prevent concurrent overwrite races.}
-        \resumeItem{Stabilized EventBridge integration for 5 downstream teams by freezing versioned payload contracts and adding dead-letter queues with CloudWatch alarms on every rule before production.}
-        \resumeItem{Fixed IDOR discovered in team code review by consolidating 6 divergent auth implementations into a single shared Cognito/JWT helper, enforcing role + campus scope server-side.}
+        \resumeItem{Built maintenance request module on AWS Lambda, DynamoDB (single-table, 2 GSIs) and EventBridge via CDK with Cognito auth (see \href{https://github.com/maczeo11/maczeo11/tree/main/proofs/prajna}{\underline{proofs/prajna}} — bench requires auth token, \texttt{hey} without token is 403).}
+        \resumeItem{Implemented status transitions with role checks (\texttt{residents} vs \texttt{admins}) and SLA breach detection via EventBridge cron; state-machine hardening with versioned \texttt{ConditionExpression} and DLQ/Alarms is tracked as next step in proofs.}
+        \resumeItem{Documented EventBridge contract and SLA notifier (SNS) — full versioned payloads + DLQ per rule for 5 downstream teams is the immediate CDK TODO noted in \texttt{lib/aprt\_mng-stack.ts:241}.}
+        \resumeItem{Fixed access-control gap by centralizing Cognito/JWT checks (\texttt{getCallerGroups/isAdmin} in \texttt{lambda/handlers.ts:20-28}) — consolidated per-handler auth into one helper (campus-scope addition planned).}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -155,7 +155,7 @@
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\textbf{Universal Text Extractor} $|$ \textit{\small Python, FastAPI, Tesseract, Docker} $|$ \small{\href{https://github.com/maczeo11/universal-text-extractor}{\underline{GitHub}}}}{Oct 2025 -- Dec 2025}
+          {\textbf{Universal Text Extractor} $|$ \textit{\small Python, FastAPI, Tesseract, Docker} $|$ \small{\href{https://github.com/maczeo11/File_extractor}{\underline{GitHub}}}}{Oct 2025 -- Dec 2025}
           \resumeItemListStart
             \resumeItem{Built a FastAPI service normalizing PDF, DOCX, XLSX, images, and HTML into one JSON schema, using magic-byte checks to catch spoofed file extensions.}
             \resumeItem{Combined native PDF text parsing with OpenCV preprocessing (grayscale, Otsu binarization) feeding Tesseract LSTM OCR for scanned pages.}

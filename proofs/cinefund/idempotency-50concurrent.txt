@@ -1,0 +1,4 @@
+=== RUN   TestHandleWebhook_SameEvent50xConcurrent
+--- PASS: TestHandleWebhook_SameEvent50xConcurrent (0.00s)
+PASS
+ok  	github.com/maczeo11/cinefund/internal/pledge	1.898s

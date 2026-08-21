@@ -1,0 +1,5 @@
+PLACEHOLDER - authenticated hey not yet run
+GET /api/requests without token => 403 Forbidden (Cognito).
+Run: hey -n 100 -c 20 -H 'Authorization: Bearer <id_token>' https://uvremjs67f.execute-api.ap-south-2.amazonaws.com/dev/api/requests
+Save real output here.
+

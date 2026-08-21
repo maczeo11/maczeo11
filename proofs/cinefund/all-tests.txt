@@ -1,0 +1,145 @@
+?   	github.com/maczeo11/cinefund/cmd/api	[no test files]
+?   	github.com/maczeo11/cinefund/cmd/dispatcher	[no test files]
+?   	github.com/maczeo11/cinefund/cmd/migrate	[no test files]
+?   	github.com/maczeo11/cinefund/cmd/seed	[no test files]
+?   	github.com/maczeo11/cinefund/cmd/transcoder	[no test files]
+?   	github.com/maczeo11/cinefund/internal/campaign	[no test files]
+?   	github.com/maczeo11/cinefund/internal/media	[no test files]
+=== RUN   TestLadderFor_NeverUpscales
+--- PASS: TestLadderFor_NeverUpscales (0.00s)
+=== RUN   TestDisplayDimensions_Rotation
+--- PASS: TestDisplayDimensions_Rotation (0.00s)
+=== RUN   TestGOPAlignmentInvariant
+--- PASS: TestGOPAlignmentInvariant (0.00s)
+=== RUN   TestRenditionArgs_GOPIdenticalAcrossRungs
+--- PASS: TestRenditionArgs_GOPIdenticalAcrossRungs (0.00s)
+=== RUN   TestRenditionArgs_CriticalFlags
+--- PASS: TestRenditionArgs_CriticalFlags (0.00s)
+=== RUN   TestPosterArgs_SeekBeforeInput
+--- PASS: TestPosterArgs_SeekBeforeInput (0.00s)
+=== RUN   TestBuildMasterPlaylist_HighestBandwidthFirst
+--- PASS: TestBuildMasterPlaylist_HighestBandwidthFirst (0.00s)
+=== RUN   TestBuildMasterPlaylist_CodecsMatchEncoderSettings
+--- PASS: TestBuildMasterPlaylist_CodecsMatchEncoderSettings (0.00s)
+=== RUN   TestBuildMasterPlaylist_BandwidthIsPeakNotAverage
+--- PASS: TestBuildMasterPlaylist_BandwidthIsPeakNotAverage (0.00s)
+=== RUN   TestRungWidth_IsEven
+--- PASS: TestRungWidth_IsEven (0.00s)
+=== RUN   TestRewriteVariantPlaylist_SignsSegments
+--- PASS: TestRewriteVariantPlaylist_SignsSegments (0.00s)
+=== RUN   TestRewriteVariantPlaylist_RejectsTraversal
+--- PASS: TestRewriteVariantPlaylist_RejectsTraversal (0.00s)
+=== RUN   TestRenditionPrefix_IsDeterministic
+--- PASS: TestRenditionPrefix_IsDeterministic (0.00s)
+=== RUN   TestValidate_AudioOnlyRejected
+--- PASS: TestValidate_AudioOnlyRejected (0.00s)
+=== RUN   TestValidate_HappyPath
+--- PASS: TestValidate_HappyPath (0.00s)
+=== RUN   TestValidate_DurationLimits
+--- PASS: TestValidate_DurationLimits (0.00s)
+=== RUN   TestValidate_ResolutionFloor
+--- PASS: TestValidate_ResolutionFloor (0.00s)
+=== RUN   TestValidate_RotatedPortraitAccepted
+--- PASS: TestValidate_RotatedPortraitAccepted (0.00s)
+=== RUN   TestValidate_UnsupportedCodec
+--- PASS: TestValidate_UnsupportedCodec (0.00s)
+=== RUN   TestValidate_ContentTypeMismatch
+--- PASS: TestValidate_ContentTypeMismatch (0.00s)
+=== RUN   TestParseFrameRate
+--- PASS: TestParseFrameRate (0.00s)
+=== RUN   TestTrackProgress_ParsesBlocks
+--- PASS: TestTrackProgress_ParsesBlocks (0.00s)
+=== RUN   TestTrackProgress_SurvivesNotAvailable
+--- PASS: TestTrackProgress_SurvivesNotAvailable (0.00s)
+=== RUN   TestTrackProgress_NeverExceedsOne
+--- PASS: TestTrackProgress_NeverExceedsOne (0.00s)
+=== RUN   TestOverallProgress_IsWeighted
+--- PASS: TestOverallProgress_IsWeighted (0.00s)
+=== RUN   TestOverallProgress_Empty
+--- PASS: TestOverallProgress_Empty (0.00s)
+PASS
+ok  	github.com/maczeo11/cinefund/internal/media/transcode	0.835s
+=== RUN   TestDispatcher_PublishThenMark
+--- PASS: TestDispatcher_PublishThenMark (0.00s)
+=== RUN   TestDispatcher_DoesNotRepublish
+--- PASS: TestDispatcher_DoesNotRepublish (0.00s)
+PASS
+ok  	github.com/maczeo11/cinefund/internal/outbox	0.868s
+?   	github.com/maczeo11/cinefund/internal/platform/config	[no test files]
+?   	github.com/maczeo11/cinefund/internal/platform/crypto	[no test files]
+?   	github.com/maczeo11/cinefund/internal/platform/errs	[no test files]
+?   	github.com/maczeo11/cinefund/internal/platform/httpx	[no test files]
+?   	github.com/maczeo11/cinefund/internal/platform/logger	[no test files]
+?   	github.com/maczeo11/cinefund/internal/platform/objectstore	[no test files]
+?   	github.com/maczeo11/cinefund/internal/platform/postgres	[no test files]
+=== RUN   TestStatusCanTransitionTo
+=== RUN   TestStatusCanTransitionTo/created->authorized
+=== RUN   TestStatusCanTransitionTo/created->captured
+=== RUN   TestStatusCanTransitionTo/created->failed
+=== RUN   TestStatusCanTransitionTo/authorized->captured
+=== RUN   TestStatusCanTransitionTo/captured->refund_pending
+=== RUN   TestStatusCanTransitionTo/captured->settled
+=== RUN   TestStatusCanTransitionTo/refund_pending->refunded
+=== RUN   TestStatusCanTransitionTo/refunded->captured
+=== RUN   TestStatusCanTransitionTo/captured->created
+=== RUN   TestStatusCanTransitionTo/same
+--- PASS: TestStatusCanTransitionTo (0.00s)
+    --- PASS: TestStatusCanTransitionTo/created->authorized (0.00s)
+    --- PASS: TestStatusCanTransitionTo/created->captured (0.00s)
+    --- PASS: TestStatusCanTransitionTo/created->failed (0.00s)
+    --- PASS: TestStatusCanTransitionTo/authorized->captured (0.00s)
+    --- PASS: TestStatusCanTransitionTo/captured->refund_pending (0.00s)
+    --- PASS: TestStatusCanTransitionTo/captured->settled (0.00s)
+    --- PASS: TestStatusCanTransitionTo/refund_pending->refunded (0.00s)
+    --- PASS: TestStatusCanTransitionTo/refunded->captured (0.00s)
+    --- PASS: TestStatusCanTransitionTo/captured->created (0.00s)
+    --- PASS: TestStatusCanTransitionTo/same (0.00s)
+=== RUN   TestTerminal
+--- PASS: TestTerminal (0.00s)
+=== RUN   TestCreatePledge_RejectsWhenCampaignNotLive
+--- PASS: TestCreatePledge_RejectsWhenCampaignNotLive (0.00s)
+=== RUN   TestCreatePledge_RejectsCreatorPledgingOwnCampaign
+--- PASS: TestCreatePledge_RejectsCreatorPledgingOwnCampaign (0.00s)
+=== RUN   TestCreatePledge_RejectsAmountBelowTierMinimum
+--- PASS: TestCreatePledge_RejectsAmountBelowTierMinimum (0.00s)
+=== RUN   TestCreatePledge_RejectsSoldOutTier
+--- PASS: TestCreatePledge_RejectsSoldOutTier (0.00s)
+=== RUN   TestCreatePledge_CreatesOrderAndAttaches
+--- PASS: TestCreatePledge_CreatesOrderAndAttaches (0.00s)
+=== RUN   TestHandleWebhook_CaptureHappyPath
+--- PASS: TestHandleWebhook_CaptureHappyPath (0.00s)
+=== RUN   TestHandleWebhook_SameEvent50xConcurrent
+--- PASS: TestHandleWebhook_SameEvent50xConcurrent (0.00s)
+=== RUN   TestHandleWebhook_RedisFlushedStillOnce
+--- PASS: TestHandleWebhook_RedisFlushedStillOnce (0.00s)
+=== RUN   TestHandleWebhook_AmountMismatch
+--- PASS: TestHandleWebhook_AmountMismatch (0.00s)
+=== RUN   TestHandleWebhook_ReleasesLockOnFailure
+--- PASS: TestHandleWebhook_ReleasesLockOnFailure (0.00s)
+=== RUN   TestFetchPaymentsUnknownOrder
+--- PASS: TestFetchPaymentsUnknownOrder (0.00s)
+=== RUN   TestConfirmPayment_CapturesAndCreditsCampaign
+--- PASS: TestConfirmPayment_CapturesAndCreditsCampaign (0.00s)
+=== RUN   TestConfirmPayment_IsIdempotent
+--- PASS: TestConfirmPayment_IsIdempotent (0.00s)
+=== RUN   TestConfirmPayment_RejectsOrderFromAnotherPledge
+--- PASS: TestConfirmPayment_RejectsOrderFromAnotherPledge (0.00s)
+=== RUN   TestConfirmPayment_RejectsForgedCheckoutSignature
+--- PASS: TestConfirmPayment_RejectsForgedCheckoutSignature (0.00s)
+PASS
+ok  	github.com/maczeo11/cinefund/internal/pledge	(cached)
+?   	github.com/maczeo11/cinefund/internal/pledge/gateway	[no test files]
+?   	github.com/maczeo11/cinefund/internal/pledge/gateway/fake	[no test files]
+=== RUN   TestCreateOrder_SendsBasicAuthAndParses
+--- PASS: TestCreateOrder_SendsBasicAuthAndParses (0.01s)
+=== RUN   TestCreateOrder_EncodesRequestBody
+--- PASS: TestCreateOrder_EncodesRequestBody (0.00s)
+=== RUN   TestFetchPayments_ParsesItems
+--- PASS: TestFetchPayments_ParsesItems (0.00s)
+=== RUN   TestCreateRefund
+--- PASS: TestCreateRefund (0.00s)
+=== RUN   TestProviderErrorIsReturned
+--- PASS: TestProviderErrorIsReturned (0.00s)
+PASS
+ok  	github.com/maczeo11/cinefund/internal/pledge/gateway/razorpay	1.697s
+?   	github.com/maczeo11/cinefund/migrations	[no test files]
