@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bhanu Teja Komma — Backend Engineer · Atelier</title>
-<meta name="description" content="Backend engineer — cloud-native systems on AWS. Ink, paper, and distributed systems. PRAJNA Business Logic Layer Lead, Go/Kafka, TypeScript/CDK." />
+  <title>Bhanu Teja Komma — Backend Engineer · Atelier</title>
+  <meta name="description" content="Bhanu Teja Komma — Backend Engineer. Leads business logic layer of PRAJNA (30 modules, 24 devs, 6 serverless modules, 5 partner teams) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Kafka, Redis." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="favicon-512.png" />
+  <meta name="theme-color" content="#0F0E12" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500&family=Fraunces:opsz,ital,wght@9..144,0,700;9..144,0,800;9..144,1,700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -416,8 +421,7 @@
         </h1>
         <p class="hero-typing" id="typing"><span id="typeText"></span><span class="cursor">▌</span></p>
         <p class="hero-copy">
-          Backend engineer building <b>cloud-native serverless systems on AWS</b> — Lambda, DynamoDB, EventBridge, CDK.
-          Business Logic Layer Lead at <b>PRAJNA</b>: six serverless modules, <b>36 handlers</b>, a <b>70-parameter FEI-1000 engine</b>, and the event contracts <b>five partner teams</b> build against. Correct under concurrent access — not eventually.
+          Lead the business logic layer of <b>PRAJNA</b>, a 30-module campus platform built by a 24-developer team — owning <b>six serverless modules</b> and the event contracts <b>five partner teams</b> build against. Shipped on <b>AWS (Lambda, DynamoDB, EventBridge, CDK)</b> in TypeScript. B.Tech CSE, GITAM 2027.
         </p>
         <div class="hero-meta">
           <span class="meta-pill"><i></i>Bengaluru, India</span>
@@ -441,16 +445,16 @@
           <div class="desk-top"><b>Atelier — System Desk</b><span class="desk-dots"><i></i><i></i><i></i></span></div>
           <div class="blueprint">
             <div class="bp-title"><i></i> PRAJNA · Approval Engine — single_table.ldb</div>
-            <div class="bp-line"><span>PK: CAMPUS#&lt;id&gt;#FACULTY#&lt;id&gt;</span><span>GSI1</span></div>
-            <div class="bp-line"><span>SK: SUBMISSION#&lt;id&gt;#v&lt;n&gt;</span><span>GSI2</span></div>
-            <div class="bp-line"><span>condition: version = :expected</span><span style="color:#4ade80">✓ optimistic</span></div>
+            <div class="bp-line"><span>PK: CAMPUS#&lt;id&gt;#FACULTY#&lt;id&gt;</span><span>GSI1 · 3 GSIs</span></div>
+            <div class="bp-line"><span>SK: SUBMISSION#&lt;id&gt;#v&lt;n&gt;</span><span>version :expected</span></div>
+            <div class="bp-line"><span>condition: version = :expected</span><span style="color:#4ade80">✓ optimistic lock</span></div>
             <div class="bp-line"><span>TransactWrite: idempotent_key = :k</span><span style="color:#4ade80">✓ retry-safe</span></div>
-            <div class="bp-line"><span>EventBridge: faculty.submitted → scoring</span><span>DLQ + alarm</span></div>
-            <div class="bp-line"><span>contribution_ledger: append-only</span><span>explainable</span></div>
+            <div class="bp-line"><span>EventBridge: frozen payloads → 5 modules</span><span>DLQ + alarm</span></div>
+            <div class="bp-line"><span>51 unit + integration tests</span><span>Idempotent</span></div>
             <div style="margin-top:10px;border-top:1px dashed rgba(255,255,255,0.18);padding-top:10px;display:flex;gap:8px;flex-wrap:wrap">
               <span style="padding:3px 8px;border:1px solid rgba(255,255,255,0.18);font-size:0.66rem">Lambda ×36</span>
-              <span style="padding:3px 8px;border:1px solid rgba(255,255,255,0.18);font-size:0.66rem">EventBridge</span>
-              <span style="padding:3px 8px;border:1px solid rgba(255,255,255,0.18);font-size:0.66rem">CDK · IaC 100%</span>
+              <span style="padding:3px 8px;border:1px solid rgba(255,255,255,0.18);font-size:0.66rem">CDK · IaC</span>
+              <span style="padding:3px 8px;border:1px solid rgba(255,255,255,0.18);font-size:0.66rem">3 campuses isolated</span>
             </div>
           </div>
           <!-- splatter -->
@@ -463,8 +467,8 @@
             </g>
           </svg>
           <div class="desk-footer">
-            <div class="mini-stat"><b>70</b><span>scoring params · 9 clusters</span></div>
-            <div class="mini-stat"><b>1000</b><span>FEI ceiling · frozen / yr</span></div>
+            <div class="mini-stat"><b>6/30</b><span>modules owned</span></div>
+            <div class="mini-stat"><b>51</b><span>tests · approval module</span></div>
             <div class="mini-stat"><b>3</b><span>campuses · tenant isolated</span></div>
             <div class="mini-stat"><b>5</b><span>partner teams · frozen contracts</span></div>
           </div>
@@ -488,7 +492,7 @@
       <h2>Business Logic Layer Lead,<br><em>PRAJNA</em></h2>
       <div class="seal">BLL<br>LEAD</div>
     </div>
-    <p class="sec-sub">Faculty performance platform for GITAM — <b>30 modules, 24 developers</b>. I led the business logic layer: six serverless modules, the FEI-1000 engine, and the event contracts everyone builds against.</p>
+    <p class="sec-sub">Campus platform for GITAM — <b>30 modules, 24 developers</b>. Own six serverless modules and the integration contracts <b>five partner teams</b> build against. Approval workflow is the single authority for approval state across 3 campuses.</p>
 
     <div class="exp-wrap reveal" style="margin-top:22px">
       <div class="exp-ribbon">
@@ -500,19 +504,17 @@
           <div class="exp-stats">
             <div class="exp-stat"><b>6/30</b><span>modules owned</span></div>
             <div class="exp-stat"><b>36</b><span>lambda handlers</span></div>
-            <div class="exp-stat"><b>70</b><span>scoring params</span></div>
+            <div class="exp-stat"><b>51</b><span>tests</span></div>
             <div class="exp-stat"><b>24</b><span>team size</span></div>
             <div class="exp-stat"><b>5</b><span>partner teams</span></div>
-            <div class="exp-stat"><b>1000</b><span>FEI ceiling</span></div>
+            <div class="exp-stat"><b>3</b><span>campuses</span></div>
           </div>
           <ul class="exp-list">
-            <li>Led <b>six serverless modules</b> (approvals, scoring, leaderboards, notifications, accreditation, appraisals) — 36 handlers, <b>single-table DynamoDB (3 GSIs)</b>, defined end-to-end in <b>CDK</b>.</li>
-            <li>Engineered approval state machine for <b>Lambda retry safety</b>: rank-based escalation, <b>optimistic locking</b> (version-checked conditional writes), <b>idempotent TransactWrites</b>.</li>
-            <li>Shipped <b>FEI-1000</b>: 9 weighted clusters, 70 rubric-driven params on a 1000-pt scale. Rubrics as <b>data, not branches</b> — policy change is a data edit; frontend contract generated from same source.</li>
-            <li>Weights <b>runtime-tunable without deploy</b> with largest-remainder normaliser; completed years <b>frozen</b> so re-weighting never retroactively moves scores.</li>
-            <li>Append-only <b>contribution ledger</b> — every score explainable (submission × rubric rung × config version) for NAAC/NBA audits.</li>
-            <li>Froze <b>EventBridge payloads</b> for five downstream modules; DLQ + CloudWatch alarm on every rule before prod.</li>
-            <li>Caught <b>IDOR</b> in review; consolidated six divergent auth implementations into one platform helper (Cognito + JWT, campus-scoped).</li>
+            <li>Lead business logic layer for <b>6 serverless modules</b> of a 30-module platform — 36 Lambda handlers across approvals, scoring, leaderboards, notifications, accreditation, appraisals — defining integration contracts <b>five partner teams</b> build against.</li>
+            <li>Built approval workflow end-to-end on <b>Lambda, DynamoDB (single-table, 3 GSIs) and EventBridge</b>, as CDK infrastructure, with <b>tenant isolation across three campuses</b> — covered by <b>51 unit + integration tests</b>.</li>
+            <li>Designed approval state machine for <b>Lambda retry safety</b>: rank-based escalation, <b>optimistic locking on version attributes</b>, and <b>idempotent TransactWrites</b> — eliminating concurrent overwrite collisions.</li>
+            <li>Froze <b>EventBridge payloads for 5 downstream modules</b> and deployed a <b>dead-letter queue + CloudWatch alarm on every rule</b> before live AWS.</li>
+            <li>Caught <b>IDOR</b> in code review and drove the fix — consolidating <b>6 divergent auth implementations</b> into one shared platform-wide helper (Cognito + JWT, campus-scoped).</li>
           </ul>
         </div>
         <figure class="exp-arch">
@@ -539,15 +541,15 @@
 
     <div class="proj-grid" style="margin-top:18px">
       <article class="proj-card reveal">
-        <div class="proj-kicker"><span>Go · Kafka · gRPC</span><a href="https://github.com/maczeo11/go-movie-streaming" target="_blank" rel="noopener" aria-label="Open repo">↗</a></div>
-        <h3 class="proj-name">cineFund — Short-Film Crowdfunding</h3>
-        <p class="proj-desc">Event-driven Go backend for crowdfunding short films. Grew from MagicStream — JWT/httpOnly auth, Mongo, HTTP Range streaming — then rebuilt for money + video.</p>
+        <div class="proj-kicker"><span>Go · Postgres · Kafka</span><a href="https://github.com/maczeo11/cinefund" target="_blank" rel="noopener" aria-label="Open repo">↗</a></div>
+        <h3 class="proj-name">CineFund — Crowdfunding & Streaming</h3>
+        <p class="proj-desc">Crowdfunding + streaming platform. Money path built before video — <b>double-entry escrow, all-or-nothing funding</b> — with FFmpeg-first transcoding de-risked early.</p>
         <ul class="proj-highlights">
-          <li>Outbox → Mongo Change Streams → Kafka → FFmpeg/HLS workers (gRPC/Protobuf)</li>
-          <li>Redis SETNX idempotency on payment webhooks — retry can't double-charge</li>
-          <li>MinIO/S3 presigned uploads · HTTP Range · token-bucket limiter</li>
+          <li>Three-method gateway interface (real + fake) — tests run without network; <b>Redis SETNX</b> in front of <b>Postgres unique constraint</b> on webhooks</li>
+          <li><b>Transactional outbox</b> over Debezium CDC — domain write + event insert in one TX, <b>SKIP LOCKED</b> dispatcher → Kafka</li>
+          <li>Presigned uploads that never buffer through API → <b>HLS ABR ladder</b> with keyframes aligned across renditions</li>
         </ul>
-        <div class="proj-tags"><span class="tag">Go</span><span class="tag">Kafka</span><span class="tag">gRPC</span><span class="tag">Redis</span><span class="tag">MongoDB</span><span class="tag">Docker</span></div>
+        <div class="proj-tags"><span class="tag">Go</span><span class="tag">PostgreSQL</span><span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">FFmpeg</span><span class="tag">Docker</span></div>
       </article>
 
       <article class="proj-card reveal">
@@ -603,21 +605,21 @@
             <div class="stroke-tagline">daily driver — PRAJNA’s entire BLL</div>
           </div>
           <div class="stroke-row">
-            <div class="stroke-head"><span class="stroke-name">Go (Golang)</span><span class="stroke-proof">cineFund · Kafka · gRPC workers</span></div>
+            <div class="stroke-head"><span class="stroke-name">Go (Golang)</span><span class="stroke-proof">CineFund · gateway interface + outbox</span></div>
             <div class="stroke-track"><div class="stroke-fill verm" data-w="78"></div></div>
-            <div class="stroke-tagline">hot path services — outbox to transcoding</div>
+            <div class="stroke-tagline">Postgres · Kafka · Redis SETNX</div>
           </div>
           <div class="stroke-row">
-            <div class="stroke-head"><span class="stroke-name">Python</span><span class="stroke-proof">FastAPI · extractor · RAG explorations</span></div>
+            <div class="stroke-head"><span class="stroke-name">Python</span><span class="stroke-proof">FastAPI · extractor · Tesseract</span></div>
             <div class="stroke-track"><div class="stroke-fill verm" data-w="82"></div></div>
           </div>
           <div class="stroke-row">
-            <div class="stroke-head"><span class="stroke-name">Java</span><span class="stroke-proof">Spring Boot · DI · transactions</span></div>
-            <div class="stroke-track"><div class="stroke-fill gold" data-w="66"></div></div>
+            <div class="stroke-head"><span class="stroke-name">Java</span><span class="stroke-proof">Spring Boot · concepts</span></div>
+            <div class="stroke-track"><div class="stroke-fill gold" data-w="58"></div></div>
           </div>
           <div class="stroke-row" style="margin-bottom:0">
-            <div class="stroke-head"><span class="stroke-name">SQL · Bash</span><span class="stroke-proof">Postgres · systemd · bpftune</span></div>
-            <div class="stroke-track"><div class="stroke-fill gold" data-w="62"></div></div>
+            <div class="stroke-head"><span class="stroke-name">SQL · Bash</span><span class="stroke-proof">Postgres · Linux · Git</span></div>
+            <div class="stroke-track"><div class="stroke-fill gold" data-w="68"></div></div>
           </div>
         </div>
 
@@ -625,19 +627,16 @@
           <h3><i style="background:var(--indigo)"></i> Concepts <span>— The Discipline</span></h3>
           <div class="chip-cloud">
             <span class="chip-tag prod">Event-driven architecture</span>
-            <span class="chip-tag prod">Idempotency & retries</span>
+            <span class="chip-tag prod">Idempotency & retry handling</span>
             <span class="chip-tag prod">Optimistic concurrency</span>
             <span class="chip-tag prod">Single-table design</span>
             <span class="chip-tag prod">Multi-tenant isolation</span>
-            <span class="chip-tag prod">IaC (CDK)</span>
-            <span class="chip-tag fluent">Transactional Outbox</span>
-            <span class="chip-tag fluent">pub/sub · Kafka</span>
-            <span class="chip-tag fluent">DLQs & alarms</span>
-            <span class="chip-tag fluent">JWT / Cognito auth</span>
-            <span class="chip-tag fam">gRPC · Protobuf</span>
-            <span class="chip-tag fam">eBPF observability</span>
+            <span class="chip-tag prod">IaC</span>
+            <span class="chip-tag fluent">Dead-letter queues</span>
+            <span class="chip-tag fluent">JWT authentication</span>
+            <span class="chip-tag fluent">REST API design</span>
           </div>
-          <p style="margin-top:14px;font-family:'Caveat',cursive;font-size:1.08rem;color:var(--ink-faint);transform:rotate(-0.4deg)">“Explainable state > running balance — audit needs why, not just what.”</p>
+          <p style="margin-top:14px;font-family:'Caveat',cursive;font-size:1.08rem;color:var(--ink-faint);transform:rotate(-0.4deg)">Resume-matched — no extra buzzwords. Hover Cloud tags for proof.</p>
         </div>
       </div>
 
@@ -652,30 +651,29 @@
             <span class="chip-tag prod">API Gateway</span>
             <span class="chip-tag prod">Cognito</span>
             <span class="chip-tag prod">S3</span>
-            <span class="chip-tag fluent">SQS · SNS</span>
-            <span class="chip-tag fluent">CloudWatch</span>
+            <span class="chip-tag prod">CloudFront</span>
+            <span class="chip-tag prod">SNS</span>
+            <span class="chip-tag fluent">SQS</span>
             <span class="chip-tag fluent">SSM</span>
+            <span class="chip-tag fluent">CloudWatch</span>
             <span class="chip-tag fluent">Docker</span>
-            <span class="chip-tag fluent">Kafka</span>
-            <span class="chip-tag fluent">GitHub Actions</span>
-            <span class="chip-tag fam">Terraform · K8s (EKS)</span>
-            <span class="chip-tag fam">Linux · systemd · nftables</span>
+            <span class="chip-tag fluent">Linux · Git</span>
+            <span class="chip-tag fluent">GitHub Actions (CI/CD)</span>
           </div>
         </div>
 
         <div class="skill-wall reveal">
           <h3><i style="background:var(--gold)"></i> Frameworks & Data <span>— The Palette</span></h3>
           <div class="chip-cloud">
-            <span class="chip-tag fluent">FastAPI</span>
-            <span class="chip-tag fluent">Gin</span>
-            <span class="chip-tag fluent">React + TypeScript</span>
-            <span class="chip-tag fluent">gRPC + Protobuf</span>
+            <span class="chip-tag prod">DynamoDB (single-table design)</span>
             <span class="chip-tag prod">PostgreSQL</span>
-            <span class="chip-tag prod">Redis (SETNX, Cluster)</span>
-            <span class="chip-tag fluent">MongoDB + Change Streams</span>
-            <span class="chip-tag fam">PyTorch</span>
-            <span class="chip-tag fam">Pydantic · pytest · Jest</span>
+            <span class="chip-tag fluent">FastAPI</span>
+            <span class="chip-tag fluent">Pydantic</span>
+            <span class="chip-tag fluent">pytest</span>
+            <span class="chip-tag fluent">React</span>
+            <span class="chip-tag fluent">Jest</span>
           </div>
+          <p style="margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--ink-faint)">Matches <code>Resume.pdf</code> 1:1 — CineFund extras (Kafka/Redis/FFmpeg) live on the project card, not the skills wall.</p>
         </div>
 
         <div class="narrative reveal">
