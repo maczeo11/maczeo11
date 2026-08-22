@@ -14,7 +14,6 @@
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 <a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
 <a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-<a href="https://github.com/maczeo11"><img src="https://komarev.com/ghpvc/?username=maczeo11&style=for-the-badge&color=A371F7" /></a>
 
 </div>
 
@@ -176,6 +175,39 @@ The single authority for approval state on every faculty submission across three
 <img src="https://img.shields.io/badge/Cognito-DD344C?style=flat-square&logo=amazonaws&logoColor=white" />
 </p>
 
+<details>
+<summary><b>Proof — Single-Table DynamoDB Schema & Access Patterns (AWS CDK)</b></summary>
+<br/>
+
+```typescript
+// proofs/prajna/cdk-snippet.txt (AWS CDK in TypeScript)
+const requestsTable = new dynamodb.Table(this, 'RequestsTable', {
+  tableName: `maintenance-requests-${stage}`,
+  partitionKey: { name: 'PK', type: dynamodb.AttributeType.STRING },
+  sortKey:      { name: 'SK', type: dynamodb.AttributeType.STRING },
+  billingMode:  dynamodb.BillingMode.PAY_PER_REQUEST,
+  timeToLiveAttribute: 'ttl',
+  removalPolicy: isProd ? cdk.RemovalPolicy.RETAIN : cdk.RemovalPolicy.DESTROY,
+});
+
+// GSI 1: Query all requests filed by a specific resident (PK=residentId, SK=createdAt)
+requestsTable.addGlobalSecondaryIndex({
+  indexName:    'ResidentIndex',
+  partitionKey: { name: 'residentId', type: dynamodb.AttributeType.STRING },
+  sortKey:      { name: 'createdAt',  type: dynamodb.AttributeType.STRING },
+});
+
+// GSI 2: SLA Escalation worker query (PK=status, SK=slaDeadline)
+requestsTable.addGlobalSecondaryIndex({
+  indexName:    'StatusIndex',
+  partitionKey: { name: 'status',      type: dynamodb.AttributeType.STRING },
+  sortKey:      { name: 'slaDeadline', type: dynamodb.AttributeType.STRING },
+});
+```
+
+<sub>Full CDK construct & architecture verification in [`proofs/prajna/`](proofs/prajna/)</sub>
+</details>
+
 <br/>
 
 <div align="center">
@@ -187,6 +219,12 @@ The single authority for approval state on every faculty submission across three
 ### CineFund — Crowdfunding & Streaming
 
 Event-driven Go backend for crowdfunding short films — money path built before video with **Postgres + Kafka + Redis**, inspired by MagicStream (movie streaming foundation with JWT/httpOnly-cookie auth and HTTP Range streaming).
+
+<div align="center">
+<img src="assets/cinefund-demo.svg" alt="CineFund 50x Concurrent Idempotency Test" width="100%" />
+</div>
+
+<br/>
 
 - **Transactional outbox** → Postgres + Debezium CDC — domain write + outbox insert in one TX, `SKIP LOCKED` dispatcher → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf) — see [`proofs/cinefund/0013_outbox.up.sql`](proofs/cinefund/0013_outbox.up.sql) + [`proofs/cinefund/README.md`](proofs/cinefund/README.md)
 - **Payments** — Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) in front of Postgres `UNIQUE(provider, provider_event_id)` ([`proofs/cinefund/0008_payment_events.up.sql`](proofs/cinefund/0008_payment_events.up.sql)) — 50 concurrent webhooks → 1 success / 49 `ErrDuplicateEvent` ([`proofs/cinefund/idempotency-50concurrent.txt`](proofs/cinefund/idempotency-50concurrent.txt)), double-entry ledger ([`proofs/cinefund/0011_ledger.up.sql`](proofs/cinefund/0011_ledger.up.sql))
@@ -204,6 +242,37 @@ Full API spec, architecture, data model, and security docs live in the repo's `d
 <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
 &nbsp; <b><a href="https://github.com/maczeo11/cinefund">Repository →</a></b>
 </p>
+
+<details>
+<summary><b>Proof — Outbox Table Schema + SKIP LOCKED Dispatcher Query</b></summary>
+<br/>
+
+```sql
+-- proofs/cinefund/0013_outbox.up.sql
+CREATE TABLE outbox (
+    id             BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    event_id       UUID NOT NULL UNIQUE,        -- dedupe key for Kafka consumers
+    event_type     TEXT NOT NULL,               -- 'pledge.captured'
+    event_version  INTEGER NOT NULL DEFAULT 1,
+    aggregate_type TEXT NOT NULL,               -- 'pledge'
+    aggregate_id   UUID NOT NULL,               -- Kafka partition key
+    payload        JSONB NOT NULL,
+    trace_id       TEXT,                        -- W3C traceparent
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+    published_at   TIMESTAMPTZ,
+    attempts       INTEGER NOT NULL DEFAULT 0,
+    last_error     TEXT
+);
+
+-- Monotonic integer scan of unpublished rows (only scans unhandled events)
+CREATE INDEX idx_outbox_unpublished ON outbox (id) WHERE published_at IS NULL;
+
+-- Dispatcher worker query (SKIP LOCKED guarantees concurrent worker safety without deadlock)
+SELECT id, payload FROM outbox WHERE published_at IS NULL ORDER BY id LIMIT 50 FOR UPDATE SKIP LOCKED;
+```
+
+<sub>Full migration DDL, ledger, and 50x concurrent test outputs in [`proofs/cinefund/`](proofs/cinefund/)</sub>
+</details>
 
 ---
 
@@ -240,6 +309,28 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
 &nbsp; <b><a href="https://github.com/maczeo11/File_extractor">Repository →</a></b>
 </p>
+
+<details>
+<summary><b>Proof — Magic-Byte Signature Detection Pipeline</b></summary>
+<br/>
+
+```python
+# proofs/extractor/magic-snippet.py
+def detect_file_type(buffer: bytes) -> str:
+    """Identifies true file format from binary magic bytes rather than trusting file extension."""
+    if buffer.startswith(b'%PDF'):
+        return 'application/pdf'
+    if buffer.startswith(b'\x89PNG\r\n\x1a\n'):
+        return 'image/png'
+    if buffer.startswith(b'\xff\xd8\xff'):
+        return 'image/jpeg'
+    if buffer.startswith(b'PK\x03\x04'):
+        return 'application/vnd.openxmlformats-officedocument' # docx, xlsx
+    return 'application/octet-stream'
+```
+
+<sub>Full extractor implementation & Otsu binarization pipeline in [`proofs/extractor/`](proofs/extractor/)</sub>
+</details>
 
 <br/>
 
