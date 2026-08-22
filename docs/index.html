@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-<script>document.documentElement.classList.replace('no-js','js');</script>
+<script>
+  (function(){
+    try{
+      if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');}
+      document.documentElement.classList.replace('no-js','js');
+    }catch(e){}
+  })();
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhanu Teja Komma — Backend Engineer · Atelier</title>
@@ -13,14 +20,17 @@
   <meta property="og:url" content="https://maczeo.me/" />
   <meta property="og:title" content="Bhanu Teja Komma — Backend Engineer" />
   <meta property="og:description" content="Leads business logic layer of PRAJNA (30 modules, 24 devs) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Distributed Systems." />
-  <meta property="og:image" content="https://maczeo.me/assets/banner.svg" />
+  <meta property="og:image" content="https://maczeo.me/assets/banner.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bhanu Teja Komma — Backend Engineer" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://maczeo.me/" />
   <meta name="twitter:title" content="Bhanu Teja Komma — Backend Engineer" />
   <meta name="twitter:description" content="Leads business logic layer of PRAJNA (30 modules, 24 devs) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Distributed Systems." />
-  <meta name="twitter:image" content="https://maczeo.me/assets/banner.svg" />
+  <meta name="twitter:image" content="https://maczeo.me/assets/banner.png" />
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -87,7 +97,7 @@
       --line-strong:rgba(245,242,235,0.2);
       --nav-bg:rgba(18,17,24,0.92);
   }
-  html.dark footer{background:rgba(18,17,24,0.45)}
+  html.dark footer{background:rgba(18,17,24,0.85)}
   html.dark .ink-cursor{mix-blend-mode:screen}
 
   *{margin:0;padding:0;box-sizing:border-box}
@@ -585,7 +595,7 @@
   .no-js .reveal,
   .revealed{opacity:1 !important;transform:none !important}
   .no-js .stroke-fill,
-  .fill-fallback{opacity:1 !important;transform:none !important}
+  .fill-fallback{width:var(--depth, 0%) !important;opacity:1 !important;transform:none !important}
   .no-js .ink-stroke path{stroke-dashoffset:0 !important}
 
   /* responsive */
@@ -869,25 +879,25 @@
           <h3><span class="sec-dot" aria-hidden="true"></span> Languages <span>— The Brushes</span></h3>
           <div class="stroke-row">
             <div class="stroke-head"><span class="stroke-name">TypeScript</span><span class="stroke-proof">36 handlers · CDK · 6 modules</span></div>
-            <div class="stroke-track"><div class="stroke-fill" data-depth="94" style="width:94%"></div></div>
+            <div class="stroke-track"><div class="stroke-fill" data-depth="94" style="--depth:94%"></div></div>
             <div class="stroke-tagline">daily driver — PRAJNA’s entire BLL</div>
           </div>
           <div class="stroke-row">
             <div class="stroke-head"><span class="stroke-name">Go (Golang)</span><span class="stroke-proof">CineFund · gateway interface + outbox</span></div>
-            <div class="stroke-track"><div class="stroke-fill verm" data-depth="84" style="width:84%"></div></div>
+            <div class="stroke-track"><div class="stroke-fill verm" data-depth="84" style="--depth:84%"></div></div>
             <div class="stroke-tagline">Postgres · Kafka · Redis SETNX</div>
           </div>
           <div class="stroke-row">
             <div class="stroke-head"><span class="stroke-name">Python</span><span class="stroke-proof">FastAPI · extractor · Tesseract</span></div>
-            <div class="stroke-track"><div class="stroke-fill verm" data-depth="82" style="width:82%"></div></div>
+            <div class="stroke-track"><div class="stroke-fill verm" data-depth="82" style="--depth:82%"></div></div>
           </div>
           <div class="stroke-row">
             <div class="stroke-head"><span class="stroke-name">Java</span><span class="stroke-proof">Spring Boot · concepts</span></div>
-            <div class="stroke-track"><div class="stroke-fill gold" data-depth="58" style="width:58%"></div></div>
+            <div class="stroke-track"><div class="stroke-fill gold" data-depth="58" style="--depth:58%"></div></div>
           </div>
           <div class="stroke-row" style="margin-bottom:0">
             <div class="stroke-head"><span class="stroke-name">SQL · Bash</span><span class="stroke-proof">Postgres · Linux · Git</span></div>
-            <div class="stroke-track"><div class="stroke-fill gold" data-depth="72" style="width:72%"></div></div>
+            <div class="stroke-track"><div class="stroke-fill gold" data-depth="72" style="--depth:72%"></div></div>
           </div>
         </div>
 
@@ -970,6 +980,7 @@
         <a href="mailto:bhanu0005a@gmail.com">✉ bhanu0005a@gmail.com</a>
         <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://github.com/maczeo11" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://leetcode.com/u/GB2023002633/" target="_blank" rel="noopener">LeetCode ↗</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -1002,27 +1013,31 @@
   // Mobile Navigation Drawer Toggle
   const menuToggle = document.getElementById('menuToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');
+
+  function closeMobileDrawer(){
+    if(!mobileDrawer) return;
+    mobileDrawer.classList.remove('open');
+    if(menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    mobileDrawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
   if(menuToggle && mobileDrawer){
     menuToggle.addEventListener('click', function(){
       const isOpen = mobileDrawer.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       mobileDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     const mobileLinks = mobileDrawer.querySelectorAll('a');
     mobileLinks.forEach(function(link){
-      link.addEventListener('click', function(){
-        mobileDrawer.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        mobileDrawer.setAttribute('aria-hidden', 'true');
-      });
+      link.addEventListener('click', closeMobileDrawer);
     });
 
     document.addEventListener('keydown', function(e){
       if(e.key === 'Escape' && mobileDrawer.classList.contains('open')){
-        mobileDrawer.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        mobileDrawer.setAttribute('aria-hidden', 'true');
+        closeMobileDrawer();
         menuToggle.focus();
       }
     });

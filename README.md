@@ -21,7 +21,8 @@
 ```yaml
 name:      Bhanu Teja Komma
 role:      Backend Engineer — Cloud-Native / Distributed Systems
-focus:     Go, Rust, FastAPI, AWS, Kafka, Redis, Spring Boot, React, Docker, Kubernetes, PyTorch, gRPC, MongoDB
+focus:     TypeScript, Go, Python, AWS (Lambda, DynamoDB, EventBridge, CDK), Postgres, MongoDB, Kafka, Redis
+exploring: Rust, gRPC, Spring Boot
 location:  Bengaluru, India
 portfolio: https://maczeo.me
 openTo:    Backend / cloud-native / platform roles
@@ -44,13 +45,14 @@ The common thread: distributed systems that stay correct under load, with observ
 
 | | |
 |---|---|
-| **Languages** | <img src="https://skillicons.dev/icons?i=ts,python,java,go,rust,nodejs" /> |
-| **Backend & Data** | <img src="https://skillicons.dev/icons?i=fastapi,spring,postgres,redis,mongodb,kafka" /> |
+| **Languages** | <img src="https://skillicons.dev/icons?i=ts,python,go" /> |
+| **Backend & Data** | <img src="https://skillicons.dev/icons?i=fastapi,postgres,redis,mongodb,kafka" /> |
 | **Frontend** | <img src="https://skillicons.dev/icons?i=react" /> |
-| **Infra & Tools** | <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,linux,git,neovim" /> |
-| **AI / ML** | <img src="https://skillicons.dev/icons?i=pytorch" /> |
+| **Infra & Tools** | <img src="https://skillicons.dev/icons?i=aws,docker,linux,git" /> |
 
-<sub>Rust, gRPC, MongoDB and PyTorch retained — known and used, not yet major-shipped projects; others are proof-backed above.</sub>
+| | |
+|---|---|
+| **Exploring** | <img src="https://skillicons.dev/icons?i=rust,spring" /> |
 
 **AWS services I lean on**
 
