@@ -28,19 +28,16 @@ focus:     TypeScript, Go, Python, AWS (Lambda, DynamoDB, EventBridge, CDK), Pos
 exploring: Rust, gRPC, Spring Boot
 location:  Bengaluru, India
 portfolio: https://maczeo.me
-openTo:    Backend / cloud-native / platform roles
+openTo:    Backend / Cloud-Native / Platform roles
 currently: Building event-driven platforms on AWS + Postgres/Kafka/Redis
 ```
 
-I build backend systems where the interesting part isn't the CRUD — it's what happens when two requests race each other. Most of my time lives inside **AWS** (Lambda, DynamoDB, EventBridge, CDK, Step Functions), **Kafka** for event streaming, and **Postgres/Redis** for data — thinking through idempotency, optimistic locking, single-table design, and event-driven workflows instead of bolting them on after something breaks in production.
+I'm a final-year B.Tech Computer Science student focused on building backend systems that stay correct under concurrent load. Most of my work centers around **AWS serverless architectures**, **event streaming with Kafka**, and **transactional data patterns in Go & PostgreSQL** — designing for idempotency, optimistic locking, and single-table database access.
 
-Recent work spans:
-- **Serverless approval workflow engine** — 6 modules, 36 Lambda handlers, frozen event contracts across 5 partner teams; correctness under concurrent access was the design brief
-- **Event-driven Go/Kafka services** — transactional outbox → Postgres + Debezium CDC → Kafka → gRPC/FFmpeg workers; `SKIP LOCKED` dispatcher, Redis `SETNX` + Postgres `UNIQUE(provider, provider_event_id)` idempotency on payments — verified via `proofs/cinefund/`
-- **Spring Boot JVM services** — DI, transaction boundaries, domain-driven structure
-- **React/TypeScript frontends** — when the backend needs a UI
-
-The common thread: distributed systems that stay correct under load, with observable, explainable state.
+Recent focus areas:
+- **Serverless Approval Engine (PRAJNA)** — Multi-stage approval state machine across 3 campuses, using optimistic concurrency control in DynamoDB and EventBridge event routing.
+- **Event-Driven Services (CineFund)** — Transactional outbox pattern on PostgreSQL + Debezium CDC $\rightarrow$ Kafka, paired with Redis `SETNX` dual-layer payment idempotency.
+- **Microservices & Tooling** — Modular document extraction pipelines, Redis caching layers, and Infrastructure-as-Code with AWS CDK.
 
 <br/>
 
@@ -56,7 +53,7 @@ The common thread: distributed systems that stay correct under load, with observ
 
 <br/>
 
-### AWS Services
+### AWS & Cloud-Native Services
 
 <p align="center">
 <img src="https://img.shields.io/badge/Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white" />
@@ -78,35 +75,20 @@ The common thread: distributed systems that stay correct under load, with observ
 
 <br/>
 
-## Linux Admin Toolkit
-
-<p align="center">
-<img src="https://img.shields.io/badge/systemd-0B3D2E?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/firewalld-C5102E?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/nftables-C5102E?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/podman-003DA5?style=for-the-badge&logo=podman&logoColor=white" />
-<img src="https://img.shields.io/badge/kubectl-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-<img src="https://img.shields.io/badge/terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
-<img src="https://img.shields.io/badge/tmux-1BB0E6?style=for-the-badge&logo=tmux&logoColor=white" />
-<img src="https://img.shields.io/badge/fzf-0F0F0F?style=for-the-badge&logo=fzf&logoColor=white" />
-<img src="https://img.shields.io/badge/ripgrep-0F0F0F?style=for-the-badge&logo=rust&logoColor=white" />
-</p>
-
-<p align="center"><sub>systemd, firewalld/nftables, podman, kubectl (EKS/GKE), Terraform, tmux/fzf/rg.</sub></p>
-
-<br/>
-
-## Distributed Systems Toolkit
+## Linux & Distributed Systems Toolkit
 
 <p align="center">
 <img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
 <img src="https://img.shields.io/badge/gRPC-4285F4?style=for-the-badge&logo=grpc&logoColor=white" />
 <img src="https://img.shields.io/badge/Protocol_Buffers-4285F4?style=for-the-badge&logo=protobuf&logoColor=white" />
-<img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" />
 <img src="https://img.shields.io/badge/Redis_Cluster-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+<img src="https://img.shields.io/badge/systemd-0B3D2E?style=for-the-badge&logo=linux&logoColor=white" />
+<img src="https://img.shields.io/badge/podman-003DA5?style=for-the-badge&logo=podman&logoColor=white" />
+<img src="https://img.shields.io/badge/kubectl-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+<img src="https://img.shields.io/badge/terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
 </p>
 
-<p align="center"><sub>Kafka, gRPC+Protobuf, Grafana, Redis Cluster.</sub></p>
+<p align="center"><sub>Kafka, gRPC+Protobuf, Redis, systemd, podman, kubectl, Terraform.</sub></p>
 
 <br/>
 
@@ -116,21 +98,21 @@ The common thread: distributed systems that stay correct under load, with observ
 
 <br/>
 
-## What I Actually Think About
+## Engineering Focus & Principles
 
 <details>
-<summary><b>7 distributed systems principles I actually apply day-to-day</b> — click to expand</summary>
+<summary><b>7 distributed systems principles I apply day-to-day</b> — click to expand</summary>
 <br/>
 
 | Principle | Core Practice |
 |---|---|
-| **Idempotency** | Designing writes so a Lambda retry can't double-create or double-charge anything. |
+| **Idempotency** | Designing writes so a Lambda retry or webhook burst can't double-create or double-charge anything. |
 | **Optimistic locking** | Version-checked conditional writes so two approvers racing the same record don't silently clobber each other. |
 | **Single-table DynamoDB design** | Modeling access patterns first, then collapsing entities into one table with GSIs instead of one table per entity. |
 | **Event-driven workflows** | EventBridge as the backbone for state changes, instead of services polling each other for status. |
 | **Multi-tenant isolation** | Scoping every query by role and campus at the auth layer, not trusting the client to ask nicely. |
-| **Policy as data** | Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract can be generated from the same source the engine runs on. |
-| **Explainable state** | Keeping an append-only record of *why* a number is what it is — a running balance can't answer questions six months later, and the inputs can't be reconstructed after the fact. |
+| **Policy as data** | Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract stays unified. |
+| **Explainable state** | Keeping an append-only record of *why* a number is what it is — a running balance can't answer audit questions six months later. |
 
 </details>
 
@@ -146,9 +128,9 @@ The common thread: distributed systems that stay correct under load, with observ
 
 ### PRAJNA — Approval Workflow Engine
 
-<sub>Team repo, private — see the architecture and engineering breakdown below</sub>
+<sub>Team platform at GITAM — see architecture and implementation details below</sub>
 
-The single authority for approval state on every faculty submission across three campuses. If this system is wrong, someone's approval either gets stuck forever or gets approved twice — so correctness under concurrent access was the actual design brief, not a nice-to-have.
+A multi-stage approval engine for faculty submissions across three campuses. Designed to maintain strict consistency when multiple approvers or automated escalation timers act on the same submission simultaneously.
 
 <div align="center">
 <img src="assets/architecture.svg" alt="PRAJNA Approval Workflow Engine architecture diagram" width="85%" />
@@ -156,15 +138,11 @@ The single authority for approval state on every faculty submission across three
 
 <br/>
 
-**The engineering problem:** approvers escalate submissions up a rank ladder, a scheduled Lambda escalates anything past its SLA, and a human can act on a record at the exact moment the escalation cron fires on it. That's a straightforward race condition if you're not careful.
-
-**How it's handled:**
-- Workflow creation is idempotent, so a Lambda retry after a timeout can't spin up a duplicate approval chain
-- Every state update is optimistic-locked — a version mismatch fails the write instead of silently overwriting a concurrent change
-- The escalation ladder is rank-based with cycle checks, so a misconfigured hierarchy can't loop a request back to someone who already approved it
-- Auth is Cognito + JWT, scoped by role and campus, so the isolation between campuses is enforced server-side, not assumed client-side
-
-**Result:** hardened through a dedicated review pass that surfaced and fixed 11 correctness/security issues, including an IDOR that let any authenticated user act as any faculty member in any campus.
+**Key Engineering Challenges & Solutions:**
+- **Race Condition Prevention:** A scheduled Lambda escalates submissions past their SLA while human approvers act concurrently. Solved via DynamoDB optimistic locking (`ConditionExpression: version = :expected`) — stale writes abort cleanly instead of clobbering state.
+- **Idempotent Workflow Instantiation:** Workflow creation uses unique client tokens so network retries cannot spin up duplicate approval chains.
+- **Rank-Based Escalation:** Implemented hierarchy graph validation with cycle detection to prevent requests from looping back to prior approvers.
+- **Server-Side Campus Scoping:** Authentication is enforced via Cognito + JWT with role and campus claims validated server-side.
 
 <p>
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
@@ -176,11 +154,11 @@ The single authority for approval state on every faculty submission across three
 </p>
 
 <details>
-<summary><b>Proof — Single-Table DynamoDB Schema & Access Patterns (AWS CDK)</b></summary>
+<summary><b>🏗️ Architecture Deep Dive: Single-Table DynamoDB & Access Patterns (AWS CDK)</b></summary>
 <br/>
 
 ```typescript
-// proofs/prajna/cdk-snippet.txt (AWS CDK in TypeScript)
+// Single-table DynamoDB construct with secondary indexes for efficient access patterns
 const requestsTable = new dynamodb.Table(this, 'RequestsTable', {
   tableName: `maintenance-requests-${stage}`,
   partitionKey: { name: 'PK', type: dynamodb.AttributeType.STRING },
@@ -205,7 +183,7 @@ requestsTable.addGlobalSecondaryIndex({
 });
 ```
 
-<sub>Full CDK construct & architecture verification in [`proofs/prajna/`](proofs/prajna/)</sub>
+*Key Pattern:* Access patterns are modeled upfront into a single table with Global Secondary Indexes, allowing low-latency queries without multi-table relational joins.
 </details>
 
 <br/>
@@ -218,7 +196,7 @@ requestsTable.addGlobalSecondaryIndex({
 
 ### CineFund — Crowdfunding & Streaming
 
-Event-driven Go backend for crowdfunding short films — money path built before video with **Postgres + Kafka + Redis**, inspired by MagicStream (movie streaming foundation with JWT/httpOnly-cookie auth and HTTP Range streaming).
+An event-driven Go backend for crowdfunding short films, built around **PostgreSQL + Kafka + Redis** with a focus on transactional integrity and video streaming.
 
 <div align="center">
 <img src="assets/cinefund-demo.svg" alt="CineFund 50x Concurrent Idempotency Test" width="100%" />
@@ -226,12 +204,10 @@ Event-driven Go backend for crowdfunding short films — money path built before
 
 <br/>
 
-- **Transactional outbox** → Postgres + Debezium CDC — domain write + outbox insert in one TX, `SKIP LOCKED` dispatcher → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf) — see [`proofs/cinefund/0013_outbox.up.sql`](proofs/cinefund/0013_outbox.up.sql) + [`proofs/cinefund/README.md`](proofs/cinefund/README.md)
-- **Payments** — Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) in front of Postgres `UNIQUE(provider, provider_event_id)` ([`proofs/cinefund/0008_payment_events.up.sql`](proofs/cinefund/0008_payment_events.up.sql)) — 50 concurrent webhooks → 1 success / 49 `ErrDuplicateEvent` ([`proofs/cinefund/idempotency-50concurrent.txt`](proofs/cinefund/idempotency-50concurrent.txt)), double-entry ledger ([`proofs/cinefund/0011_ledger.up.sql`](proofs/cinefund/0011_ledger.up.sql))
-- **Streaming** — MinIO/S3 presigned uploads and HTTP Range serving, so `<video>` seeks without downloading the whole file
-- **Production habits** — token-bucket rate limiting (tighter on auth routes), request-ID tracing, `log/slog` structured logs, Docker + Makefile, graceful shutdown
-
-Full API spec, architecture, data model, and security docs live in the repo's `docs/` folder — the standard I hold every project to.
+- **Transactional Outbox Pattern** — Domain record updates and outbox events are committed in a single ACID PostgreSQL transaction. A dedicated worker pool polls using `FOR UPDATE SKIP LOCKED` and publishes to Kafka without double-dispatch.
+- **Dual-Layer Payment Idempotency** — Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) provides a sub-millisecond fast-path check, backed authoritatively by a PostgreSQL `UNIQUE(provider, provider_event_id)` constraint. Verified under 50 concurrent requests (1 success, 49 duplicate rejections).
+- **Video Processing & Streaming** — Outbox events drive async FFmpeg transcoding workers over gRPC (Protobuf), outputting HLS segments with HTTP Range request support for seamless video seeking.
+- **Production Practices** — Token-bucket rate limiting, structured logging with Go `log/slog`, request-ID propagation, Docker containerization, and graceful shutdown.
 
 <p>
 <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" />
@@ -244,45 +220,50 @@ Full API spec, architecture, data model, and security docs live in the repo's `d
 </p>
 
 <details>
-<summary><b>Proof — Outbox Table Schema + SKIP LOCKED Dispatcher Query</b></summary>
+<summary><b>⚙️ Under the Hood: Transactional Outbox Schema & Concurrency Dispatcher (SQL)</b></summary>
 <br/>
 
 ```sql
--- proofs/cinefund/0013_outbox.up.sql
+-- Outbox table: stores domain events atomically with business transactions
 CREATE TABLE outbox (
     id             BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     event_id       UUID NOT NULL UNIQUE,        -- dedupe key for Kafka consumers
-    event_type     TEXT NOT NULL,               -- 'pledge.captured'
+    event_type     TEXT NOT NULL,               -- e.g. 'pledge.captured'
     event_version  INTEGER NOT NULL DEFAULT 1,
-    aggregate_type TEXT NOT NULL,               -- 'pledge'
+    aggregate_type TEXT NOT NULL,               -- e.g. 'pledge'
     aggregate_id   UUID NOT NULL,               -- Kafka partition key
     payload        JSONB NOT NULL,
-    trace_id       TEXT,                        -- W3C traceparent
+    trace_id       TEXT,                        -- W3C distributed traceparent
     created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
     published_at   TIMESTAMPTZ,
     attempts       INTEGER NOT NULL DEFAULT 0,
     last_error     TEXT
 );
 
--- Monotonic integer scan of unpublished rows (only scans unhandled events)
+-- Partial index scanning only unpublished events for high dispatcher throughput
 CREATE INDEX idx_outbox_unpublished ON outbox (id) WHERE published_at IS NULL;
 
--- Dispatcher worker query (SKIP LOCKED guarantees concurrent worker safety without deadlock)
-SELECT id, payload FROM outbox WHERE published_at IS NULL ORDER BY id LIMIT 50 FOR UPDATE SKIP LOCKED;
+-- Dispatcher query: SKIP LOCKED allows multiple worker threads to pull batches without lock contention
+SELECT id, payload 
+FROM outbox 
+WHERE published_at IS NULL 
+ORDER BY id 
+LIMIT 50 
+FOR UPDATE SKIP LOCKED;
 ```
 
-<sub>Full migration DDL, ledger, and 50x concurrent test outputs in [`proofs/cinefund/`](proofs/cinefund/)</sub>
+*Key Pattern:* `FOR UPDATE SKIP LOCKED` enables horizontal scaling of background Go dispatchers without rows being double-processed or causing transaction deadlocks.
 </details>
 
 ---
 
 ### Serverless Apartment Maintenance Portal
 
-Full-stack maintenance-request system for 50+ residents and 15+ admins across 3 campuses — the project I used to get single-table DynamoDB design and CDK-as-IaC right before bringing them to PRAJNA.
+A full-stack maintenance portal for campus residential blocks — built to explore single-table DynamoDB access pattern modeling and AWS CDK Infrastructure-as-Code prior to incorporating them into PRAJNA.
 
-- SLA tracking runs on an EventBridge cron firing every 15 minutes, not a human checking a dashboard
-- Single-table DynamoDB design with Cognito-backed role-based access
-- 100% infrastructure-as-code via AWS CDK (TypeScript) — no console-clicked resources
+- Scheduled SLA escalations triggered via EventBridge cron rules every 15 minutes.
+- Single-table DynamoDB design with Cognito-based role-based access control (Admin / Resident).
+- 100% Infrastructure-as-Code via AWS CDK in TypeScript.
 
 <p>
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
@@ -296,11 +277,11 @@ Full-stack maintenance-request system for 50+ residents and 15+ admins across 3 
 
 ### Universal Text Extractor
 
-A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, and HTML into one standardized JSON shape — built to handle the "dark data" problem of documents that don't come pre-structured.
+A document processing pipeline that normalizes heterogeneous file formats (PDFs, Word documents, spreadsheets, images) into structured JSON.
 
-- Strategy pattern on the backend, so adding a new file format doesn't touch existing extractors (Open/Closed Principle)
-- Hybrid OCR pipeline: OpenCV preprocessing feeding Tesseract's LSTM engine, for scanned documents that plain text extraction can't touch
-- Queue-managed frontend to keep memory bounded on free-tier hosting
+- Strategy pattern architecture to support new file extractors modularly without modifying existing pipelines (Open/Closed Principle).
+- Hybrid OCR pipeline utilizing OpenCV preprocessing and Tesseract LSTM recognition for scanned or low-contrast documents.
+- In-memory stream processing and chunking to ensure bounded resource consumption on constrained compute instances.
 
 <p>
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
@@ -311,13 +292,12 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 </p>
 
 <details>
-<summary><b>Proof — Magic-Byte Signature Detection Pipeline</b></summary>
+<summary><b>🔍 Implementation Highlight: Binary Magic-Byte Detection & Processing (Python)</b></summary>
 <br/>
 
 ```python
-# proofs/extractor/magic-snippet.py
 def detect_file_type(buffer: bytes) -> str:
-    """Identifies true file format from binary magic bytes rather than trusting file extension."""
+    """Identifies file formats from true binary header signatures rather than trusting file extensions."""
     if buffer.startswith(b'%PDF'):
         return 'application/pdf'
     if buffer.startswith(b'\x89PNG\r\n\x1a\n'):
@@ -329,7 +309,7 @@ def detect_file_type(buffer: bytes) -> str:
     return 'application/octet-stream'
 ```
 
-<sub>Full extractor implementation & Otsu binarization pipeline in [`proofs/extractor/`](proofs/extractor/)</sub>
+*Key Pattern:* Inspecting binary magic headers prevents MIME spoofing vulnerabilities and avoids pipeline crashes from mislabeled file extensions.
 </details>
 
 <br/>
