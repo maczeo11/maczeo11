@@ -25,7 +25,7 @@ focus:     Go, Rust, FastAPI, AWS, Kafka, Redis, Spring Boot, React, Docker, Kub
 location:  Bengaluru, India
 portfolio: https://maczeo.me
 openTo:    Backend / cloud-native / platform roles
-currently: Building event-driven platforms; exploring RAG architectures; hardening Linux systems
+currently: Building event-driven platforms on AWS + Postgres/Kafka/Redis; hardening Linux systems
 ```
 
 I build backend systems where the interesting part isn't the CRUD — it's what happens when two requests race each other. Most of my time lives inside **AWS** (Lambda, DynamoDB, EventBridge, CDK, Step Functions), **Kafka** for event streaming, and **Postgres/Redis** for data — thinking through idempotency, optimistic locking, single-table design, and event-driven workflows instead of bolting them on after something breaks in production.
@@ -50,7 +50,7 @@ The common thread: distributed systems that stay correct under load, with observ
 | **Infra & Tools** | <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,linux,git,neovim" /> |
 | **AI / ML** | <img src="https://skillicons.dev/icons?i=pytorch" /> |
 
-<sub>Go for the hot path, FastAPI when Python fits, Spring Boot for JVM services, Postgres when I need a real database, Redis for the speed layer, Kafka for event streaming, React + TS when the backend needs a UI, Rust for systems-level projects, and PyTorch for applied LLM/RAG work.</sub>
+<sub>Rust, gRPC, MongoDB and PyTorch retained — known and used, not yet major-shipped projects; others are proof-backed above.</sub>
 
 **AWS services I lean on**
 
@@ -66,7 +66,7 @@ The common thread: distributed systems that stay correct under load, with observ
 <img src="https://img.shields.io/badge/Step_Functions-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
 </p>
 
-<sub>Plus a personal Linux touch: Alpine & Arch for lightweight and rolling environments.</sub>
+<sub>Alpine & Arch for lightweight and rolling environments.</sub>
 
 <br/>
 
@@ -90,7 +90,7 @@ The common thread: distributed systems that stay correct under load, with observ
 <img src="https://img.shields.io/badge/ripgrep-0F0F0F?style=for-the-badge&logo=rust&logoColor=white" />
 </p>
 
-<sub>Daily drivers: systemd for services, firewalld/nftables for network policy, podman for containers, kubectl for managed K8s (EKS/GKE), Terraform for IaC, tmux/fzf/rg in the terminal.</sub>
+<sub>systemd, firewalld/nftables, podman, kubectl (EKS/GKE), Terraform, tmux/fzf/rg.</sub>
 
 <br/>
 
@@ -105,7 +105,7 @@ The common thread: distributed systems that stay correct under load, with observ
 <img src="https://img.shields.io/badge/Redis_Cluster-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 </p>
 
-<sub>Event streaming with Kafka, gRPC+Protobuf for service contracts, Grafana dashboards for observability, Redis Cluster for distributed caching.</sub>
+<sub>Kafka, gRPC+Protobuf, Grafana, Redis Cluster.</sub>
 
 <br/>
 
@@ -118,6 +118,11 @@ The common thread: distributed systems that stay correct under load, with observ
 
 
 ## The Linux Tinkerer
+
+<details>
+<summary><b>CachyOS · x86-64-v4 · systemd tinkerer</b> — click to expand</summary>
+
+<br/>
 
 <div align="center">
 <img src="assets/terminal.svg" width="100%" alt="Animated terminal session — CachyOS tinkerer" />
@@ -161,6 +166,8 @@ PACKAGES:  ~2000 (pacman)
 - systemd unit hardening: `NoNewPrivileges=yes`, `ProtectSystem=strict`, `PrivateTmp=yes`
 - eBPF programs for custom observability — because `perf` isn't enough
 
+</details>
+
 <br/>
 
 <div align="center">
@@ -197,7 +204,7 @@ PACKAGES:  ~2000 (pacman)
 
 ## Featured Work
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:1a1030,50:3b1f6e,100:6e40c9&text=PRAJNA%20%E2%80%94%20Approval%20Workflow%20Engine&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="PRAJNA — Approval Workflow Engine" />
+### PRAJNA — Approval Workflow Engine
 
 <sub>Team repo, private — see the architecture and engineering breakdown below</sub>
 
@@ -228,7 +235,7 @@ The single authority for approval state on every faculty submission across three
 <br/>
 
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=CineFund%20%E2%80%94%20Crowdfunding%20%26%20Streaming&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="CineFund — Crowdfunding & Streaming" />
+### CineFund — Crowdfunding & Streaming
 
 Event-driven Go backend for crowdfunding short films — money path built before video with **Postgres + Kafka + Redis**, inspired by MagicStream (movie streaming foundation with JWT/httpOnly-cookie auth and HTTP Range streaming).
 
@@ -243,7 +250,7 @@ Full API spec, architecture, data model, and security docs live in the repo's `d
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=60&color=0:1a1030,100:2d1a5c&text=Serverless%20Apartment%20Maintenance%20Portal&fontSize=17&fontColor=e6e9f0&fontAlignY=58&animation=fadeIn" width="100%" alt="Serverless Apartment Maintenance Portal" />
+### Serverless Apartment Maintenance Portal
 
 Full-stack maintenance-request system for 50+ residents and 15+ admins across 3 campuses — the project I used to get single-table DynamoDB design and CDK-as-IaC right before bringing them to PRAJNA.
 
@@ -253,7 +260,7 @@ Full-stack maintenance-request system for 50+ residents and 15+ admins across 3 
 
 `TypeScript` `AWS CDK` `DynamoDB` `React` — **[Repository →](https://github.com/maczeo11/serverless-apartment-manager)**
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=60&color=0:1a1030,100:2d1a5c&text=Universal%20Text%20Extractor&fontSize=17&fontColor=e6e9f0&fontAlignY=58&animation=fadeIn" width="100%" alt="Universal Text Extractor" />
+### Universal Text Extractor
 
 A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, and HTML into one standardized JSON shape — built to handle the "dark data" problem of documents that don't come pre-structured.
 
@@ -283,33 +290,12 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 ## GitHub Activity
 
 <div align="center">
-<img src="https://gh-readme-stats-liart.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true" width="48%" alt="GitHub stats for maczeo11" />
+<img src="https://gh-readme-stats-liart.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" width="48%" alt="GitHub stats for maczeo11" />
 <img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="48%" alt="GitHub streak stats" />
 </div>
 
 <div align="center">
 <img src="https://gh-readme-stats-liart.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5" width="48%" alt="Top languages for maczeo11" />
-<img src="https://github-readme-stats.vercel.app/api/wakatime?username=maczeo11&theme=tokyonight&hide_border=true&layout=compact" width="48%" alt="WakaTime coding stats" />
-</div>
-
-<div align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=maczeo11&theme=tokyo-night&hide_border=true&area=true&height=300" width="100%" alt="Contribution graph for maczeo11" />
-</div>
-
-<br/>
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake.svg">
-  <img alt="Contribution snake animation" width="100%" src="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake.svg">
-</picture>
-</div>
-
-<br/>
-
-<div align="center">
-<img src="https://gitcity-azure.vercel.app/api/svg?username=maczeo11&theme=violet" width="100%" alt="3D isometric contribution skyline" />
 </div>
 
 <br/>
