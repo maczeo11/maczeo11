@@ -32,11 +32,11 @@ openTo:    Backend / Cloud-Native / Platform roles
 currently: Building event-driven platforms on AWS + Postgres/Kafka/Redis
 ```
 
-I'm a final-year B.Tech Computer Science student focused on building backend systems that stay correct under concurrent load. Most of my work centers around **AWS serverless architectures**, **event streaming with Kafka**, and **transactional data patterns in Go & PostgreSQL** — designing for idempotency, optimistic locking, and single-table database access.
+I'm a final-year B.Tech CSE student at GITAM. I build backend systems where the interesting part isn't the CRUD — it's what happens when two requests race each other. Most of my time lives inside **AWS** (Lambda, DynamoDB, EventBridge, CDK, Step Functions), **Kafka** for event streaming, and **Postgres/Redis** for data — thinking through idempotency, optimistic locking, single-table design, and event-driven workflows instead of bolting them on after something breaks in production.
 
 Recent focus areas:
 - **Serverless Approval Engine (PRAJNA)** — Multi-stage approval state machine across 3 campuses, using optimistic concurrency control in DynamoDB and EventBridge event routing.
-- **Event-Driven Services (CineFund)** — Transactional outbox pattern on PostgreSQL + Debezium CDC $\rightarrow$ Kafka, paired with Redis `SETNX` dual-layer payment idempotency.
+- **Event-Driven Services (CineFund)** — Transactional outbox pattern on PostgreSQL + Debezium CDC → Kafka, paired with Redis `SETNX` dual-layer payment idempotency.
 - **Microservices & Tooling** — Modular document extraction pipelines, Redis caching layers, and Infrastructure-as-Code with AWS CDK.
 
 <br/>
@@ -67,8 +67,6 @@ Recent focus areas:
 <img src="https://img.shields.io/badge/Step_Functions-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
 </p>
 
-<p align="center"><sub>Alpine & Arch for lightweight and rolling environments.</sub></p>
-
 <br/>
 
 > **Open source by default.** If it's not a secret, it's public — issues, PRs, and docs welcome.
@@ -77,18 +75,19 @@ Recent focus areas:
 
 ## Linux & Distributed Systems Toolkit
 
+<sub>2 years daily-driving Arch/CachyOS before a forgotten BIOS lock sent me to Windows + WSL2. The habits stuck.</sub>
+
 <p align="center">
 <img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
-<img src="https://img.shields.io/badge/gRPC-4285F4?style=for-the-badge&logo=grpc&logoColor=white" />
-<img src="https://img.shields.io/badge/Protocol_Buffers-4285F4?style=for-the-badge&logo=protobuf&logoColor=white" />
-<img src="https://img.shields.io/badge/Redis_Cluster-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 <img src="https://img.shields.io/badge/systemd-0B3D2E?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/podman-003DA5?style=for-the-badge&logo=podman&logoColor=white" />
-<img src="https://img.shields.io/badge/kubectl-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-<img src="https://img.shields.io/badge/terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" />
+<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/tmux-1BB0E6?style=for-the-badge&logo=tmux&logoColor=white" />
+<img src="https://img.shields.io/badge/fzf-0F0F0F?style=for-the-badge&logo=fzf&logoColor=white" />
+<img src="https://img.shields.io/badge/ripgrep-0F0F0F?style=for-the-badge&logo=rust&logoColor=white" />
 </p>
 
-<p align="center"><sub>Kafka, gRPC+Protobuf, Redis, systemd, podman, kubectl, Terraform.</sub></p>
+<p align="center"><sub>Kafka for event streaming, Redis for caching & idempotency, systemd/Docker/tmux/fzf/rg in the terminal.</sub></p>
 
 <br/>
 
@@ -158,9 +157,9 @@ A multi-stage approval engine for faculty submissions across three university ca
 <br/>
 
 ```typescript
-// Single-table DynamoDB construct with secondary indexes for efficient access patterns
-const requestsTable = new dynamodb.Table(this, 'RequestsTable', {
-  tableName: `maintenance-requests-${stage}`,
+// PRAJNA — Approval single-table design
+const approvalTable = new dynamodb.Table(this, 'ApprovalTable', {
+  tableName: `prajna-approvals-${stage}`,
   partitionKey: { name: 'PK', type: dynamodb.AttributeType.STRING },
   sortKey:      { name: 'SK', type: dynamodb.AttributeType.STRING },
   billingMode:  dynamodb.BillingMode.PAY_PER_REQUEST,
@@ -168,18 +167,18 @@ const requestsTable = new dynamodb.Table(this, 'RequestsTable', {
   removalPolicy: isProd ? cdk.RemovalPolicy.RETAIN : cdk.RemovalPolicy.DESTROY,
 });
 
-// GSI 1: Query all requests filed by a specific resident (PK=residentId, SK=createdAt)
-requestsTable.addGlobalSecondaryIndex({
-  indexName:    'ResidentIndex',
-  partitionKey: { name: 'residentId', type: dynamodb.AttributeType.STRING },
-  sortKey:      { name: 'createdAt',  type: dynamodb.AttributeType.STRING },
+// GSI 1: Query submissions by status for escalation cron worker (PK=STATUS#pending, SK=slaDeadline)
+approvalTable.addGlobalSecondaryIndex({
+  indexName:    'StatusDeadlineIndex',
+  partitionKey: { name: 'gsi1pk', type: dynamodb.AttributeType.STRING },
+  sortKey:      { name: 'gsi1sk', type: dynamodb.AttributeType.STRING },
 });
 
-// GSI 2: SLA Escalation worker query (PK=status, SK=slaDeadline)
-requestsTable.addGlobalSecondaryIndex({
-  indexName:    'StatusIndex',
-  partitionKey: { name: 'status',      type: dynamodb.AttributeType.STRING },
-  sortKey:      { name: 'slaDeadline', type: dynamodb.AttributeType.STRING },
+// GSI 2: Faculty submission history across campuses (PK=FACULTY#<id>, SK=createdAt)
+approvalTable.addGlobalSecondaryIndex({
+  indexName:    'FacultyIndex',
+  partitionKey: { name: 'gsi2pk', type: dynamodb.AttributeType.STRING },
+  sortKey:      { name: 'gsi2sk', type: dynamodb.AttributeType.STRING },
 });
 ```
 
@@ -258,6 +257,8 @@ FOR UPDATE SKIP LOCKED;
 *Key Pattern:* `FOR UPDATE SKIP LOCKED` enables horizontal scaling of background Go dispatchers without rows being double-processed or causing transaction deadlocks.
 </details>
 
+<sub>Full proof artifacts: [proofs/cinefund/](https://github.com/maczeo11/maczeo11/tree/main/proofs/cinefund) — migration files, concurrent test output, ledger schema.</sub>
+
 ---
 
 ### Serverless Apartment Maintenance Portal
@@ -277,6 +278,39 @@ A full-stack maintenance portal for campus residential blocks — built to explo
 - **Single-Table Access Modeling:** Efficiently queries requests by resident or status without relational joins.
 - **Role-Based Access Control:** Cognito-authenticated admin and resident roles with scoped API permissions.
 - **100% IaC:** Entire stack defined reproducibly in TypeScript via AWS CDK.
+
+<details>
+<summary><b>Architecture Deep Dive: Apartment Requests Schema (AWS CDK)</b></summary>
+<br/>
+
+```typescript
+// Single-table DynamoDB construct with secondary indexes for apartment maintenance
+const requestsTable = new dynamodb.Table(this, 'RequestsTable', {
+  tableName: `maintenance-requests-${stage}`,
+  partitionKey: { name: 'PK', type: dynamodb.AttributeType.STRING },
+  sortKey:      { name: 'SK', type: dynamodb.AttributeType.STRING },
+  billingMode:  dynamodb.BillingMode.PAY_PER_REQUEST,
+  timeToLiveAttribute: 'ttl',
+  removalPolicy: isProd ? cdk.RemovalPolicy.RETAIN : cdk.RemovalPolicy.DESTROY,
+});
+
+// GSI 1: Query all requests filed by a specific resident (PK=residentId, SK=createdAt)
+requestsTable.addGlobalSecondaryIndex({
+  indexName:    'ResidentIndex',
+  partitionKey: { name: 'residentId', type: dynamodb.AttributeType.STRING },
+  sortKey:      { name: 'createdAt',  type: dynamodb.AttributeType.STRING },
+});
+
+// GSI 2: SLA Escalation worker query (PK=status, SK=slaDeadline)
+requestsTable.addGlobalSecondaryIndex({
+  indexName:    'StatusIndex',
+  partitionKey: { name: 'status',      type: dynamodb.AttributeType.STRING },
+  sortKey:      { name: 'slaDeadline', type: dynamodb.AttributeType.STRING },
+});
+```
+
+*Key Pattern:* GSI partitions map status and resident queries directly to partition keys, supporting rapid ticket lookups without table scans.
+</details>
 
 <br/>
 
