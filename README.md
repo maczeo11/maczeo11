@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
+<img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
 <br/>
 <br/>
