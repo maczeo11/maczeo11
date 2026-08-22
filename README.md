@@ -2,7 +2,7 @@
 
 <img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+%C2%B7+Kafka+%C2%B7+AWS+Lambda+%C2%B7+DynamoDB;Idempotent+by+default%2C+event-driven+by+design;Distributed+systems+that+stay+correct+under+load;CachyOS+%2B+x86-64-v4+%2B+systemd+at+PID+1;Build+systems+that+scale%2C+write+code+that+lasts)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+%C2%B7+Kafka+%C2%B7+AWS+Lambda+%C2%B7+DynamoDB;Idempotent+by+default%2C+event-driven+by+design;Distributed+systems+that+stay+correct+under+load;Windows+%2B+WSL2+%2B+PowerShell;Build+systems+that+scale%2C+write+code+that+lasts)](https://git.io/typing-svg)
 
 <a href="https://maczeo.me"><img src="https://img.shields.io/badge/Portfolio-maczeo.me-D93D2E?style=for-the-badge&logo=safari&logoColor=white" /></a>
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
@@ -25,7 +25,7 @@ focus:     Go, Rust, FastAPI, AWS, Kafka, Redis, Spring Boot, React, Docker, Kub
 location:  Bengaluru, India
 portfolio: https://maczeo.me
 openTo:    Backend / cloud-native / platform roles
-currently: Building event-driven platforms on AWS + Postgres/Kafka/Redis; hardening Linux systems
+currently: Building event-driven platforms on AWS + Postgres/Kafka/Redis
 ```
 
 I build backend systems where the interesting part isn't the CRUD — it's what happens when two requests race each other. Most of my time lives inside **AWS** (Lambda, DynamoDB, EventBridge, CDK, Step Functions), **Kafka** for event streaming, and **Postgres/Redis** for data — thinking through idempotency, optimistic locking, single-table design, and event-driven workflows instead of bolting them on after something breaks in production.
@@ -117,64 +117,7 @@ The common thread: distributed systems that stay correct under load, with observ
 <br/>
 
 
-## The Linux Tinkerer
 
-<details>
-<summary><b>CachyOS · x86-64-v4 · systemd tinkerer</b> — click to expand</summary>
-
-<br/>
-
-<div align="center">
-<img src="assets/terminal.svg" width="100%" alt="Animated terminal session — CachyOS tinkerer" />
-</div>
-
-<br/>
-
-Rolling-release, x86-64-v4, systemd at PID 1. When I'm not shipping serverless APIs, I'm the guy in `/usr/src/linux` making the box run faster.
-
-**The rig:**
-
-```text
-OS:        CachyOS x86-64-v4
-KERNEL:    6.x-cachyos
-SHELL:     zsh
-DE:        KDE Plasma 6
-INIT:      systemd (PID 1)
-FIREWALL:  firewalld
-TUNING:    bpftune (eBPF)
-PACKAGES:  ~2000 (pacman)
-```
-
-**Badges:**
-
-<p align="center">
-<img src="https://img.shields.io/badge/CachyOS-1793D1?style=for-the-badge&logo=archlinux&logoColor=white" />
-<img src="https://img.shields.io/badge/KDE_Plasma-1DC3FF?style=for-the-badge&logo=kdeplasma&logoColor=white" />
-<img src="https://img.shields.io/badge/zsh-333333?style=for-the-badge&logo=gnubash&logoColor=white" />
-<img src="https://img.shields.io/badge/eBPF-003DA5?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/bpftune-FF6E40?style=for-the-badge&logo=oracle&logoColor=white" />
-<img src="https://img.shields.io/github/stars/oracle/bpftune?style=for-the-badge&label=⭐%20bpftune&logo=oracle&logoColor=white" />
-</p>
-
-**Things I've tinkered with**
-
-- systemd timer replacing cron (`OnCalendar=*-*-* 03:00:00`, `Persistent=true`)
-- bpftune auto-tuning TCP congestion control — it chose BBR
-- firewalld zone juggling — default is `home`, work happens in `dmz`
-- Plasma KDE theming until 3 AM (and breaking it, then fixing it)
-- CachyOS repos: x86-64-v4 optimized packages, `-O3 -march=x86-64-v4`
-- systemd unit hardening: `NoNewPrivileges=yes`, `ProtectSystem=strict`, `PrivateTmp=yes`
-- eBPF programs for custom observability — because `perf` isn't enough
-
-</details>
-
-<br/>
-
-<div align="center">
-<img src="assets/divider.svg" width="100%" alt="divider" />
-</div>
-
-<br/>
 
 ## What I Actually Think About
 
