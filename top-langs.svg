@@ -1,0 +1,30 @@
+<svg width="576" height="235" viewBox="0 0 576 235" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: 600 18px 'Segoe UI', Ubuntu, sans-serif; fill: #a371f7; }
+  </style>
+  <rect width="576" height="100%" rx="8" fill="#1a1b27"/>
+  <rect x="0.5" y="0.5" width="575" height="99%" rx="7.5" fill="none" stroke="#2a2d3e"/>
+
+  <text x="25" y="35" class="title">Languages</text>
+  
+      <text x="25" y="60" fill="#c9d1d9" font-size="14" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="600">Go</text>
+      <rect x="155" y="47" width="300" height="16" rx="8" fill="#2a2d3e"/>
+      <rect x="155" y="47" width="300" height="16" rx="8" fill="#00ADD8"/>
+      <text x="465" y="60" fill="#8b8b8b" font-size="12" font-family="Segoe UI, Ubuntu, sans-serif">49.5%</text>
+      <text x="25" y="92" fill="#c9d1d9" font-size="14" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="600">Python</text>
+      <rect x="155" y="79" width="300" height="16" rx="8" fill="#2a2d3e"/>
+      <rect x="155" y="79" width="134.1671914968555" height="16" rx="8" fill="#3572A5"/>
+      <text x="465" y="92" fill="#8b8b8b" font-size="12" font-family="Segoe UI, Ubuntu, sans-serif">22.1%</text>
+      <text x="25" y="124" fill="#c9d1d9" font-size="14" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="600">Dart</text>
+      <rect x="155" y="111" width="300" height="16" rx="8" fill="#2a2d3e"/>
+      <rect x="155" y="111" width="95.35502896764162" height="16" rx="8" fill="#00B4AB"/>
+      <text x="465" y="124" fill="#8b8b8b" font-size="12" font-family="Segoe UI, Ubuntu, sans-serif">15.7%</text>
+      <text x="25" y="156" fill="#c9d1d9" font-size="14" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="600">TypeScript</text>
+      <rect x="155" y="143" width="300" height="16" rx="8" fill="#2a2d3e"/>
+      <rect x="155" y="143" width="71.51739103182112" height="16" rx="8" fill="#3178c6"/>
+      <text x="465" y="156" fill="#8b8b8b" font-size="12" font-family="Segoe UI, Ubuntu, sans-serif">11.8%</text>
+      <text x="25" y="188" fill="#c9d1d9" font-size="14" font-family="Segoe UI, Ubuntu, sans-serif" font-weight="600">C++</text>
+      <rect x="155" y="175" width="300" height="16" rx="8" fill="#2a2d3e"/>
+      <rect x="155" y="175" width="6" height="16" rx="8" fill="#f34b7d"/>
+      <text x="465" y="188" fill="#8b8b8b" font-size="12" font-family="Segoe UI, Ubuntu, sans-serif">0.8%</text>
+</svg>
