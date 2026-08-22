@@ -4,6 +4,7 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+%C2%B7+Kafka+%C2%B7+AWS+Lambda+%C2%B7+DynamoDB;Idempotent+by+default%2C+event-driven+by+design;Distributed+systems+that+stay+correct+under+load;CachyOS+%2B+x86-64-v4+%2B+systemd+at+PID+1;Build+systems+that+scale%2C+write+code+that+lasts)](https://git.io/typing-svg)
 
+<a href="https://maczeo.me"><img src="https://img.shields.io/badge/Portfolio-maczeo.me-D93D2E?style=for-the-badge&logo=safari&logoColor=white" /></a>
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 <a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
@@ -20,8 +21,9 @@
 ```yaml
 name:      Bhanu Teja Komma
 role:      Backend Engineer — Cloud-Native / Distributed Systems
-focus:     Go, Rust, FastAPI, AWS, Kafka, Spring Boot, React, Docker, Kubernetes, PyTorch
+focus:     Go, Rust, FastAPI, AWS, Kafka, Spring Boot, React, Docker, Kubernetes, PyTorch, gRPC, MongoDB
 location:  Bengaluru, India
+portfolio: https://maczeo.me
 openTo:    Backend / cloud-native / platform roles
 currently: Building event-driven platforms; exploring RAG architectures; hardening Linux systems
 ```
@@ -30,7 +32,7 @@ I build backend systems where the interesting part isn't the CRUD — it's what 
 
 Recent work spans:
 - **Serverless approval workflow engine** — 6 modules, 36 Lambda handlers, frozen event contracts across 5 partner teams; correctness under concurrent access was the design brief
-- **Event-driven Go/Kafka services** — transactional outbox → Mongo Change Streams → Kafka → gRPC/FFmpeg workers; Redis `SETNX` idempotency on payments
+- **Event-driven Go/Kafka services** — transactional outbox → Postgres + Debezium CDC → Kafka → gRPC/FFmpeg workers; `SKIP LOCKED` dispatcher, Redis `SETNX` + Postgres `UNIQUE(provider, provider_event_id)` idempotency on payments — verified via `proofs/cinefund/`
 - **Spring Boot JVM services** — DI, transaction boundaries, domain-driven structure
 - **React/TypeScript frontends** — when the backend needs a UI
 
@@ -100,11 +102,10 @@ The common thread: distributed systems that stay correct under load, with observ
 <img src="https://img.shields.io/badge/gRPC-4285F4?style=for-the-badge&logo=grpc&logoColor=white" />
 <img src="https://img.shields.io/badge/Protocol_Buffers-4285F4?style=for-the-badge&logo=protobuf&logoColor=white" />
 <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" />
-<img src="https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" />
 <img src="https://img.shields.io/badge/Redis_Cluster-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 </p>
 
-<sub>Event streaming with Kafka, gRPC+Protobuf for service contracts, Grafana dashboards + Elasticsearch for observability, Redis Cluster for distributed caching.</sub>
+<sub>Event streaming with Kafka, gRPC+Protobuf for service contracts, Grafana dashboards for observability, Redis Cluster for distributed caching.</sub>
 
 <br/>
 
@@ -181,7 +182,7 @@ PACKAGES:  ~2000 (pacman)
 <tr><td><b>Event-driven workflows</b></td><td>EventBridge as the backbone for state changes, instead of services polling each other for status.</td></tr>
 <tr><td><b>Multi-tenant isolation</b></td><td>Scoping every query by role and campus at the auth layer, not trusting the client to ask nicely.</td></tr>
 <tr><td><b>Policy as data</b></td><td>Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract can be generated from the same source the engine runs on.</td></tr>
-<tr><td><b>Explainable state</b></td><td>Keeping an append-only record of <i>why</i> a number is what it is — a running balance can't answer questions six months later, and the inputs can't be reconstructed after the fact.</td></tr>
+<tr><td><b>Explainable state</b></td><td>Keeping an append-only record of <em>why</em> a number is what it is — a running balance can't answer questions six months later, and the inputs can't be reconstructed after the fact.</td></tr>
 </table>
 
 </details>
@@ -227,18 +228,18 @@ The single authority for approval state on every faculty submission across three
 <br/>
 
 
-<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=cineFund%20%E2%80%94%20Short-Film%20Crowdfunding&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="cineFund — Short-Film Crowdfunding" />
+<img src="https://capsule-render.vercel.app/api?type=rect&height=90&color=0:0f2027,50:1a3a4a,100:2d6a4f&text=CineFund%20%E2%80%94%20Crowdfunding%20%26%20Streaming&fontSize=26&fontColor=ffffff&fontAlignY=58&animation=fadeIn" width="100%" alt="CineFund — Crowdfunding & Streaming" />
 
-Event-driven Go backend for crowdfunding short films — money handled with idempotency guarantees and video transcoding pushed off the request path. Grew out of MagicStream, a movie streaming server whose JWT/httpOnly-cookie auth, MongoDB layer and HTTP Range streaming became the foundation here.
+Event-driven Go backend for crowdfunding short films — money path built before video with **Postgres + Kafka + Redis**, inspired by MagicStream (movie streaming foundation with JWT/httpOnly-cookie auth and HTTP Range streaming).
 
-- **Transactional outbox** → Mongo Change Streams → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf)
-- **Payments** — Redis `SETNX` idempotency guards on webhooks, so a retried callback can't double-charge or double-credit a pledge
+- **Transactional outbox** → Postgres + Debezium CDC — domain write + outbox insert in one TX, `SKIP LOCKED` dispatcher → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf) — see `proofs/cinefund/0013_outbox.up.sql:1` + `proofs/cinefund/README.md:13`
+- **Payments** — Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) in front of Postgres `UNIQUE(provider, provider_event_id)` (`proofs/cinefund/0008_payment_events.up.sql:13`) — 50 concurrent webhooks → 1 success / 49 `ErrDuplicateEvent` (`proofs/cinefund/idempotency-50concurrent.txt:1`), double-entry ledger (`proofs/cinefund/0011_ledger.up.sql:1`)
 - **Streaming** — MinIO/S3 presigned uploads and HTTP Range serving, so `<video>` seeks without downloading the whole file
 - **Production habits** — token-bucket rate limiting (tighter on auth routes), request-ID tracing, `log/slog` structured logs, Docker + Makefile, graceful shutdown
 
 Full API spec, architecture, data model, and security docs live in the repo's `docs/` folder — the standard I hold every project to.
 
-`Go` `Kafka` `gRPC` `Redis` `MongoDB` `JWT` `Docker` — **[Repository →](https://github.com/maczeo11/go-movie-streaming)**
+`Go` `PostgreSQL` `Kafka` `Redis` `gRPC` `FFmpeg` `Docker` — **[Repository →](https://github.com/maczeo11/cinefund)**
 
 ---
 
@@ -267,7 +268,7 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 <br/>
 
 - **[TechBot](https://github.com/maczeo11/sys-ai)** — terminal AI agent for IT troubleshooting; LangChain LCEL agent (Groq `llama-3.3-70b`) with live `psutil` diagnostics and whitelisted shell execution (`ping`, `netstat`, `df`).
-- **[Tourism Safety App](https://github.com/maczeo11/tourism_safety_app)** — cross-platform Flutter app with a Python backend aggregating traveller safety data.
+- **[go-movie-streaming](https://github.com/maczeo11/go-movie-streaming)** — earlier MagicStream fork (MongoDB + JWT/httpOnly-cookie) that CineFund grew out of; kept as side project.
 
 </details>
 
