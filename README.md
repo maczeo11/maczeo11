@@ -19,7 +19,7 @@
 
 <br/>
 
-## 👤 About
+## About
 
 ```yaml
 name:      Bhanu Teja Komma
@@ -34,14 +34,14 @@ currently: Building event-driven platforms on AWS + Postgres/Kafka/Redis
 
 I'm a final-year B.Tech Computer Science student focused on building backend systems that stay correct under concurrent load. Most of my work centers around **AWS serverless architectures**, **event streaming with Kafka**, and **transactional data patterns in Go & PostgreSQL** — designing for idempotency, optimistic locking, and single-table database access.
 
-#### 🚀 Current Focus Areas:
-- ⚡ **Serverless Approval Engine (PRAJNA)** — Multi-stage approval state machine across 3 campuses, using optimistic concurrency control in DynamoDB and EventBridge event routing.
-- 🎬 **Event-Driven Services (CineFund)** — Transactional outbox pattern on PostgreSQL + Debezium CDC $\rightarrow$ Kafka, paired with Redis `SETNX` dual-layer payment idempotency.
-- 🛠️ **Microservices & Tooling** — Modular document extraction pipelines, Redis caching layers, and Infrastructure-as-Code with AWS CDK.
+Recent focus areas:
+- **Serverless Approval Engine (PRAJNA)** — Multi-stage approval state machine across 3 campuses, using optimistic concurrency control in DynamoDB and EventBridge event routing.
+- **Event-Driven Services (CineFund)** — Transactional outbox pattern on PostgreSQL + Debezium CDC $\rightarrow$ Kafka, paired with Redis `SETNX` dual-layer payment idempotency.
+- **Microservices & Tooling** — Modular document extraction pipelines, Redis caching layers, and Infrastructure-as-Code with AWS CDK.
 
 <br/>
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Technologies & Tools |
 |---|---|
@@ -53,7 +53,7 @@ I'm a final-year B.Tech Computer Science student focused on building backend sys
 
 <br/>
 
-### ☁️ AWS & Cloud-Native Services
+### AWS & Cloud-Native Services
 
 <p align="center">
 <img src="https://img.shields.io/badge/Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white" />
@@ -75,7 +75,7 @@ I'm a final-year B.Tech Computer Science student focused on building backend sys
 
 <br/>
 
-## 🐧 Linux & Distributed Systems Toolkit
+## Linux & Distributed Systems Toolkit
 
 <p align="center">
 <img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
@@ -98,7 +98,7 @@ I'm a final-year B.Tech Computer Science student focused on building backend sys
 
 <br/>
 
-## 💡 Engineering Focus & Core Principles
+## What I Think About
 
 <details>
 <summary><b>7 distributed systems principles I apply day-to-day</b> — click to expand</summary>
@@ -106,13 +106,13 @@ I'm a final-year B.Tech Computer Science student focused on building backend sys
 
 | Principle | Core Engineering Practice |
 |---|---|
-| **🔒 Idempotency** | Designing writes so a Lambda retry or webhook burst can't double-create or double-charge anything. |
-| **⚡ Optimistic Locking** | Version-checked conditional writes so two approvers racing the same record don't silently clobber each other. |
-| **🗄️ Single-Table Design** | Modeling access patterns first, then collapsing entities into one DynamoDB table with GSIs instead of multi-table joins. |
-| **📡 Event-Driven Workflows** | EventBridge as the backbone for state changes, instead of services polling each other for status. |
-| **🛡️ Multi-Tenant Isolation** | Scoping every query by role and campus at the auth layer, not trusting the client to ask nicely. |
-| **📜 Policy as Data** | Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract stays unified. |
-| **📊 Explainable State** | Keeping an append-only record of *why* a number is what it is — a running balance can't answer audit questions six months later. |
+| **Idempotency** | Designing writes so a Lambda retry or webhook burst can't double-create or double-charge anything. |
+| **Optimistic Locking** | Version-checked conditional writes so two approvers racing the same record don't silently clobber each other. |
+| **Single-Table Design** | Modeling access patterns first, then collapsing entities into one DynamoDB table with GSIs instead of multi-table joins. |
+| **Event-Driven Workflows** | EventBridge as the backbone for state changes, instead of services polling each other for status. |
+| **Multi-Tenant Isolation** | Scoping every query by role and campus at the auth layer, not trusting the client to ask nicely. |
+| **Policy as Data** | Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract stays unified. |
+| **Explainable State** | Keeping an append-only record of *why* a number is what it is — a running balance can't answer audit questions six months later. |
 
 </details>
 
@@ -124,9 +124,9 @@ I'm a final-year B.Tech Computer Science student focused on building backend sys
 
 <br/>
 
-## 🌟 Featured Work
+## Featured Work
 
-### ⚡ PRAJNA — Serverless Approval Workflow Engine
+### PRAJNA — Approval Workflow Engine
 
 <p>
 <img src="https://img.shields.io/badge/AWS_Serverless-FF9900?style=flat-square&logo=amazonaws&logoColor=white" />
@@ -145,18 +145,16 @@ A multi-stage approval engine for faculty submissions across three university ca
 
 <br/>
 
-#### 🎯 The Engineering Challenge
-- **Concurrent Escalation Race:** A scheduled SLA Lambda escalates past-due requests at the exact same millisecond an approver submits an action, leading to split-state or double-action bugs without locking.
-- **Hierarchical Loop Prevention:** Complex multi-campus approval ladders could cycle indefinitely if a user configuration is malformed.
+**The problem:** approvers escalate submissions up a rank ladder while a scheduled Lambda escalates overdue items past their SLA. If an approver acts at the exact moment the escalation cron fires, stale updates will clobber state without proper concurrency control.
 
-#### ⚙️ Key Architecture & Solutions
-- 🔒 **Optimistic Concurrency Control:** Enforced atomic version checks on DynamoDB updates (`ConditionExpression: version = :expected`). Stale writes fail cleanly with `409 Conflict` rather than overwriting concurrent approvals.
-- 🔁 **Idempotent Workflow Creation:** Unique client request tokens prevent network retries from creating duplicate approval chains.
-- 🌳 **Graph Cycle Validation:** Implemented rank-based hierarchy checks with cycle detection on approval transitions.
-- 🛡️ **Server-Side Campus Scoping:** Auth validated via Cognito JWT claims, ensuring requests are scoped strictly to the approver's campus and permission tier.
+**How it's handled:**
+- **Optimistic Concurrency Control:** Enforced atomic version checks on DynamoDB updates (`ConditionExpression: version = :expected`). Stale writes fail cleanly with `409 Conflict` rather than overwriting concurrent approvals.
+- **Idempotent Workflow Creation:** Unique client request tokens prevent network retries from creating duplicate approval chains.
+- **Graph Cycle Validation:** Implemented rank-based hierarchy checks with cycle detection on approval transitions.
+- **Server-Side Campus Scoping:** Auth validated via Cognito JWT claims, ensuring requests are scoped strictly to the approver's campus and permission tier.
 
 <details>
-<summary><b>🏗️ Architecture Deep Dive: Single-Table DynamoDB Schema (AWS CDK)</b></summary>
+<summary><b>Architecture Deep Dive: Single-Table DynamoDB Schema (AWS CDK)</b></summary>
 <br/>
 
 ```typescript
@@ -196,7 +194,7 @@ requestsTable.addGlobalSecondaryIndex({
 
 <br/>
 
-### 🎬 CineFund — Event-Driven Crowdfunding & Video Streaming
+### CineFund — Crowdfunding & Video Streaming
 
 <p>
 <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" />
@@ -216,18 +214,16 @@ An event-driven Go backend for crowdfunding independent short films — money pa
 
 <br/>
 
-#### 🎯 The Engineering Challenge
-- **Webhook Burst Replay:** Payment providers send duplicate webhook bursts upon network blips; payment crediting must be strictly idempotent to prevent double-funding.
-- **Dual-Write Consistency:** Writing to the database and publishing to Kafka must never leave the system in an inconsistent state if the network fails midway.
+**The problem:** payment providers send duplicate webhook bursts upon network retries, risking double-crediting if not deduplicated. Simultaneously, publishing Kafka events alongside database writes risks dual-write inconsistencies if the broker is unreachable midway.
 
-#### ⚙️ Key Architecture & Solutions
-- 📦 **Transactional Outbox Pattern:** Domain records and outbox events commit together in a single ACID PostgreSQL transaction. A Go worker pool polls with `FOR UPDATE SKIP LOCKED` and publishes to Kafka without double-dispatch.
-- 🛡️ **Dual-Layer Payment Idempotency:** Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) acts as a sub-millisecond fast-path gate, backed by an authoritative PostgreSQL `UNIQUE(provider, provider_event_id)` constraint. Verified under 50 concurrent requests (1 success, 49 duplicate rejections).
-- 🎥 **Async Video Transcoding:** Kafka events trigger background FFmpeg workers over gRPC (Protobuf) to generate HLS segments with HTTP Range seeking.
-- 📈 **Production Practices:** Token-bucket rate limiting, structured logging with `log/slog`, distributed trace IDs, and graceful shutdown.
+**How it's handled:**
+- **Transactional Outbox Pattern:** Domain records and outbox events commit together in a single ACID PostgreSQL transaction. A Go worker pool polls with `FOR UPDATE SKIP LOCKED` and publishes to Kafka without double-dispatch.
+- **Dual-Layer Payment Idempotency:** Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) acts as a sub-millisecond fast-path gate, backed by an authoritative PostgreSQL `UNIQUE(provider, provider_event_id)` constraint. Verified under 50 concurrent requests (1 success, 49 duplicate rejections).
+- **Async Video Transcoding:** Kafka events trigger background FFmpeg workers over gRPC (Protobuf) to generate HLS segments with HTTP Range seeking.
+- **Production Practices:** Token-bucket rate limiting, structured logging with `log/slog`, distributed trace IDs, and graceful shutdown.
 
 <details>
-<summary><b>⚙️ Under the Hood: Transactional Outbox Schema & Concurrency Dispatcher (SQL)</b></summary>
+<summary><b>Under the Hood: Transactional Outbox Schema & Concurrency Dispatcher (SQL)</b></summary>
 <br/>
 
 ```sql
@@ -264,7 +260,7 @@ FOR UPDATE SKIP LOCKED;
 
 ---
 
-### 🏢 Serverless Apartment Maintenance Portal
+### Serverless Apartment Maintenance Portal
 
 <p>
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
@@ -277,14 +273,14 @@ FOR UPDATE SKIP LOCKED;
 
 A full-stack maintenance portal for campus residential blocks — built to explore single-table DynamoDB access pattern modeling and AWS CDK Infrastructure-as-Code prior to incorporating them into PRAJNA.
 
-- ⏱️ **Automated SLA Tracking:** EventBridge cron rules fire every 15 minutes to evaluate overdue tickets against SLA deadlines.
-- 🗄️ **Single-Table Access Modeling:** Efficiently queries requests by resident or status without relational joins.
-- 🔐 **Role-Based Access Control:** Cognito-authenticated admin and resident roles with scoped API permissions.
-- 📜 **100% IaC:** Entire stack defined reproducibly in TypeScript via AWS CDK.
+- **Automated SLA Tracking:** EventBridge cron rules fire every 15 minutes to evaluate overdue tickets against SLA deadlines.
+- **Single-Table Access Modeling:** Efficiently queries requests by resident or status without relational joins.
+- **Role-Based Access Control:** Cognito-authenticated admin and resident roles with scoped API permissions.
+- **100% IaC:** Entire stack defined reproducibly in TypeScript via AWS CDK.
 
 <br/>
 
-### 📄 Universal Text Extractor
+### Universal Text Extractor
 
 <p>
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
@@ -297,13 +293,13 @@ A full-stack maintenance portal for campus residential blocks — built to explo
 
 A document processing pipeline that normalizes heterogeneous file formats (PDFs, Word documents, spreadsheets, images) into structured JSON.
 
-- 🧩 **Strategy Pattern Architecture:** Pluggable extractor modules allow adding new document types without touching existing parsers (Open/Closed Principle).
-- 🔍 **Binary Magic-Byte Inspection:** Inspects true header bytes (`%PDF`, PNG, JPEG, OpenXML) to prevent MIME spoofing and extension-mismatch crashes.
-- 👁️ **Hybrid OCR Pipeline:** OpenCV preprocessing (grayscale, adaptive Otsu thresholding, noise removal) feeding Tesseract LSTM for scanned documents.
-- ⚡ **Bounded Memory Streaming:** Chunked file parsing keeps RAM bounded even on small cloud instances.
+- **Strategy Pattern Architecture:** Pluggable extractor modules allow adding new document types without touching existing parsers (Open/Closed Principle).
+- **Binary Magic-Byte Inspection:** Inspects true header bytes (`%PDF`, PNG, JPEG, OpenXML) to prevent MIME spoofing and extension-mismatch crashes.
+- **Hybrid OCR Pipeline:** OpenCV preprocessing (grayscale, adaptive Otsu thresholding, noise removal) feeding Tesseract LSTM for scanned documents.
+- **Bounded Memory Streaming:** Chunked file parsing keeps RAM bounded even on small cloud instances.
 
 <details>
-<summary><b>🔍 Implementation Highlight: Binary Magic-Byte Detection & Processing (Python)</b></summary>
+<summary><b>Implementation Highlight: Binary Magic-Byte Detection & Processing (Python)</b></summary>
 <br/>
 
 ```python
@@ -326,11 +322,11 @@ def detect_file_type(buffer: bytes) -> str:
 <br/>
 
 <details>
-<summary><b>📦 Other Shipped Projects & Utilities</b> — click to expand</summary>
+<summary><b>Other Shipped Projects & Utilities</b> — click to expand</summary>
 <br/>
 
-- 🤖 **[TechBot](https://github.com/maczeo11/sys-ai)** — Terminal AI agent for IT troubleshooting; LangChain LCEL agent (Groq `llama-3.3-70b`) with live `psutil` diagnostics and whitelisted shell execution (`ping`, `netstat`, `df`).
-- 🎬 **[go-movie-streaming](https://github.com/maczeo11/go-movie-streaming)** — Earlier MagicStream fork (MongoDB + JWT/httpOnly-cookie) that CineFund grew out of; kept as side project.
+- **[TechBot](https://github.com/maczeo11/sys-ai)** — Terminal AI agent for IT troubleshooting; LangChain LCEL agent (Groq `llama-3.3-70b`) with live `psutil` diagnostics and whitelisted shell execution (`ping`, `netstat`, `df`).
+- **[go-movie-streaming](https://github.com/maczeo11/go-movie-streaming)** — Earlier MagicStream fork (MongoDB + JWT/httpOnly-cookie) that CineFund grew out of; kept as side project.
 
 </details>
 
@@ -342,7 +338,7 @@ def detect_file_type(buffer: bytes) -> str:
 
 <br/>
 
-## 📊 GitHub Activity
+## GitHub Activity
 
 <table width="100%">
   <tr>
