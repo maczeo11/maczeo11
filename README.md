@@ -21,7 +21,7 @@
 ```yaml
 name:      Bhanu Teja Komma
 role:      Backend Engineer — Cloud-Native / Distributed Systems
-focus:     Go, Rust, FastAPI, AWS, Kafka, Spring Boot, React, Docker, Kubernetes, PyTorch, gRPC, MongoDB
+focus:     Go, Rust, FastAPI, AWS, Kafka, Redis, Spring Boot, React, Docker, Kubernetes, PyTorch, gRPC, MongoDB
 location:  Bengaluru, India
 portfolio: https://maczeo.me
 openTo:    Backend / cloud-native / platform roles
