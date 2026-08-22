@@ -1,16 +1,20 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
+<img src="assets/banner.png" alt="Bhanu Teja Komma — Backend Engineer, Cloud-Native Systems on AWS" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+%C2%B7+Kafka+%C2%B7+AWS+Lambda+%C2%B7+DynamoDB;Idempotent+by+default%2C+event-driven+by+design;Distributed+systems+that+stay+correct+under+load;Windows+%2B+WSL2+%2B+PowerShell;Build+systems+that+scale%2C+write+code+that+lasts)](https://git.io/typing-svg)
+<br/>
+<br/>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+%C2%B7+Kafka+%C2%B7+AWS+Lambda+%C2%B7+DynamoDB;Idempotent+by+default%2C+event-driven+by+design;Distributed+systems+that+stay+correct+under+load;Build+systems+that+scale%2C+write+code+that+lasts)](https://git.io/typing-svg)
+
+<br/>
 
 <a href="https://maczeo.me"><img src="https://img.shields.io/badge/Portfolio-maczeo.me-D93D2E?style=for-the-badge&logo=safari&logoColor=white" /></a>
 <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 <a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
 <a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-
-![](https://komarev.com/ghpvc/?username=maczeo11&style=for-the-badge&color=A371F7)
+<a href="https://github.com/maczeo11"><img src="https://komarev.com/ghpvc/?username=maczeo11&style=for-the-badge&color=A371F7" /></a>
 
 </div>
 
@@ -43,18 +47,17 @@ The common thread: distributed systems that stay correct under load, with observ
 
 ## Tech Stack
 
-| | |
+| Category | Skills & Tools |
 |---|---|
 | **Languages** | <img src="https://skillicons.dev/icons?i=ts,python,go" /> |
 | **Backend & Data** | <img src="https://skillicons.dev/icons?i=fastapi,postgres,redis,mongodb,kafka" /> |
 | **Frontend** | <img src="https://skillicons.dev/icons?i=react" /> |
 | **Infra & Tools** | <img src="https://skillicons.dev/icons?i=aws,docker,linux,git" /> |
-
-| | |
-|---|---|
 | **Exploring** | <img src="https://skillicons.dev/icons?i=rust,spring" /> |
 
-**AWS services I lean on**
+<br/>
+
+### AWS Services
 
 <p align="center">
 <img src="https://img.shields.io/badge/Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white" />
@@ -68,15 +71,13 @@ The common thread: distributed systems that stay correct under load, with observ
 <img src="https://img.shields.io/badge/Step_Functions-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
 </p>
 
-<sub>Alpine & Arch for lightweight and rolling environments.</sub>
+<p align="center"><sub>Alpine & Arch for lightweight and rolling environments.</sub></p>
 
 <br/>
-
 
 > **Open source by default.** If it's not a secret, it's public — issues, PRs, and docs welcome.
 
 <br/>
-
 
 ## Linux Admin Toolkit
 
@@ -92,10 +93,9 @@ The common thread: distributed systems that stay correct under load, with observ
 <img src="https://img.shields.io/badge/ripgrep-0F0F0F?style=for-the-badge&logo=rust&logoColor=white" />
 </p>
 
-<sub>systemd, firewalld/nftables, podman, kubectl (EKS/GKE), Terraform, tmux/fzf/rg.</sub>
+<p align="center"><sub>systemd, firewalld/nftables, podman, kubectl (EKS/GKE), Terraform, tmux/fzf/rg.</sub></p>
 
 <br/>
-
 
 ## Distributed Systems Toolkit
 
@@ -107,10 +107,9 @@ The common thread: distributed systems that stay correct under load, with observ
 <img src="https://img.shields.io/badge/Redis_Cluster-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
 </p>
 
-<sub>Kafka, gRPC+Protobuf, Grafana, Redis Cluster.</sub>
+<p align="center"><sub>Kafka, gRPC+Protobuf, Grafana, Redis Cluster.</sub></p>
 
 <br/>
-
 
 <div align="center">
 <img src="assets/divider.svg" width="100%" alt="divider" />
@@ -118,24 +117,21 @@ The common thread: distributed systems that stay correct under load, with observ
 
 <br/>
 
-
-
-
 ## What I Actually Think About
 
 <details>
 <summary><b>7 distributed systems principles I actually apply day-to-day</b> — click to expand</summary>
 <br/>
 
-<table>
-<tr><td width="30%"><b>Idempotency</b></td><td>Designing writes so a Lambda retry can't double-create or double-charge anything.</td></tr>
-<tr><td><b>Optimistic locking</b></td><td>Version-checked conditional writes so two approvers racing the same record don't silently clobber each other.</td></tr>
-<tr><td><b>Single-table DynamoDB design</b></td><td>Modeling access patterns first, then collapsing entities into one table with GSIs instead of one table per entity.</td></tr>
-<tr><td><b>Event-driven workflows</b></td><td>EventBridge as the backbone for state changes, instead of services polling each other for status.</td></tr>
-<tr><td><b>Multi-tenant isolation</b></td><td>Scoping every query by role and campus at the auth layer, not trusting the client to ask nicely.</td></tr>
-<tr><td><b>Policy as data</b></td><td>Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract can be generated from the same source the engine runs on.</td></tr>
-<tr><td><b>Explainable state</b></td><td>Keeping an append-only record of <em>why</em> a number is what it is — a running balance can't answer questions six months later, and the inputs can't be reconstructed after the fact.</td></tr>
-</table>
+| Principle | Core Practice |
+|---|---|
+| **Idempotency** | Designing writes so a Lambda retry can't double-create or double-charge anything. |
+| **Optimistic locking** | Version-checked conditional writes so two approvers racing the same record don't silently clobber each other. |
+| **Single-table DynamoDB design** | Modeling access patterns first, then collapsing entities into one table with GSIs instead of one table per entity. |
+| **Event-driven workflows** | EventBridge as the backbone for state changes, instead of services polling each other for status. |
+| **Multi-tenant isolation** | Scoping every query by role and campus at the auth layer, not trusting the client to ask nicely. |
+| **Policy as data** | Encoding business rules as a registry the code interprets, so a policy change is a data edit and the API contract can be generated from the same source the engine runs on. |
+| **Explainable state** | Keeping an append-only record of *why* a number is what it is — a running balance can't answer questions six months later, and the inputs can't be reconstructed after the fact. |
 
 </details>
 
@@ -159,6 +155,8 @@ The single authority for approval state on every faculty submission across three
 <img src="assets/architecture.svg" alt="PRAJNA Approval Workflow Engine architecture diagram" width="85%" />
 </div>
 
+<br/>
+
 **The engineering problem:** approvers escalate submissions up a rank ladder, a scheduled Lambda escalates anything past its SLA, and a human can act on a record at the exact moment the escalation cron fires on it. That's a straightforward race condition if you're not careful.
 
 **How it's handled:**
@@ -168,10 +166,17 @@ The single authority for approval state on every faculty submission across three
 - Auth is Cognito + JWT, scoped by role and campus, so the isolation between campuses is enforced server-side, not assumed client-side
 
 **Result:** hardened through a dedicated review pass that surfaced and fixed 11 correctness/security issues, including an IDOR that let any authenticated user act as any faculty member in any campus.
-`TypeScript` `AWS CDK` `Lambda` `DynamoDB` `EventBridge` `Cognito`
+
+<p>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/AWS_CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/AWS_Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white" />
+<img src="https://img.shields.io/badge/DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white" />
+<img src="https://img.shields.io/badge/EventBridge-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/Cognito-DD344C?style=flat-square&logo=amazonaws&logoColor=white" />
+</p>
 
 <br/>
-
 
 <div align="center">
 <img src="assets/divider.svg" width="100%" alt="divider" />
@@ -179,19 +184,26 @@ The single authority for approval state on every faculty submission across three
 
 <br/>
 
-
 ### CineFund — Crowdfunding & Streaming
 
 Event-driven Go backend for crowdfunding short films — money path built before video with **Postgres + Kafka + Redis**, inspired by MagicStream (movie streaming foundation with JWT/httpOnly-cookie auth and HTTP Range streaming).
 
-- **Transactional outbox** → Postgres + Debezium CDC — domain write + outbox insert in one TX, `SKIP LOCKED` dispatcher → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf) — see `proofs/cinefund/0013_outbox.up.sql:1` + `proofs/cinefund/README.md:13`
-- **Payments** — Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) in front of Postgres `UNIQUE(provider, provider_event_id)` (`proofs/cinefund/0008_payment_events.up.sql:13`) — 50 concurrent webhooks → 1 success / 49 `ErrDuplicateEvent` (`proofs/cinefund/idempotency-50concurrent.txt:1`), double-entry ledger (`proofs/cinefund/0011_ledger.up.sql:1`)
+- **Transactional outbox** → Postgres + Debezium CDC — domain write + outbox insert in one TX, `SKIP LOCKED` dispatcher → Kafka, driving async FFmpeg/HLS transcoding workers over gRPC (Protobuf) — see [`proofs/cinefund/0013_outbox.up.sql`](proofs/cinefund/0013_outbox.up.sql) + [`proofs/cinefund/README.md`](proofs/cinefund/README.md)
+- **Payments** — Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) in front of Postgres `UNIQUE(provider, provider_event_id)` ([`proofs/cinefund/0008_payment_events.up.sql`](proofs/cinefund/0008_payment_events.up.sql)) — 50 concurrent webhooks → 1 success / 49 `ErrDuplicateEvent` ([`proofs/cinefund/idempotency-50concurrent.txt`](proofs/cinefund/idempotency-50concurrent.txt)), double-entry ledger ([`proofs/cinefund/0011_ledger.up.sql`](proofs/cinefund/0011_ledger.up.sql))
 - **Streaming** — MinIO/S3 presigned uploads and HTTP Range serving, so `<video>` seeks without downloading the whole file
 - **Production habits** — token-bucket rate limiting (tighter on auth routes), request-ID tracing, `log/slog` structured logs, Docker + Makefile, graceful shutdown
 
 Full API spec, architecture, data model, and security docs live in the repo's `docs/` folder — the standard I hold every project to.
 
-`Go` `PostgreSQL` `Kafka` `Redis` `gRPC` `FFmpeg` `Docker` — **[Repository →](https://github.com/maczeo11/cinefund)**
+<p>
+<img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" />
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" />
+<img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" />
+<img src="https://img.shields.io/badge/gRPC-4285F4?style=flat-square&logo=grpc&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+&nbsp; <b><a href="https://github.com/maczeo11/cinefund">Repository →</a></b>
+</p>
 
 ---
 
@@ -203,7 +215,15 @@ Full-stack maintenance-request system for 50+ residents and 15+ admins across 3 
 - Single-table DynamoDB design with Cognito-backed role-based access
 - 100% infrastructure-as-code via AWS CDK (TypeScript) — no console-clicked resources
 
-`TypeScript` `AWS CDK` `DynamoDB` `React` — **[Repository →](https://github.com/maczeo11/serverless-apartment-manager)**
+<p>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/AWS_CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white" />
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
+&nbsp; <b><a href="https://github.com/maczeo11/serverless-apartment-manager">Repository →</a></b>
+</p>
+
+<br/>
 
 ### Universal Text Extractor
 
@@ -213,7 +233,15 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 - Hybrid OCR pipeline: OpenCV preprocessing feeding Tesseract's LSTM engine, for scanned documents that plain text extraction can't touch
 - Queue-managed frontend to keep memory bounded on free-tier hosting
 
-`Python` `OpenCV` `Docker` `JavaScript` — **[Repository →](https://github.com/maczeo11/File_extractor)**
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+&nbsp; <b><a href="https://github.com/maczeo11/File_extractor">Repository →</a></b>
+</p>
+
+<br/>
 
 <details>
 <summary><b>Other projects</b> — smaller in scope, still shipped</summary>
@@ -234,10 +262,16 @@ A hybrid extraction pipeline that turns PDFs, Word docs, spreadsheets, images, a
 
 ## GitHub Activity
 
-<div align="center">
-<img src="https://gh-readme-stats-liart.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" width="48%" alt="GitHub stats for maczeo11" />
-<img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="48%" alt="GitHub streak stats" />
-</div>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://gh-readme-stats-liart.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" width="100%" alt="GitHub stats for maczeo11" />
+    </td>
+    <td width="50%" align="center">
+      <img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="100%" alt="GitHub streak stats" />
+    </td>
+  </tr>
+</table>
 
 <div align="center">
 <img src="https://gh-readme-stats-liart.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5" width="48%" alt="Top languages for maczeo11" />
