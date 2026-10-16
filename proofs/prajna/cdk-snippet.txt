@@ -1,50 +1,41 @@
-    const requestsTable = new dynamodb.Table(this, 'RequestsTable', {
-      tableName: `maintenance-requests-${stage}`,
+PRAJNA Module 13 — Approval Workflow Engine
+Source: prajna-business-logic/src/modules/approval-workflow/adapters/DynamoDBClientAdapter.ts
 
-      partitionKey: {
-        name: 'PK',
-        type: dynamodb.AttributeType.STRING,
-      },
+--- Key + GSI layout (:64-69) ---
+PK     = CAMPUS#<campus>                     (tenant-scoped main item)
+SK     = REQ#<requestId>
+GSI1PK = STATUS#<overallStatus>#ROLE#<role>  GSI1SK = CREATED_AT#<createdAt>   -> role+campus pending queue
+GSI2PK = FACULTY#<facultyId>                 GSI2SK = CREATED_AT#<createdAt>   -> a faculty member's history
+GSI3PK = DEADLINE                            GSI3SK = STATUS#<status>#<deadline> -> escalation cron scan
++ a REQ#<id> pointer item for O(1) getById without knowing the campus (:73-79)
 
-      sortKey: {
-        name: 'SK',
-        type: dynamodb.AttributeType.STRING,
-      },
+--- Atomic create via TransactWriteItems (:100-125) ---
+new TransactWriteCommand({
+  TransactItems: [
+    { Put: { TableName, Item: mainItem,          ConditionExpression: 'attribute_not_exists(PK)' } },
+    { Put: { TableName, Item: pointerItem,       ConditionExpression: 'attribute_not_exists(PK)' } },
+    { Put: { TableName, Item: entityPointerItem, ConditionExpression: 'attribute_not_exists(PK)' } },
+  ],
+});
+// Item 3 is the idempotency pointer: two concurrent retries on the same
+// (moduleId, entityId, campus, facultyId) → only one wins; the loser gets
+// TransactionCanceledException → DuplicateEntityError (:131-138).
 
-      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+--- Optimistic lock on update (:188-223) ---
+const expectedVersion = request.version ?? 1;
+request.version = expectedVersion + 1;
 
-      timeToLiveAttribute: 'ttl',
+await this.docClient.send(new PutCommand({
+  TableName: this.tableName,
+  Item: mainItem,
+  ConditionExpression: '#v = :expectedVersion',
+  ExpressionAttributeNames:  { '#v': 'version' },
+  ExpressionAttributeValues: { ':expectedVersion': expectedVersion },
+}));
+// ConditionalCheckFailedException → typed ConflictError (409), caller re-reads and retries.
 
-      removalPolicy: isProd
-        ? cdk.RemovalPolicy.RETAIN
-        : cdk.RemovalPolicy.DESTROY,
-    });
-
-    requestsTable.addGlobalSecondaryIndex({
-      indexName: 'ResidentIndex',
-
-      partitionKey: {
-        name: 'residentId',
-        type: dynamodb.AttributeType.STRING,
-      },
-
-      sortKey: {
-        name: 'createdAt',
-        type: dynamodb.AttributeType.STRING,
-      },
-    });
-
-    requestsTable.addGlobalSecondaryIndex({
-      indexName: 'StatusIndex',
-
-      partitionKey: {
-        name: 'status',
-        type: dynamodb.AttributeType.STRING,
-      },
-
-      sortKey: {
-        name: 'slaDeadline',
-        type: dynamodb.AttributeType.STRING,
-      },
-    });
-
+--- Idempotency guard (services/ApprovalWorkflowEngine.ts:161-167) ---
+const existingId = await this.dbClient.findPendingByEntity(
+  payload.moduleId, payload.entityId, payload.campus, payload.facultyId
+);
+if (existingId) return existingId;   // handle Lambda retries / double-calls

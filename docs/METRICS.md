@@ -16,16 +16,29 @@ Last run: `2026-08-21` → **140 commits, 7 PRs, 10 repos** — see `stats/stats
 
 Committed as SVG so profile README renders offline; CI can refresh via `.github/workflows/stats.yml` (if present).
 
-## 2. PRAJNA / serverless-apartment-manager
+## 2. PRAJNA — Module 13 (Approval Workflow Engine)
+
+Repos are private (`Prajna-AI-Gitam` org + `maczeo11/prajna-business-service`). Verify by walkthrough; source pointers:
+
+| Artifact | Path | Status |
+|---|---|---|
+| Optimistic lock | `prajna-business-logic/src/modules/approval-workflow/adapters/DynamoDBClientAdapter.ts:208` | `ConditionExpression: '#v = :expectedVersion'` |
+| Atomic create | `…/DynamoDBClientAdapter.ts:100-125` | `TransactWriteCommand` (main + pointer + idempotency item) |
+| Idempotency guard | `…/services/ApprovalWorkflowEngine.ts:161-167` | returns the existing `requestId` |
+| Key + GSIs | `…/DynamoDBClientAdapter.ts:64-69` | `CAMPUS#` PK; GSI1 role+status, GSI2 faculty, GSI3 deadline |
+| Auth-gated API | `proofs/prajna/hey.txt` | unauthenticated request → `403` (Cognito) |
+
+PRAJNA's Approval table is owned by Module 5 — Bhanu **designed** the schema, did not provision it (`PRAJNA_ACCOUNT_INVENTORY.md` §4). No latency number is claimed (the API is auth-gated). See `proofs/prajna/README.md`.
+
+## 2b. serverless-apartment-manager (separate solo project)
 
 | Artifact | Path | Status | How to regenerate |
 |---|---|---|---|
-| Raw bench (broken) | `bench-prajna-20260821-1643.json` | `p50:null n:0` — proves `hey` without Cognito token is `403` | `curl -i https://uvremjs67f.execute-api.ap-south-2.amazonaws.com/dev/api/requests` → 403 |
-| Honest bench | `proofs/prajna/bench.json` | same file, documented as invalid; superseded by `proofs/prajna/hey.txt` | `hey -n 100 -c 20 -H "Authorization: Bearer <id_token>" https://.../dev/api/requests > proofs/prajna/hey.txt` |
-| CDK truth | `proofs/prajna/cdk-snippet.txt` | 2 GSIs (`ResidentIndex`, `StatusIndex`) from `lib/aprt_mng-stack.ts:82-108` | `Select-String lib/aprt_mng-stack.ts -Pattern addGlobalSecondaryIndex` |
+| Raw bench (broken) | `bench-prajna-20260821-1643.json` | `p50:null n:0` — `hey` without Cognito token → `403` | `curl -i https://uvremjs67f.execute-api.ap-south-2.amazonaws.com/dev/api/requests` |
+| GSIs | `lib/aprt_mng-stack.ts` | 2 GSIs (`ResidentIndex`, `StatusIndex`) | `Select-String lib/aprt_mng-stack.ts -Pattern addGlobalSecondaryIndex` |
 | Tests | `test/aprt_mng.test.ts` | 0 passing (placeholder) | `npm test` in `serverless-apartment-manager` |
 
-See `proofs/prajna/README.md` for full gap analysis (3 GSIs → 2, 51 tests → 0, no DLQ yet).
+Note: `bench-prajna-20260821-1643.json` predates the split and carries a "prajna" name, but it actually measured the apartment-manager `GET /api/requests` route.
 
 ## 3. CineFund (Go, Kafka, Postgres, Redis)
 

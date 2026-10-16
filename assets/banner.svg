@@ -86,7 +86,7 @@
     Event-driven architecture   ·   Distributed systems   ·   Serverless AWS
   </text>
 
-  <text x="60" y="255" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#6b7089">
+  <text x="60" y="255" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#8b90a8">
     Idempotency · Optimistic locking · Event-driven architecture — the boring stuff done right
   </text>
 </svg>

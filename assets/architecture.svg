@@ -12,7 +12,7 @@
     </marker>
   </defs>
   <rect width="900" height="440" fill="#0d1117" rx="14"/>
-  <text x="450" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#e6e9f0">PRAJNA — Approval Workflow Engine</text>
+  <text x="450" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#e6e9f0">PRAJNA · Module 13 — Approval Workflow Engine</text>
 
   <!-- Client -->
   <rect x="30" y="180" width="120" height="60" rx="8" fill="url(#box)" stroke="#3b3f68"/>
@@ -76,7 +76,7 @@
   <!-- Arrow 6: Escalation Lambda → Workflow Lambda (dashed, gray) -->
   <path d="M700,370 L465,271" fill="none" stroke="#3b3f68" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#arrowGray)"/>
 
-  <text x="450" y="425" text-anchor="middle" font-size="10.5" fill="#6b7089">
+  <text x="450" y="425" text-anchor="middle" font-size="10.5" fill="#8b90a8">
     Dashed line = escalation cron re-invokes the workflow Lambda on SLA breach
   </text>
 </svg>

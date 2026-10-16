@@ -5,15 +5,15 @@
 <br/>
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+%C2%B7+Kafka+%C2%B7+AWS+Lambda+%C2%B7+DynamoDB;Idempotent+by+default%2C+event-driven+by+design;Distributed+systems+that+stay+correct+under+load;Build+systems+that+scale%2C+write+code+that+lasts)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=1200&color=A371F7&center=true&vCenter=true&width=560&lines=Cloud-native+backend+systems;Go+%C2%B7+Kafka+%C2%B7+AWS+Lambda+%C2%B7+DynamoDB;Idempotent+by+default%2C+event-driven+by+design;Distributed+systems+that+stay+correct+under+load;Build+systems+that+scale%2C+write+code+that+lasts)](https://github.com/DenverCoder1/readme-typing-svg)
 
 <br/>
 
-<a href="https://maczeo.me"><img src="https://img.shields.io/badge/Portfolio-maczeo.me-D93D2E?style=for-the-badge&logo=safari&logoColor=white" /></a>
-<a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-<a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-<a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
-<a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+<a href="https://maczeo.me"><img src="https://img.shields.io/badge/Portfolio-maczeo.me-6e40c9?style=for-the-badge&logo=safari&logoColor=white" /></a>
+<a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-6e40c9?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-6e40c9?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-6e40c9?style=for-the-badge&logo=leetcode&logoColor=white" /></a>
+<a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-6e40c9?style=for-the-badge&logo=github&logoColor=white" /></a>
 
 </div>
 
@@ -24,7 +24,8 @@
 ```yaml
 name:      Bhanu Teja Komma
 role:      Backend Engineer — Cloud-Native / Distributed Systems
-focus:     TypeScript, Go, Python, AWS (Lambda, DynamoDB, EventBridge, CDK), Postgres, MongoDB, Kafka, Redis
+focus:     TypeScript, Go, Python, AWS (Lambda, DynamoDB, EventBridge, CDK), Express, Postgres, MongoDB, Kafka, Redis
+azure:     Working knowledge — VMs/VMSS, Functions, Container Apps, VNet/Subnets, Blob Storage, Azure SQL, Entra ID
 exploring: Rust, gRPC, Spring Boot
 location:  Bengaluru, India
 portfolio: https://maczeo.me
@@ -35,8 +36,8 @@ currently: Building event-driven platforms on AWS + Postgres/Kafka/Redis
 I'm a final-year B.Tech CSE student at GITAM. I build backend systems where the interesting part isn't the CRUD — it's what happens when two requests race each other. Most of my time lives inside **AWS** (Lambda, DynamoDB, EventBridge, CDK, Step Functions), **Kafka** for event streaming, and **Postgres/Redis** for data — thinking through idempotency, optimistic locking, single-table design, and event-driven workflows instead of bolting them on after something breaks in production.
 
 Recent focus areas:
-- **Serverless Approval Engine (PRAJNA)** — Multi-stage approval state machine across 3 campuses, using optimistic concurrency control in DynamoDB and EventBridge event routing.
-- **Event-Driven Services (CineFund)** — Transactional outbox pattern on PostgreSQL + Debezium CDC → Kafka, paired with Redis `SETNX` dual-layer payment idempotency.
+- **Approval Workflow Engine (PRAJNA, Module 13)** — Led the Business Logic layer (Modules 13–18) and built the multi-stage approval engine itself: optimistic concurrency control on DynamoDB and EventBridge event routing.
+- **Event-Driven Services (CineFund)** — Transactional outbox on PostgreSQL polled via `FOR UPDATE SKIP LOCKED` → Kafka, paired with Redis `SETNX` dual-layer payment idempotency.
 - **Microservices & Tooling** — Modular document extraction pipelines, Redis caching layers, and Infrastructure-as-Code with AWS CDK.
 
 <br/>
@@ -46,9 +47,9 @@ Recent focus areas:
 | Category | Technologies & Tools |
 |---|---|
 | **Core Languages** | <img src="https://skillicons.dev/icons?i=ts,python,go" /> |
-| **Backend & Data** | <img src="https://skillicons.dev/icons?i=fastapi,postgres,redis,mongodb,kafka" /> |
+| **Backend & Data** | <img src="https://skillicons.dev/icons?i=fastapi,express,postgres,redis,mongodb,dynamodb,kafka" /> |
 | **Frontend** | <img src="https://skillicons.dev/icons?i=react" /> |
-| **Infra & DevOps** | <img src="https://skillicons.dev/icons?i=aws,docker,linux,git" /> |
+| **Infra & DevOps** | <img src="https://skillicons.dev/icons?i=aws,azure,docker,linux,git" /> |
 | **Exploring** | <img src="https://skillicons.dev/icons?i=rust,spring" /> |
 
 <br/>
@@ -56,16 +57,31 @@ Recent focus areas:
 ### AWS & Cloud-Native Services
 
 <p align="center">
-<img src="https://img.shields.io/badge/Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white" />
-<img src="https://img.shields.io/badge/DynamoDB-4053D6?style=for-the-badge&logo=amazondynamodb&logoColor=white" />
-<img src="https://img.shields.io/badge/CDK_(TypeScript)-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/EventBridge-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/Cognito-DD344C?style=for-the-badge&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/API_Gateway-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white" />
-<img src="https://img.shields.io/badge/SQS-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/Step_Functions-FF4F8B?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/Lambda-6e40c9?style=for-the-badge&logo=awslambda&logoColor=white" />
+<img src="https://img.shields.io/badge/DynamoDB-6e40c9?style=for-the-badge&logo=amazondynamodb&logoColor=white" />
+<img src="https://img.shields.io/badge/CDK_(TypeScript)-6e40c9?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/EventBridge-6e40c9?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/Cognito-6e40c9?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/API_Gateway-6e40c9?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/S3-6e40c9?style=for-the-badge&logo=amazons3&logoColor=white" />
+<img src="https://img.shields.io/badge/SQS-6e40c9?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/Step_Functions-6e40c9?style=for-the-badge&logo=amazonaws&logoColor=white" />
 </p>
+
+### Azure & Cloud Services <sub>working knowledge</sub>
+
+<p align="center">
+<img src="https://img.shields.io/badge/Azure_VM-6e40c9?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+<img src="https://img.shields.io/badge/VM_Scale_Sets-6e40c9?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+<img src="https://img.shields.io/badge/VNet_%2F_Subnets-6e40c9?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+<img src="https://img.shields.io/badge/Azure_Functions-6e40c9?style=for-the-badge&logo=azurefunctions&logoColor=white" />
+<img src="https://img.shields.io/badge/Container_Apps-6e40c9?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+<img src="https://img.shields.io/badge/Blob_Storage-6e40c9?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+<img src="https://img.shields.io/badge/Azure_SQL-6e40c9?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" />
+<img src="https://img.shields.io/badge/Entra_ID-6e40c9?style=for-the-badge&logo=microsoftazure&logoColor=white" />
+</p>
+
+<p align="center"><sub>Comfortable provisioning &amp; operating — VMs/autoscaling, VNet/subnet design, serverless Functions, Container Apps, Blob Storage, managed databases, and Entra ID identity. AWS remains my primary cloud.</sub></p>
 
 <br/>
 
@@ -78,13 +94,13 @@ Recent focus areas:
 <sub>2 years daily-driving Arch/CachyOS before a forgotten BIOS lock sent me to Windows + WSL2. The habits stuck.</sub>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />
-<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
-<img src="https://img.shields.io/badge/systemd-0B3D2E?style=for-the-badge&logo=linux&logoColor=white" />
-<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-<img src="https://img.shields.io/badge/tmux-1BB0E6?style=for-the-badge&logo=tmux&logoColor=white" />
-<img src="https://img.shields.io/badge/fzf-0F0F0F?style=for-the-badge&logo=fzf&logoColor=white" />
-<img src="https://img.shields.io/badge/ripgrep-0F0F0F?style=for-the-badge&logo=rust&logoColor=white" />
+<img src="https://img.shields.io/badge/Kafka-6e40c9?style=for-the-badge&logo=apachekafka&logoColor=white" />
+<img src="https://img.shields.io/badge/Redis-6e40c9?style=for-the-badge&logo=redis&logoColor=white" />
+<img src="https://img.shields.io/badge/systemd-6e40c9?style=for-the-badge&logo=linux&logoColor=white" />
+<img src="https://img.shields.io/badge/docker-6e40c9?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/tmux-6e40c9?style=for-the-badge&logo=tmux&logoColor=white" />
+<img src="https://img.shields.io/badge/fzf-6e40c9?style=for-the-badge&logo=fzf&logoColor=white" />
+<img src="https://img.shields.io/badge/ripgrep-6e40c9?style=for-the-badge&logo=rust&logoColor=white" />
 </p>
 
 <p align="center"><sub>Kafka for event streaming, Redis for caching & idempotency, systemd/Docker/tmux/fzf/rg in the terminal.</sub></p>
@@ -92,7 +108,13 @@ Recent focus areas:
 <br/>
 
 <div align="center">
-<img src="assets/divider.svg" width="100%" alt="divider" />
+<img src="assets/terminal.svg" alt="WSL2 development terminal — Go services, Kafka, Postgres, Redis via Docker Compose" width="82%" />
+</div>
+
+<br/>
+
+<div align="center">
+<img src="assets/divider.svg" width="100%" alt="" />
 </div>
 
 <br/>
@@ -118,7 +140,7 @@ Recent focus areas:
 <br/>
 
 <div align="center">
-<img src="assets/divider.svg" width="100%" alt="divider" />
+<img src="assets/divider.svg" width="100%" alt="" />
 </div>
 
 <br/>
@@ -128,15 +150,15 @@ Recent focus areas:
 ### PRAJNA — Approval Workflow Engine
 
 <p>
-<img src="https://img.shields.io/badge/AWS_Serverless-FF9900?style=flat-square&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/DynamoDB_Single--Table-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white" />
-<img src="https://img.shields.io/badge/EventBridge-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/AWS_CDK-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/Cognito_Auth-DD344C?style=flat-square&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/Scale-3_Campuses-2ea043?style=flat-square" />
+<img src="https://img.shields.io/badge/AWS_Serverless-6e40c9?style=flat-square&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/DynamoDB_Single--Table-6e40c9?style=flat-square&logo=amazondynamodb&logoColor=white" />
+<img src="https://img.shields.io/badge/EventBridge-6e40c9?style=flat-square&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/AWS_CDK-TypeScript-6e40c9?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Cognito_Auth-6e40c9?style=flat-square&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/Scale-3_Campuses-6e40c9?style=flat-square" />
 </p>
 
-A multi-stage approval engine for faculty submissions across three university campuses. Built to maintain strict transactional consistency when multiple human approvers and automated escalation timers act on the same submission simultaneously.
+**Module 13 of PRAJNA — a 24-module AWS platform built by a team at GITAM.** I led the Business Logic layer (Modules 13–18) and personally built this engine and its shared contracts. It's a multi-stage approval engine for faculty submissions across campuses, built to maintain strict transactional consistency when multiple human approvers and an automated escalation timer act on the same submission simultaneously.
 
 <div align="center">
 <img src="assets/architecture.svg" alt="PRAJNA Approval Workflow Engine architecture diagram" width="85%" />
@@ -147,48 +169,54 @@ A multi-stage approval engine for faculty submissions across three university ca
 **The problem:** approvers escalate submissions up a rank ladder while a scheduled Lambda escalates overdue items past their SLA. If an approver acts at the exact moment the escalation cron fires, stale updates will clobber state without proper concurrency control.
 
 **How it's handled:**
-- **Optimistic Concurrency Control:** Enforced atomic version checks on DynamoDB updates (`ConditionExpression: version = :expected`). Stale writes fail cleanly with `409 Conflict` rather than overwriting concurrent approvals.
-- **Idempotent Workflow Creation:** Unique client request tokens prevent network retries from creating duplicate approval chains.
-- **Graph Cycle Validation:** Implemented rank-based hierarchy checks with cycle detection on approval transitions.
-- **Server-Side Campus Scoping:** Auth validated via Cognito JWT claims, ensuring requests are scoped strictly to the approver's campus and permission tier.
+- **Optimistic Concurrency Control:** Atomic version checks on DynamoDB writes (`ConditionExpression: '#v = :expectedVersion'`), plus `TransactWriteItems` so a request, its lookup pointer, and its idempotency pointer commit atomically. A stale write throws a typed `ConflictError` instead of clobbering a concurrent approval.
+- **Idempotent Workflow Creation:** A pending-entity guard returns the existing `requestId` when a workflow already exists for that `(module, entity, campus, faculty)`, and an atomic `TransactWrite` pointer prevents two concurrent retries from both inserting.
+- **Escalation Ladder w/ Self-Loop Guard:** A rank-ordered escalation walker (Day 3 reminder → Day 7 Director → Day 10 PVC) that never escalates a step to itself or a lower rank.
+- **Server-Side Campus Scoping:** Role and campus (`custom:role`, `custom:campus`) are read from Cognito JWT claims; a `role+campus` GSI drives pending-approval queries, so an approver never sees another campus's queue.
 
 <details>
-<summary><b>Architecture Deep Dive: Single-Table DynamoDB Schema (AWS CDK)</b></summary>
+<summary><b>Architecture Deep Dive: Single-Table Access Pattern & Optimistic Lock (Module 13)</b></summary>
 <br/>
 
 ```typescript
-// PRAJNA — Approval single-table design
-const approvalTable = new dynamodb.Table(this, 'ApprovalTable', {
-  tableName: `prajna-approvals-${stage}`,
-  partitionKey: { name: 'PK', type: dynamodb.AttributeType.STRING },
-  sortKey:      { name: 'SK', type: dynamodb.AttributeType.STRING },
-  billingMode:  dynamodb.BillingMode.PAY_PER_REQUEST,
-  timeToLiveAttribute: 'ttl',
-  removalPolicy: isProd ? cdk.RemovalPolicy.RETAIN : cdk.RemovalPolicy.DESTROY,
-});
+// PRAJNA Module 13 — single-table key layout
+//   PK=CAMPUS#<campus>   SK=REQ#<requestId>          (tenant-scoped main item)
+//   GSI1 PK=STATUS#<status>#ROLE#<role>  SK=CREATED_AT#<ts>      → role+campus pending queue
+//   GSI2 PK=FACULTY#<facultyId>          SK=CREATED_AT#<ts>      → a faculty member's history
+//   GSI3 PK=DEADLINE                     SK=STATUS#<status>#<deadline> → escalation cron scan
+//   + a REQ#<id> pointer item for O(1) getById without knowing the campus
+const mainItem = {
+  PK: `CAMPUS#${request.campus}`,
+  SK: `REQ#${request.requestId}`,
+  GSI1PK: `STATUS#${request.overallStatus}#ROLE#${request.steps[request.currentStep].role}`,
+  GSI2PK: `FACULTY#${request.facultyId}`,
+  GSI3PK: 'DEADLINE',
+  // ...flattened request fields, incl. `version`
+};
 
-// GSI 1: Query submissions by status for escalation cron worker (PK=STATUS#pending, SK=slaDeadline)
-approvalTable.addGlobalSecondaryIndex({
-  indexName:    'StatusDeadlineIndex',
-  partitionKey: { name: 'gsi1pk', type: dynamodb.AttributeType.STRING },
-  sortKey:      { name: 'gsi1sk', type: dynamodb.AttributeType.STRING },
-});
+// Optimistic lock on write — a concurrent approval loses the race, not the data
+const expectedVersion = request.version ?? 1;
+request.version = expectedVersion + 1;
 
-// GSI 2: Faculty submission history across campuses (PK=FACULTY#<id>, SK=createdAt)
-approvalTable.addGlobalSecondaryIndex({
-  indexName:    'FacultyIndex',
-  partitionKey: { name: 'gsi2pk', type: dynamodb.AttributeType.STRING },
-  sortKey:      { name: 'gsi2sk', type: dynamodb.AttributeType.STRING },
-});
+await this.docClient.send(new PutCommand({
+  TableName: this.tableName,
+  Item: mainItem,
+  ConditionExpression: '#v = :expectedVersion',
+  ExpressionAttributeNames:  { '#v': 'version' },
+  ExpressionAttributeValues: { ':expectedVersion': expectedVersion },
+}));
+// ConditionalCheckFailedException → typed ConflictError (409); caller re-reads and retries.
 ```
 
-*Key Pattern:* Access patterns are modeled upfront into a single table with Global Secondary Indexes, allowing low-latency queries without multi-table relational joins.
+*Key Pattern:* Campus is the partition key (tenant isolation at the storage layer); role+status, faculty, and deadline each get a GSI, so no access pattern needs a table scan. Every write carries a `version` condition, so two approvers racing the same request can't silently overwrite each other.
 </details>
+
+<sub>Source-verified against the (private) `prajna-business-logic` repo — `DynamoDBClientAdapter.ts` (key layout, `TransactWrite`, version condition) and `ApprovalWorkflowEngine.ts` (idempotency guard, escalation ladder). Details in [proofs/prajna/](https://github.com/maczeo11/maczeo11/tree/main/proofs/prajna).</sub>
 
 <br/>
 
 <div align="center">
-<img src="assets/divider.svg" width="100%" alt="divider" />
+<img src="assets/divider.svg" width="100%" alt="" />
 </div>
 
 <br/>
@@ -196,12 +224,12 @@ approvalTable.addGlobalSecondaryIndex({
 ### CineFund — Crowdfunding & Video Streaming
 
 <p>
-<img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" />
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/Kafka_Streaming-231F20?style=flat-square&logo=apachekafka&logoColor=white" />
-<img src="https://img.shields.io/badge/Redis_SETNX-DC382D?style=flat-square&logo=redis&logoColor=white" />
-<img src="https://img.shields.io/badge/gRPC_+_FFmpeg-4285F4?style=flat-square&logo=grpc&logoColor=white" />
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Go-6e40c9?style=flat-square&logo=go&logoColor=white" />
+<img src="https://img.shields.io/badge/PostgreSQL-6e40c9?style=flat-square&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/Kafka_Streaming-6e40c9?style=flat-square&logo=apachekafka&logoColor=white" />
+<img src="https://img.shields.io/badge/Redis_SETNX-6e40c9?style=flat-square&logo=redis&logoColor=white" />
+<img src="https://img.shields.io/badge/gRPC_+_FFmpeg-6e40c9?style=flat-square&logo=grpc&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-6e40c9?style=flat-square&logo=docker&logoColor=white" />
 &nbsp; <b><a href="https://github.com/maczeo11/cinefund">Repository →</a></b>
 </p>
 
@@ -264,11 +292,11 @@ FOR UPDATE SKIP LOCKED;
 ### Serverless Apartment Maintenance Portal
 
 <p>
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/AWS_CDK-FF9900?style=flat-square&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/DynamoDB-4053D6?style=flat-square&logo=amazondynamodb&logoColor=white" />
-<img src="https://img.shields.io/badge/EventBridge_Cron-FF4F8B?style=flat-square&logo=amazonaws&logoColor=white" />
-<img src="https://img.shields.io/badge/React_UI-61DAFB?style=flat-square&logo=react&logoColor=black" />
+<img src="https://img.shields.io/badge/TypeScript-6e40c9?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/AWS_CDK-6e40c9?style=flat-square&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/DynamoDB-6e40c9?style=flat-square&logo=amazondynamodb&logoColor=white" />
+<img src="https://img.shields.io/badge/EventBridge_Cron-6e40c9?style=flat-square&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/React_UI-6e40c9?style=flat-square&logo=react&logoColor=white" />
 &nbsp; <b><a href="https://github.com/maczeo11/serverless-apartment-manager">Repository →</a></b>
 </p>
 
@@ -317,11 +345,11 @@ requestsTable.addGlobalSecondaryIndex({
 ### Universal Text Extractor
 
 <p>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
-<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
-<img src="https://img.shields.io/badge/Tesseract_OCR-5C3EE8?style=flat-square&logo=tesseract&logoColor=white" />
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Python-6e40c9?style=flat-square&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/FastAPI-6e40c9?style=flat-square&logo=fastapi&logoColor=white" />
+<img src="https://img.shields.io/badge/OpenCV-6e40c9?style=flat-square&logo=opencv&logoColor=white" />
+<img src="https://img.shields.io/badge/Tesseract_OCR-6e40c9?style=flat-square&logo=tesseract&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-6e40c9?style=flat-square&logo=docker&logoColor=white" />
 &nbsp; <b><a href="https://github.com/maczeo11/File_extractor">Repository →</a></b>
 </p>
 
@@ -367,7 +395,7 @@ def detect_file_type(buffer: bytes) -> str:
 <br/>
 
 <div align="center">
-<img src="assets/divider.svg" width="100%" alt="divider" />
+<img src="assets/divider.svg" width="100%" alt="" />
 </div>
 
 <br/>
@@ -377,16 +405,16 @@ def detect_file_type(buffer: bytes) -> str:
 <table width="100%">
   <tr>
     <td width="50%" align="center">
-      <img src="https://gh-readme-stats-liart.vercel.app/api?username=maczeo11&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true" width="100%" alt="GitHub stats for maczeo11" />
+      <img src="https://raw.githubusercontent.com/maczeo11/maczeo11/stats/stats.svg" width="100%" alt="GitHub stats for maczeo11" />
     </td>
     <td width="50%" align="center">
-      <img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=FF6E40&currStreakLabel=FF6E40&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="100%" alt="GitHub streak stats" />
+      <img src="https://streak-stats.demolab.com/?user=maczeo11&theme=tokyonight&hide_border=true&fire=A371F7&currStreakLabel=A371F7&sideNums=FFF&sideLabels=A371F7&dates=A371F7" width="100%" alt="GitHub streak stats" />
     </td>
   </tr>
 </table>
 
 <div align="center">
-<img src="https://gh-readme-stats-liart.vercel.app/api/top-langs/?username=maczeo11&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&size_weight=0.5&count_weight=0.5" width="48%" alt="Top languages for maczeo11" />
+<img src="https://raw.githubusercontent.com/maczeo11/maczeo11/stats/top-langs.svg" width="48%" alt="Top languages for maczeo11" />
 </div>
 
 <br/>

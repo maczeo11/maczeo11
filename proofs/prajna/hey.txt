@@ -1,5 +1,16 @@
-PLACEHOLDER - authenticated hey not yet run
-GET /api/requests without token => 403 Forbidden (Cognito).
-Run: hey -n 100 -c 20 -H 'Authorization: Bearer <id_token>' https://uvremjs67f.execute-api.ap-south-2.amazonaws.com/dev/api/requests
-Save real output here.
+PLACEHOLDER — no unauthenticated bench exists for PRAJNA.
 
+The PRAJNA dev API (https://uvremjs67f.execute-api.ap-south-2.amazonaws.com/dev)
+sits behind a Cognito authorizer, so any request without a valid JWT returns:
+
+    HTTP/2 403   (Unauthorized / Missing Authentication Token)
+
+Because of that, health/latency CANNOT be measured unauthenticated — which is why
+bench.json is null/n:0. Do not quote a p50/p95 for PRAJNA.
+
+An authenticated bench is only meaningful with an id_token:
+
+    hey -n 100 -c 20 -H "Authorization: Bearer <cognito_id_token>" \
+        https://uvremjs67f.execute-api.ap-south-2.amazonaws.com/dev/<route>
+
+If you ever run that, save the real output here and say "dev, authenticated".
