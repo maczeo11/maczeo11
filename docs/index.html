@@ -12,14 +12,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhanu Teja Komma — Backend Engineer · Atelier</title>
-  <meta name="description" content="Bhanu Teja Komma — Backend Engineer. Leads business logic layer of PRAJNA (30 modules, 24 devs, 6 serverless modules, 5 partner teams) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Kafka, Redis." />
+  <meta name="description" content="Bhanu Teja Komma — Backend Engineer. Leads business logic layer of PRAJNA (24 modules, 24 devs, 6 serverless modules, 5 partner teams) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Kafka, Redis." />
   <link rel="canonical" href="https://maczeo.me/" />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://maczeo.me/" />
   <meta property="og:title" content="Bhanu Teja Komma — Backend Engineer" />
-  <meta property="og:description" content="Leads business logic layer of PRAJNA (30 modules, 24 devs) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Distributed Systems." />
+  <meta property="og:description" content="Leads business logic layer of PRAJNA (24 modules, 24 devs) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Distributed Systems." />
   <meta property="og:image" content="https://maczeo.me/assets/banner.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -29,7 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://maczeo.me/" />
   <meta name="twitter:title" content="Bhanu Teja Komma — Backend Engineer" />
-  <meta name="twitter:description" content="Leads business logic layer of PRAJNA (30 modules, 24 devs) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Distributed Systems." />
+  <meta name="twitter:description" content="Leads business logic layer of PRAJNA (24 modules, 24 devs) on AWS Lambda/DynamoDB/EventBridge/CDK. Go, PostgreSQL, Distributed Systems." />
   <meta name="twitter:image" content="https://maczeo.me/assets/banner.png" />
 
   <!-- Structured Data (JSON-LD) -->
@@ -41,7 +41,7 @@
     "url": "https://maczeo.me",
     "jobTitle": "Backend Engineer",
     "alumniOf": "GITAM Deemed University",
-    "knowsAbout": ["AWS Lambda", "DynamoDB", "EventBridge", "AWS CDK", "Go", "TypeScript", "PostgreSQL", "Distributed Systems", "Idempotency", "Single-Table Design"],
+    "knowsAbout": ["AWS Lambda", "DynamoDB", "EventBridge", "AWS CDK", "Go", "TypeScript", "PostgreSQL", "Distributed Systems", "Idempotency", "Single-Table Design", "Azure (working knowledge)"],
     "sameAs": [
       "https://github.com/maczeo11",
       "https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/",
@@ -362,6 +362,17 @@
     font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;
     padding:7px 10px;border:1px solid var(--line-strong);background:var(--paper-card);display:inline-flex;align-items:center;gap:8px;
   }
+  /* brand-coloured social pills */
+  .meta-pill.social{border-width:1.5px;font-weight:600;transition:background 0.2s,color 0.2s,border-color 0.2s,transform 0.2s}
+  .meta-pill.social:hover{transform:translateY(-2px)}
+  .meta-pill.social-gh{border-color:#181717;color:#181717;background:rgba(24,23,23,0.07)}
+  .meta-pill.social-gh:hover{background:#181717;color:#fff}
+  .meta-pill.social-in{border-color:#0A66C2;color:#0A66C2;background:rgba(10,102,194,0.09)}
+  .meta-pill.social-in:hover{background:#0A66C2;color:#fff}
+  .meta-pill.social-lc{border-color:#E8930C;color:#9A6300;background:rgba(255,161,22,0.13)}
+  .meta-pill.social-lc:hover{background:#FFA116;color:#0F0E12}
+  .meta-pill.social-mail{border-color:var(--vermillion);color:var(--vermillion);background:rgba(217,61,46,0.08)}
+  .meta-pill.social-mail:hover{background:var(--vermillion);color:#fff}
   .hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
   .btn-primary{
     display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:var(--ink);color:var(--paper);
@@ -406,6 +417,19 @@
   .bp-line span:last-child{color:var(--gold)}
   .bp-title{color:#fff;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:0.74rem;margin-bottom:8px;display:flex;align-items:center;gap:8px}
   .bp-title .dot{width:8px;height:8px;background:var(--vermillion);display:inline-block;box-shadow:0 0 10px var(--vermillion)}
+  /* race-condition schematic */
+  .race-svg{width:100%;height:auto;display:block;margin:4px 0 10px;position:relative;z-index:1}
+  .race-log{position:relative;z-index:1;display:grid;gap:4px;margin-bottom:10px;font-size:0.72rem}
+  .race-log .ok{color:#4ade80}
+  .race-log .bad{color:#D93D2E}
+  .race-log .warn{color:#C9A86A}
+  .race-btn{
+    position:relative;z-index:1;width:100%;cursor:pointer;
+    font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:600;letter-spacing:0.05em;
+    padding:9px 12px;border:1.5px solid #C9A86A;background:transparent;color:#C9A86A;transition:background 0.2s,color 0.2s;
+  }
+  .race-btn:hover{background:#C9A86A;color:#0F0E12}
+  .race-btn:disabled{opacity:0.5;cursor:default;background:transparent;color:#C9A86A}
   .ink-splatter{
     position:absolute;right:-18px;top:-18px;width:90px;height:90px;opacity:0.9;pointer-events:none;
   }
@@ -439,6 +463,12 @@
   .exp-stat{border:1px solid var(--line-strong);padding:12px 10px;text-align:center;background:var(--paper-card)}
   .exp-stat b{font-family:'Fraunces',serif;font-size:1.45rem;line-height:1;display:block}
   .exp-stat span{font-family:'JetBrains Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint)}
+.module-map{border:1px solid var(--line-strong);background:var(--paper-card);padding:12px;margin-bottom:18px}
+.module-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px;font-family:'JetBrains Mono',monospace;font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint)}
+.module-head b{font-family:'Fraunces',serif;font-size:0.98rem;letter-spacing:-0.01em;color:var(--ink);text-transform:none}
+.module-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:5px}
+.module-cell{aspect-ratio:1;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:0.6rem;border:1px solid var(--line);color:var(--ink-faint);background:rgba(15,14,18,0.03)}
+.module-cell.owned{background:var(--vermillion);border-color:var(--vermillion);color:#fff;box-shadow:0 0 0 1px var(--vermillion), 0 0 10px rgba(217,61,46,0.28)}
   .exp-list{list-style:none;display:grid;gap:10px}
   .exp-list li{position:relative;padding-left:22px;color:var(--ink-dim);font-size:0.95rem;line-height:1.6}
   .exp-list li::before{
@@ -478,6 +508,7 @@
   .proj-kicker a{width:28px;height:28px;border:1px solid var(--line-strong);display:grid;place-items:center;text-decoration:none;background:var(--paper-card);transition:all 0.2s}
   .proj-kicker a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
   .proj-name{font-family:'Fraunces',serif;font-size:1.28rem;font-weight:800;letter-spacing:-0.02em;line-height:1.05}
+.proj-schema{width:100%;height:auto;display:block;border-radius:4px;border:1px solid rgba(15,14,18,0.22)}
   .proj-desc{color:var(--ink-dim);font-size:0.92rem;line-height:1.6;flex:1}
   .proj-highlights{list-style:none;display:grid;gap:7px}
   .proj-highlights li{font-size:0.84rem;color:var(--ink-dim);padding-left:16px;position:relative;line-height:1.5}
@@ -691,7 +722,7 @@
         </h1>
         <p class="hero-typing" id="typing"><span id="typeText"></span><span class="cursor">▌</span></p>
         <p class="hero-copy">
-          Lead the business logic layer of <b>PRAJNA</b>, a 30-module campus platform built by a 24-developer team — owning <b>six serverless modules</b> and the event contracts <b>five partner teams</b> build against. Shipped on <b>AWS (Lambda, DynamoDB, EventBridge, CDK)</b> in TypeScript. B.Tech CSE, GITAM 2027.
+          Lead the business logic layer of <b>PRAJNA</b>, a 24-module campus platform built by a 24-developer team — owning <b>six serverless modules</b> and the event contracts <b>five partner teams</b> build against. Shipped on <b>AWS (Lambda, DynamoDB, EventBridge, CDK)</b> in TypeScript. B.Tech CSE, GITAM 2027.
         </p>
         <div class="hero-meta">
           <span class="meta-pill"><span class="dot" aria-hidden="true"></span>Bengaluru, India</span>
@@ -704,9 +735,10 @@
           <a class="btn-ghost" href="#experience">The Blueprint — PRAJNA ↓</a>
         </div>
         <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <a href="https://github.com/maczeo11" target="_blank" rel="noopener" class="meta-pill" style="text-decoration:none;color:var(--ink)" aria-label="GitHub profile">gh / maczeo11 ↗</a>
-          <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/" target="_blank" rel="noopener" class="meta-pill" style="text-decoration:none;color:var(--ink)" aria-label="LinkedIn profile">in / bhanu-teja-komma ↗</a>
-          <a href="https://leetcode.com/u/GB2023002633/" target="_blank" rel="noopener" class="meta-pill" style="text-decoration:none;color:var(--ink)" aria-label="LeetCode profile">lc / GB2023002633 ↗</a>
+          <a href="https://github.com/maczeo11" target="_blank" rel="noopener" class="meta-pill social social-gh" style="text-decoration:none" aria-label="GitHub profile">gh / maczeo11 ↗</a>
+          <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/" target="_blank" rel="noopener" class="meta-pill social social-in" style="text-decoration:none" aria-label="LinkedIn profile">in / bhanu-teja-komma ↗</a>
+          <a href="https://leetcode.com/u/GB2023002633/" target="_blank" rel="noopener" class="meta-pill social social-lc" style="text-decoration:none" aria-label="LeetCode profile">lc / GB2023002633 ↗</a>
+          <a href="mailto:bhanu0005a@gmail.com" class="meta-pill social social-mail" style="text-decoration:none" aria-label="Email Bhanu Teja Komma">✉ bhanu0005a@gmail.com ↗</a>
         </div>
       </div>
 
@@ -714,18 +746,42 @@
         <div class="desk-card" id="deskCard">
           <div class="desk-top"><b>Atelier — System Desk</b><span class="desk-dots"><span class="desk-dot" aria-hidden="true"></span><span class="desk-dot" aria-hidden="true"></span><span class="desk-dot" aria-hidden="true"></span></span></div>
           <div class="blueprint">
-            <div class="bp-title"><span class="dot" aria-hidden="true"></span> PRAJNA · Approval Engine — single_table.ldb</div>
-            <div class="bp-line"><span>PK: CAMPUS#&lt;id&gt;#FACULTY#&lt;id&gt;</span><span>GSI1 · 3 GSIs</span></div>
-            <div class="bp-line"><span>SK: SUBMISSION#&lt;id&gt;#v&lt;n&gt;</span><span>version :expected</span></div>
-            <div class="bp-line"><span>condition: version = :expected</span><span style="color:#4ade80">✓ optimistic lock</span></div>
-            <div class="bp-line"><span>TransactWrite: idempotent_key = :k</span><span style="color:#4ade80">✓ retry-safe</span></div>
-            <div class="bp-line"><span>EventBridge: frozen payloads → 5 modules</span><span>DLQ + alarm</span></div>
-            <div class="bp-line"><span>51 unit + integration tests</span><span>Idempotent</span></div>
-            <div style="margin-top:10px;border-top:1px dashed rgba(255,255,255,0.18);padding-top:10px;display:flex;gap:8px;flex-wrap:wrap">
-              <span style="padding:3px 8px;border:1px solid rgba(255,255,255,0.18);font-size:0.66rem">Lambda ×36</span>
-              <span style="padding:3px 8px;border:1px solid rgba(255,255,255,0.18);font-size:0.66rem">CDK · IaC</span>
-              <span style="padding:3px 8px;border:1px solid rgba(255,255,255,0.18);font-size:0.66rem">3 campuses isolated</span>
+            <div class="bp-title"><span class="dot" aria-hidden="true"></span> PRAJNA · Approval Engine — concurrent_writes.ldb</div>
+            <div class="bp-line" style="margin-bottom:8px"><span>single-table · 3 GSIs · version=:expected</span><span>idempotent TransactWrite</span></div>
+
+            <!-- live race schematic -->
+            <svg class="race-svg" viewBox="0 0 420 132" role="img" aria-label="Two concurrent approvals race to a versioned DynamoDB write: approver A commits version 7 to 8, approver B's conditional write fails and retries as version 9, so no update is lost.">
+              <g stroke="#3a3f52" stroke-width="1.5" fill="none" stroke-linecap="round">
+                <line x1="38" y1="67" x2="104" y2="67"/>
+                <line x1="124" y1="67" x2="196" y2="67"/>
+                <line x1="216" y1="67" x2="284" y2="67"/>
+                <path d="M304 57 L304 36 L356 36"/>
+                <path d="M304 77 L304 98 L356 98"/>
+              </g>
+              <g font-family="'JetBrains Mono',monospace" font-size="8" fill="#8b90a8">
+                <rect x="18" y="57" width="20" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/>
+                <text x="28" y="52" text-anchor="middle">client</text>
+                <rect x="104" y="57" width="20" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/>
+                <text x="114" y="52" text-anchor="middle">APIGW</text>
+                <rect x="196" y="57" width="20" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/>
+                <text x="206" y="52" text-anchor="middle">Lambda</text>
+                <rect x="284" y="57" width="20" height="20" rx="3" fill="#161b2e" stroke="#C9A86A"/>
+                <text x="294" y="52" text-anchor="middle" fill="#C9A86A">DDB</text>
+                <rect x="356" y="26" width="20" height="20" rx="3" fill="#161b2e" stroke="#4ade80"/>
+                <text x="366" y="21" text-anchor="middle" fill="#4ade80">EventBridge</text>
+                <rect x="356" y="88" width="20" height="20" rx="3" fill="#161b2e" stroke="#D93D2E"/>
+                <text x="366" y="120" text-anchor="middle" fill="#D93D2E">409 → retry</text>
+              </g>
+              <circle id="pktA" r="4.5" fill="#D93D2E" transform="translate(28,64)"/>
+              <circle id="pktB" r="4.5" fill="#C9A86A" transform="translate(28,70)"/>
+            </svg>
+
+            <div class="race-log" aria-live="polite">
+              <div class="bp-line"><span>A · approver</span><span id="lineA">waiting</span></div>
+              <div class="bp-line"><span>B · approver</span><span id="lineB">waiting</span></div>
             </div>
+
+            <button class="race-btn" id="raceFire" type="button">Fire 2 concurrent approvals ▸</button>
           </div>
           <!-- splatter -->
           <svg class="ink-splatter" viewBox="0 0 100 100" aria-hidden="true">
@@ -736,12 +792,6 @@
               <circle cx="50" cy="50" r="5"/><circle cx="60" cy="48" r="1.8"/><circle cx="44" cy="56" r="1.2"/>
             </g>
           </svg>
-          <div class="desk-footer">
-            <div class="mini-stat"><b>6/30</b><span>modules owned</span></div>
-            <div class="mini-stat"><b>51</b><span>tests · approval module</span></div>
-            <div class="mini-stat"><b>3</b><span>campuses · tenant isolated</span></div>
-            <div class="mini-stat"><b>5</b><span>partner teams · frozen contracts</span></div>
-          </div>
         </div>
         <div class="floating-seal">PRAJNA<br>BLL<br>— LEAD —</div>
       </div>
@@ -762,7 +812,7 @@
       <h2>Business Logic Layer Lead,<br><em>PRAJNA</em></h2>
       <div class="seal">BLL<br>LEAD</div>
     </div>
-    <p class="sec-sub">Campus platform for GITAM — <b>30 modules, 24 developers</b>. Own six serverless modules and the integration contracts <b>five partner teams</b> build against. Approval workflow is the single authority for approval state across 3 campuses.</p>
+    <p class="sec-sub">Campus platform for GITAM — <b>24 modules, 24 developers</b>. Own six serverless modules and the integration contracts <b>five partner teams</b> build against. Approval workflow is the single authority for approval state across 3 campuses.</p>
 
     <div class="exp-wrap reveal" style="margin-top:22px">
       <div class="exp-ribbon">
@@ -771,17 +821,38 @@
       </div>
       <div class="exp-body">
         <div>
-          <div class="exp-stats">
-            <div class="exp-stat"><b>6/30</b><span>modules owned</span></div>
-            <div class="exp-stat"><b>36</b><span>lambda handlers</span></div>
-            <div class="exp-stat"><b>51</b><span>tests</span></div>
-            <div class="exp-stat"><b>24</b><span>team size</span></div>
-            <div class="exp-stat"><b>5</b><span>partner teams</span></div>
-            <div class="exp-stat"><b>3</b><span>campuses</span></div>
+          <div class="module-map" aria-label="24-module platform; six modules owned by Bhanu, M13 through M18">
+            <div class="module-head"><b>24-module platform</b><span>6 owned · M13–M18</span></div>
+            <div class="module-grid">
+              <span class="module-cell">M1</span>
+              <span class="module-cell">M2</span>
+              <span class="module-cell">M3</span>
+              <span class="module-cell">M4</span>
+              <span class="module-cell">M5</span>
+              <span class="module-cell">M6</span>
+              <span class="module-cell">M7</span>
+              <span class="module-cell">M8</span>
+              <span class="module-cell">M9</span>
+              <span class="module-cell">M10</span>
+              <span class="module-cell">M11</span>
+              <span class="module-cell">M12</span>
+              <span class="module-cell owned" title="Approval workflow (lead)">M13</span>
+              <span class="module-cell owned" title="Scoring">M14</span>
+              <span class="module-cell owned" title="Leaderboards">M15</span>
+              <span class="module-cell owned" title="Notifications">M16</span>
+              <span class="module-cell owned" title="Accreditation">M17</span>
+              <span class="module-cell owned" title="Appraisals">M18</span>
+              <span class="module-cell">M19</span>
+              <span class="module-cell">M20</span>
+              <span class="module-cell">M21</span>
+              <span class="module-cell">M22</span>
+              <span class="module-cell">M23</span>
+              <span class="module-cell">M24</span>
+            </div>
           </div>
           <ul class="exp-list">
-            <li>Lead business logic layer for <b>6 serverless modules</b> of a 30-module platform — 36 Lambda handlers across approvals, scoring, leaderboards, notifications, accreditation, appraisals — defining integration contracts <b>five partner teams</b> build against.</li>
-            <li>Built approval workflow end-to-end on <b>Lambda, DynamoDB (single-table, 3 GSIs) and EventBridge</b>, as CDK infrastructure, with <b>tenant isolation across three campuses</b> — covered by <b>51 unit + integration tests</b>.</li>
+            <li>Lead business logic layer for <b>6 serverless modules</b> of a 24-module platform — <span data-count="36">36</span> Lambda handlers across approvals, scoring, leaderboards, notifications, accreditation, appraisals — defining integration contracts <b>five partner teams</b> build against.</li>
+            <li>Built approval workflow end-to-end on <b>Lambda, DynamoDB (single-table, 3 GSIs) and EventBridge</b>, as CDK infrastructure, with <b>tenant isolation across three campuses</b> — covered by <b><span data-count="51">51</span> unit + integration tests</b>.</li>
             <li>Designed approval state machine for <b>Lambda retry safety</b>: rank-based escalation, <b>optimistic locking on version attributes</b>, and <b>idempotent TransactWrites</b> — eliminating concurrent overwrite collisions.</li>
             <li>Froze <b>EventBridge payloads for 5 downstream modules</b> and deployed a <b>dead-letter queue + CloudWatch alarm on every rule</b> before live AWS.</li>
             <li>Caught <b>IDOR</b> in code review and drove the fix — consolidating <b>6 divergent auth implementations</b> into one shared platform-wide helper (Cognito + JWT, campus-scoped).</li>
@@ -812,11 +883,22 @@
     <div class="proj-grid" style="margin-top:18px">
       <article class="proj-card reveal">
         <div class="proj-kicker"><span>Go · Postgres · Kafka</span><a href="https://github.com/maczeo11/cinefund" target="_blank" rel="noopener" aria-label="Open CineFund repository on GitHub">↗</a></div>
+        <svg class="proj-schema" viewBox="0 0 260 56" role="img" aria-label="CineFund flow: webhook behind a Redis SETNX gate, then a single Postgres transaction with an outbox, drained by a SKIP LOCKED dispatcher into Kafka">
+          <rect width="260" height="56" rx="4" fill="#0F0E12"/>
+          <g font-family="JetBrains Mono,monospace" font-size="7" fill="#c9d1d9" text-anchor="middle">
+            <text x="130" y="13" fill="#8b90a8" font-size="6.4">Redis SETNX gate · idempotent webhooks</text>
+            <rect x="8" y="24" width="52" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="34" y="37">webhook</text>
+            <rect x="78" y="24" width="66" height="20" rx="3" fill="#161b2e" stroke="#C9A86A"/><text x="111" y="37" fill="#C9A86A">PG · outbox</text>
+            <rect x="162" y="24" width="60" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="192" y="37">SKIP LOCKED</text>
+            <rect x="230" y="24" width="24" height="20" rx="3" fill="#161b2e" stroke="#4ade80"/><text x="242" y="37" fill="#4ade80">kfk</text>
+          </g>
+          <g stroke="#3a3f52" stroke-width="1.2" fill="none" stroke-linecap="round"><path d="M60 34H78"/><path d="M144 34H162"/><path d="M222 34H230"/></g>
+        </svg>
         <h3 class="proj-name">CineFund — Crowdfunding & Streaming</h3>
         <p class="proj-desc">Crowdfunding + streaming platform. Money path built before video — <b>double-entry escrow, all-or-nothing funding</b> — with FFmpeg-first transcoding de-risked early.</p>
         <ul class="proj-highlights">
           <li>Three-method gateway interface (real + fake) — tests run without network; <b>Redis SETNX</b> in front of <b>Postgres unique constraint</b> on webhooks</li>
-          <li><b>Transactional outbox</b> over Debezium CDC — domain write + event insert in one TX, <b>SKIP LOCKED</b> dispatcher → Kafka</li>
+          <li><b>Transactional outbox</b> — domain write + event insert in one ACID TX, polled with <b>FOR UPDATE SKIP LOCKED</b> → Kafka (no oplog/CDC coupling)</li>
           <li>Presigned uploads that never buffer through API → <b>HLS ABR ladder</b> with keyframes aligned across renditions</li>
         </ul>
         <div class="proj-tags"><span class="tag">Go</span><span class="tag">PostgreSQL</span><span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">FFmpeg</span><span class="tag">Docker</span></div>
@@ -824,6 +906,18 @@
 
       <article class="proj-card reveal">
         <div class="proj-kicker"><span>AWS · CDK · Serverless</span><a href="https://github.com/maczeo11/serverless-apartment-manager" target="_blank" rel="noopener" aria-label="Open Apartment Maintenance Portal repository on GitHub">↗</a></div>
+        <svg class="proj-schema" viewBox="0 0 260 56" role="img" aria-label="Apartment portal: API Gateway to Lambda to single-table DynamoDB with two GSIs, plus an EventBridge cron to SNS">
+          <rect width="260" height="56" rx="4" fill="#0F0E12"/>
+          <g font-family="JetBrains Mono,monospace" font-size="7" fill="#c9d1d9" text-anchor="middle">
+            <text x="130" y="12" fill="#8b90a8" font-size="6.4">single-table DDB · 2 GSIs · 100% CDK</text>
+            <rect x="8" y="22" width="46" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="31" y="35">APIGW</text>
+            <rect x="72" y="22" width="46" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="95" y="35">Lambda</text>
+            <rect x="136" y="22" width="64" height="20" rx="3" fill="#161b2e" stroke="#C9A86A"/><text x="168" y="35" fill="#C9A86A">DDB · 2 GSI</text>
+            <rect x="218" y="22" width="34" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="235" y="35">SNS</text>
+            <text x="130" y="51" fill="#8b90a8" font-size="6.4">EventBridge 15-min SLA cron → 4 priority tiers</text>
+          </g>
+          <g stroke="#3a3f52" stroke-width="1.2" fill="none" stroke-linecap="round"><path d="M54 32H72"/><path d="M118 32H136"/><path d="M200 32H218"/></g>
+        </svg>
         <h3 class="proj-name">Apartment Maintenance Portal</h3>
         <p class="proj-desc">Full-stack maintenance system for 50+ residents across 3 campuses — the project where I learned single-table design before PRAJNA.</p>
         <ul class="proj-highlights">
@@ -836,6 +930,17 @@
 
       <article class="proj-card reveal">
         <div class="proj-kicker"><span>Python · Vision</span><a href="https://github.com/maczeo11/File_extractor" target="_blank" rel="noopener" aria-label="Open Universal Text Extractor repository on GitHub">↗</a></div>
+        <svg class="proj-schema" viewBox="0 0 260 56" role="img" aria-label="Extractor pipeline: input, magic-byte detection, strategy selection, then standardized JSON; OpenCV to Tesseract OCR">
+          <rect width="260" height="56" rx="4" fill="#0F0E12"/>
+          <g font-family="JetBrains Mono,monospace" font-size="7" fill="#c9d1d9" text-anchor="middle">
+            <text x="130" y="12" fill="#8b90a8" font-size="6.4">OpenCV → Tesseract OCR · 6 formats → 1 shape</text>
+            <rect x="8" y="22" width="46" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="31" y="35">input</text>
+            <rect x="72" y="22" width="62" height="20" rx="3" fill="#161b2e" stroke="#C9A86A"/><text x="103" y="35" fill="#C9A86A">magic-byte</text>
+            <rect x="152" y="22" width="48" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="176" y="35">strategy</text>
+            <rect x="218" y="22" width="34" height="20" rx="3" fill="#161b2e" stroke="#4ade80"/><text x="235" y="35" fill="#4ade80">JSON</text>
+          </g>
+          <g stroke="#3a3f52" stroke-width="1.2" fill="none" stroke-linecap="round"><path d="M54 32H72"/><path d="M134 32H152"/><path d="M200 32H218"/></g>
+        </svg>
         <h3 class="proj-name">Universal Text Extractor</h3>
         <p class="proj-desc">Hybrid pipeline turning PDFs, Word, sheets, images, HTML into one standardized JSON shape — the “dark data” problem.</p>
         <ul class="proj-highlights">
@@ -920,8 +1025,18 @@
 
       <div style="display:grid;gap:18px">
         <div class="skill-wall reveal">
-          <h3><span class="sec-dot" style="background:var(--ink)" aria-hidden="true"></span> Cloud & DevOps <span>— The Kiln</span></h3>
+          <h3><span class="sec-dot" style="background:var(--ink)" aria-hidden="true"></span> Cloud & DevOps <span>— AWS (primary) · Azure</span></h3>
           <div class="chip-cloud">
+            <span style="flex-basis:100%;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint)">Azure — working knowledge</span>
+            <span class="chip-tag fam" title="working knowledge — labs only, no production claims">Azure VM</span>
+            <span class="chip-tag fam" title="working knowledge — labs only, no production claims">VM Scale Sets</span>
+            <span class="chip-tag fam" title="working knowledge — labs only, no production claims">VNet · Subnets</span>
+            <span class="chip-tag fam" title="working knowledge — labs only, no production claims">Azure Functions</span>
+            <span class="chip-tag fam" title="working knowledge — labs only, no production claims">Container Apps</span>
+            <span class="chip-tag fam" title="working knowledge — labs only, no production claims">Blob Storage</span>
+            <span class="chip-tag fam" title="working knowledge — labs only, no production claims">Azure SQL</span>
+            <span class="chip-tag fam" title="working knowledge — labs only, no production claims">Entra ID</span>
+            <span style="flex-basis:100%;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint)">AWS — production core</span>
             <span class="chip-tag prod" title="36 handlers, EventBridge, DLQs">AWS Lambda</span>
             <span class="chip-tag prod" title="single-table, 3 GSIs">DynamoDB</span>
             <span class="chip-tag prod">EventBridge</span>
@@ -938,6 +1053,7 @@
             <span class="chip-tag fluent">Linux · Git</span>
             <span class="chip-tag fluent">GitHub Actions (CI/CD)</span>
           </div>
+          <p style="margin-top:14px;font-family:'Caveat',cursive;font-size:1.08rem;color:var(--ink-faint);transform:rotate(-0.4deg)">AWS is where I’ve shipped; Azure is working knowledge — no production claims.</p>
         </div>
 
         <div class="skill-wall reveal">
@@ -985,7 +1101,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2025 Bhanu Teja Komma · maczeo.me · Crafted in the atelier — ink, paper, and event-driven systems.</span>
-      <span style="display:flex;gap:8px;align-items:center"><span style="width:8px;height:8px;background:var(--vermillion);display:inline-block"></span> CachyOS · x86-64-v4 · systemd at PID 1</span>
+      <span style="display:flex;gap:8px;align-items:center"><span style="width:8px;height:8px;background:var(--vermillion);display:inline-block"></span> Windows 11 · WSL2 · Ubuntu 24.04</span>
     </div>
   </div>
 </footer>
@@ -1149,6 +1265,32 @@
     })();
   }
 
+  // Count-up for proof numbers (36 handlers, 51 tests)
+  (function(){
+    var els = document.querySelectorAll('[data-count]');
+    if(!els.length || !('IntersectionObserver' in window)) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce) return;
+    Array.prototype.forEach.call(els, function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      if(isNaN(target)) return;
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(!e.isIntersecting) return;
+          io.disconnect();
+          var t0 = performance.now(), dur = 900;
+          function step(now){
+            var p = Math.min(1, (now - t0) / dur);
+            el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+            if(p < 1) requestAnimationFrame(step); else el.textContent = target;
+          }
+          requestAnimationFrame(step);
+        });
+      }, {threshold:0.6});
+      io.observe(el);
+    });
+  })();
+
   // Desk tilt on mouse
   const desk = document.getElementById('deskCard');
   if(desk && window.matchMedia('(hover:hover)').matches && hasGSAP){
@@ -1162,6 +1304,99 @@
       gsap.to(desk,{rotationY:0,rotationX:0,x:0,y:0,duration:0.6, ease:'power3.out'});
     });
   }
+
+  // Race-condition hero: two concurrent approvals hit one optimistic-locked write
+  (function(){
+    var fire  = document.getElementById('raceFire');
+    var pktA  = document.getElementById('pktA');
+    var pktB  = document.getElementById('pktB');
+    var lineA = document.getElementById('lineA');
+    var lineB = document.getElementById('lineB');
+    if(!fire || !pktA || !pktB) return;
+
+    var RUN_LABEL  = 'Fire 2 concurrent approvals ▸';
+    var DONE_LABEL = '2 writes · 0 lost updates ✓ — replay ▸';
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var running = false;
+
+    function setPkt(el, x, y){ el.setAttribute('transform', 'translate(' + x + ',' + y + ')'); }
+    function ease(p){ return p < 0.5 ? 2*p*p : 1 - Math.pow(-2*p + 2, 2) / 2; }
+
+    function moveAlong(el, pts, dur, done){
+      var segs = [], total = 0, i;
+      for(i = 1; i < pts.length; i++){
+        var dx = pts[i][0] - pts[i-1][0], dy = pts[i][1] - pts[i-1][1];
+        var len = Math.sqrt(dx*dx + dy*dy);
+        segs.push(len); total += len;
+      }
+      var t0 = (window.performance && performance.now) ? performance.now() : Date.now();
+      function frame(now){
+        now = now || Date.now();
+        var p = Math.min(1, (now - t0) / dur);
+        var d = ease(p) * total, acc = 0;
+        for(var j = 0; j < segs.length; j++){
+          if(d <= acc + segs[j] || j === segs.length - 1){
+            var local = Math.max(0, Math.min(1, (d - acc) / segs[j]));
+            setPkt(el,
+              pts[j][0] + (pts[j+1][0] - pts[j][0]) * local,
+              pts[j][1] + (pts[j+1][1] - pts[j][1]) * local);
+            break;
+          }
+          acc += segs[j];
+        }
+        if(p < 1) requestAnimationFrame(frame); else if(done) done();
+      }
+      requestAnimationFrame(frame);
+    }
+
+    var COMMON_A = [[28,64],[114,64],[206,64],[294,64]];
+    var COMMON_B = [[28,70],[114,70],[206,70],[294,70]];
+    var WIN_A    = [[294,64],[294,36],[366,36]];
+    var LOSE_B   = [[294,70],[294,98],[366,98]];
+
+    function reset(){
+      setPkt(pktA, 28, 64);
+      setPkt(pktB, 28, 70);
+      lineA.textContent = 'waiting'; lineA.className = '';
+      lineB.textContent = 'waiting'; lineB.className = '';
+      fire.textContent = RUN_LABEL;
+    }
+
+    function run(){
+      if(running) return;
+      running = true;
+      fire.disabled = true;
+      reset();
+      lineA.textContent = 'A · PutItem v=7'; lineA.className = 'warn';
+      lineB.textContent = 'B · PutItem v=7'; lineB.className = 'warn';
+
+      if(reduce){
+        setPkt(pktA, 366, 36); setPkt(pktB, 366, 98);
+        lineA.textContent = 'A · committed v7→v8 ✓'; lineA.className = 'ok';
+        lineB.textContent = 'B · 409 → retry v8→v9 ✓'; lineB.className = 'ok';
+        fire.textContent = DONE_LABEL;
+        fire.disabled = false; running = false;
+        return;
+      }
+
+      moveAlong(pktA, COMMON_A, 900, function(){
+        lineA.textContent = 'A · committed v7→v8 ✓'; lineA.className = 'ok';
+        moveAlong(pktA, WIN_A, 650);
+      });
+      moveAlong(pktB, COMMON_B, 900, function(){
+        lineB.textContent = 'B · ConditionCheckFailed ✗'; lineB.className = 'bad';
+        moveAlong(pktB, LOSE_B, 650, function(){
+          lineB.textContent = 'B · 409 → re-read v8 → retry v8→v9 ✓'; lineB.className = 'ok';
+          fire.textContent = DONE_LABEL;
+          fire.disabled = false; running = false;
+        });
+      });
+    }
+
+    fire.addEventListener('click', run);
+    reset();
+  })();
 })();
 </script>
 </body>
