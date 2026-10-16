@@ -10,10 +10,10 @@
 <br/>
 
 <a href="https://maczeo.me"><img src="https://img.shields.io/badge/Portfolio-maczeo.me-6e40c9?style=for-the-badge&logo=safari&logoColor=white" /></a>
-<a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-6e40c9?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-<a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-6e40c9?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-<a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-6e40c9?style=for-the-badge&logo=leetcode&logoColor=white" /></a>
-<a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-6e40c9?style=for-the-badge&logo=github&logoColor=white" /></a>
+<a href="https://github.com/maczeo11"><img src="https://img.shields.io/badge/GitHub-24292F?style=for-the-badge&logo=github&logoColor=white" /></a>
+<a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="mailto:bhanu0005a@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+<a href="https://leetcode.com/u/GB2023002633/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
 
 </div>
 
