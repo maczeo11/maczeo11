@@ -25,8 +25,9 @@
 name:      Bhanu Teja Komma
 role:      Backend Engineer — Cloud-Native / Distributed Systems
 focus:     TypeScript, Go, Python, AWS (Lambda, DynamoDB, EventBridge, CDK), Express, Postgres, MongoDB, Kafka, Redis
+rust:      Rust for personal CLI tools (cargo) — systems-leaning, no production claim
 azure:     Working knowledge — VMs/VMSS, Functions, Container Apps, VNet/Subnets, Blob Storage, Azure SQL, Entra ID
-exploring: Rust, gRPC, Spring Boot
+exploring: gRPC, Spring Boot
 location:  Bengaluru, India
 portfolio: https://maczeo.me
 openTo:    Backend / Cloud-Native / Platform roles
@@ -46,11 +47,11 @@ Recent focus areas:
 
 | Category | Technologies & Tools |
 |---|---|
-| **Core Languages** | <img src="https://skillicons.dev/icons?i=ts,python,go" /> |
+| **Core Languages** | <img src="https://skillicons.dev/icons?i=ts,python,go,rust" /> |
 | **Backend & Data** | <img src="https://skillicons.dev/icons?i=fastapi,express,postgres,redis,mongodb,dynamodb,kafka" /> |
 | **Frontend** | <img src="https://skillicons.dev/icons?i=react" /> |
 | **Infra & DevOps** | <img src="https://skillicons.dev/icons?i=aws,azure,docker,linux,git" /> |
-| **Exploring** | <img src="https://skillicons.dev/icons?i=rust,spring" /> |
+| **Exploring** | <img src="https://skillicons.dev/icons?i=spring" /> |
 
 <br/>
 

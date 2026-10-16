@@ -41,7 +41,7 @@
     "url": "https://maczeo.me",
     "jobTitle": "Backend Engineer",
     "alumniOf": "GITAM Deemed University",
-    "knowsAbout": ["AWS Lambda", "DynamoDB", "EventBridge", "AWS CDK", "Go", "TypeScript", "PostgreSQL", "Distributed Systems", "Idempotency", "Single-Table Design", "Azure (working knowledge)"],
+    "knowsAbout": ["AWS Lambda", "DynamoDB", "EventBridge", "AWS CDK", "Go", "Rust", "TypeScript", "PostgreSQL", "Distributed Systems", "Idempotency", "Single-Table Design", "Azure (working knowledge)"],
     "sameAs": [
       "https://github.com/maczeo11",
       "https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/",
@@ -99,6 +99,18 @@
   }
   html.dark footer{background:rgba(18,17,24,0.85)}
   html.dark .ink-cursor{mix-blend-mode:screen}
+
+  /* dark-mode corrections — brand/hardcoded light-tuned colours that fail on dark paper */
+  html.dark .meta-pill.social-gh{border-color:#E6E1DA;color:#E9E5DE;background:rgba(245,242,235,0.08)}
+  html.dark .meta-pill.social-gh:hover{background:#E6E1DA;color:#181717}
+  html.dark .meta-pill.social-in{border-color:#4DA3FF;color:#8CC4FF;background:rgba(10,102,194,0.2)}
+  html.dark .meta-pill.social-in:hover{background:#0A66C2;color:#fff}
+  html.dark .meta-pill.social-lc{border-color:#FFA116;color:#FFC24D;background:rgba(255,161,22,0.16)}
+  html.dark .meta-pill.social-lc:hover{background:#FFA116;color:#0F0E12}
+  html.dark .meta-pill.social-mail{background:rgba(232,78,63,0.14)}
+  html.dark .module-cell{background:rgba(245,242,235,0.06)}
+  html.dark .proj-schema{border-color:rgba(245,242,235,0.16)}
+  html.dark .btn-primary:hover,html.dark .proj-card:hover,html.dark .chip-cloud .chip-tag:hover{box-shadow:6px 6px 0 rgba(245,242,235,0.14)}
 
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:auto}
@@ -991,6 +1003,11 @@
             <div class="stroke-head"><span class="stroke-name">Go (Golang)</span><span class="stroke-proof">CineFund · gateway interface + outbox</span></div>
             <div class="stroke-track"><div class="stroke-fill verm" data-depth="84" style="--depth:84%"></div></div>
             <div class="stroke-tagline">Postgres · Kafka · Redis SETNX</div>
+          </div>
+          <div class="stroke-row">
+            <div class="stroke-head"><span class="stroke-name">Rust</span><span class="stroke-proof">personal CLI tools · cargo</span></div>
+            <div class="stroke-track"><div class="stroke-fill gold" data-depth="60" style="--depth:60%"></div></div>
+            <div class="stroke-tagline">systems-leaning tools — personal use, no production claim</div>
           </div>
           <div class="stroke-row">
             <div class="stroke-head"><span class="stroke-name">Python</span><span class="stroke-proof">FastAPI · extractor · Tesseract</span></div>
