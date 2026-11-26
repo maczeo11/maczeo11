@@ -229,7 +229,7 @@ await this.docClient.send(new PutCommand({
 <img src="https://img.shields.io/badge/PostgreSQL-6e40c9?style=flat-square&logo=postgresql&logoColor=white" />
 <img src="https://img.shields.io/badge/Kafka_Streaming-6e40c9?style=flat-square&logo=apachekafka&logoColor=white" />
 <img src="https://img.shields.io/badge/Redis_SETNX-6e40c9?style=flat-square&logo=redis&logoColor=white" />
-<img src="https://img.shields.io/badge/gRPC_+_FFmpeg-6e40c9?style=flat-square&logo=grpc&logoColor=white" />
+<img src="https://img.shields.io/badge/Kafka_+_FFmpeg-6e40c9?style=flat-square&logo=apachekafka&logoColor=white" />
 <img src="https://img.shields.io/badge/Docker-6e40c9?style=flat-square&logo=docker&logoColor=white" />
 &nbsp; <b><a href="https://github.com/maczeo11/cinefund">Repository →</a></b>
 </p>
@@ -247,7 +247,7 @@ An event-driven Go backend for crowdfunding independent short films — money pa
 **How it's handled:**
 - **Transactional Outbox Pattern:** Domain records and outbox events commit together in a single ACID PostgreSQL transaction. A Go worker pool polls with `FOR UPDATE SKIP LOCKED` and publishes to Kafka without double-dispatch.
 - **Dual-Layer Payment Idempotency:** Redis `SETNX` (24h TTL, `idem:wh:<eventID>`) acts as a sub-millisecond fast-path gate, backed by an authoritative PostgreSQL `UNIQUE(provider, provider_event_id)` constraint. Verified under 50 concurrent requests (1 success, 49 duplicate rejections).
-- **Async Video Transcoding:** Kafka events trigger background FFmpeg workers over gRPC (Protobuf) to generate HLS segments with HTTP Range seeking.
+- **Async Video Transcoding:** Kafka events trigger background FFmpeg workers that generate HLS segments with HTTP Range seeking.
 - **Production Practices:** Token-bucket rate limiting, structured logging with `log/slog`, distributed trace IDs, and graceful shutdown.
 
 <details>
@@ -351,7 +351,7 @@ requestsTable.addGlobalSecondaryIndex({
 <img src="https://img.shields.io/badge/OpenCV-6e40c9?style=flat-square&logo=opencv&logoColor=white" />
 <img src="https://img.shields.io/badge/Tesseract_OCR-6e40c9?style=flat-square&logo=tesseract&logoColor=white" />
 <img src="https://img.shields.io/badge/Docker-6e40c9?style=flat-square&logo=docker&logoColor=white" />
-&nbsp; <b><a href="https://github.com/maczeo11/File_extractor">Repository →</a></b>
+&nbsp; <b><a href="https://github.com/maczeo11/universal-text-extractor">Repository →</a></b>
 </p>
 
 A document processing pipeline that normalizes heterogeneous file formats (PDFs, Word documents, spreadsheets, images) into structured JSON.
@@ -416,6 +416,14 @@ def detect_file_type(buffer: bytes) -> str:
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/maczeo11/maczeo11/stats/top-langs.svg" width="48%" alt="Top languages for maczeo11" />
+</div>
+
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake.svg" />
+  <img alt="Contribution grid animation — a snake drawn through the contribution squares" src="https://raw.githubusercontent.com/maczeo11/maczeo11/output/github-contribution-grid-snake.svg" width="100%" />
+</picture>
 </div>
 
 <br/>

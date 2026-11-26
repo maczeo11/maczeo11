@@ -1,6 +1,6 @@
 # Universal Text Extractor — Proof Pack
 
-> **Actual repo:** `https://github.com/maczeo11/File_extractor` (not `universal-text-extractor` — resume link will 404)
+> **Actual repo:** `https://github.com/maczeo11/universal-text-extractor` (`File_extractor` was renamed and now redirects here)
 > **Pinned clone:** `C:\Users\bhanu\AppData\Local\Temp\file_extractor` 2026-08-21
 
 ## Claim → Proof for `resume.tex:157-161`
@@ -13,7 +13,7 @@
 ## Reproduce (2 min)
 
 ```bash
-git clone https://github.com/maczeo11/File_extractor && cd File_extractor
+git clone https://github.com/maczeo11/universal-text-extractor && cd universal-text-extractor
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 # spoof test — rename PNG to PDF, upload to /api/extract, check mime from buffer != application/pdf
@@ -22,9 +22,9 @@ curl -F "file=@spoofed.pdf" http://localhost:8000/api/extract | jq .mime_detecte
 curl -F "file=@scanned.png" http://localhost:8000/api/extract | jq .units[0].source  # -> ocr_engine
 ```
 
-## Fix resume link
+## Repo link
 
-`resume.tex:157` currently points to `https://github.com/maczeo11/universal-text-extractor` → 404. Change to `https://github.com/maczeo11/File_extractor`.
+`resume.tex` now points to `https://github.com/maczeo11/universal-text-extractor`, the canonical repo name. The old `File_extractor` URL still works via GitHub's 301 redirect.
 
 ## Files here
 * Copy of `app/main.py:30-70` magic-byte snippet and `app/utils.py` Otsu snippet — keep for interview walkthrough.

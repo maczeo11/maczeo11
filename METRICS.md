@@ -63,7 +63,7 @@ go test ./...
 
 ## 4. Universal Text Extractor (Python)
 
-Repo: `https://github.com/maczeo11/File_extractor` (not `universal-text-extractor`)
+Repo: `https://github.com/maczeo11/universal-text-extractor` (`File_extractor` redirects here)
 
 | Artifact | Path |
 |---|---|
@@ -82,7 +82,7 @@ Both are source for `docs/index.html` presentations; keep in repo so slides are 
 
 * `resume.tex:137` → `proofs/prajna/` (honest: 2 GSIs, Cognito 403, CDK line refs)
 * `resume.tex:150-154` → `proofs/cinefund/` (SETNX+UNIQUE, SKIP LOCKED)
-* `resume.tex:157` → `proofs/extractor/` + `File_extractor` repo
+* `resume.tex:157` → `proofs/extractor/` + `universal-text-extractor` repo
 
 ## 7. Updating this doc
 

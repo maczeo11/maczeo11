@@ -70,9 +70,11 @@
     --ink-dim:#3A3842;
     --vermillion:#D93D2E;
     --vermillion-2:#B91C12;
+    --vermillion-text:#B83327;
     --indigo:#1E1B4B;
     --gold:#C9A86A;
     --gold-2:#8C7040;
+    --gold-text:#7A4E00;
     --line:rgba(15,14,18,0.09);
     --line-strong:rgba(15,14,18,0.14);
     --nav-bg:rgba(253,251,247,0.88);
@@ -90,9 +92,11 @@
       --ink-dim:#D0CADB;
       --vermillion:#E84E3F;
       --vermillion-2:#F87171;
+      --vermillion-text:#F87171;
       --indigo:#818CF8;
       --gold:#E2C285;
       --gold-2:#C9A86A;
+      --gold-text:#FFC24D;
       --line:rgba(245,242,235,0.12);
       --line-strong:rgba(245,242,235,0.2);
       --nav-bg:rgba(18,17,24,0.92);
@@ -318,13 +322,13 @@
   /* eyebrow with seal */
   .eyebrow{
     display:flex;align-items:center;gap:14px;margin-bottom:14px;
-    font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--vermillion);
+    font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--vermillion-text);
   }
   .eyebrow::before{
-    content:'';width:28px;height:1.5px;background:var(--vermillion);opacity:0.9;
+    content:'';width:28px;height:1.5px;background:var(--vermillion-text);opacity:0.9;
   }
   .seal{
-    width:42px;height:42px;border:1.8px solid var(--vermillion);color:var(--vermillion);
+    width:42px;height:42px;border:1.8px solid var(--vermillion);color:var(--vermillion-text);
     display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:800;font-size:0.62rem;line-height:1;
     letter-spacing:0.12em;text-transform:uppercase;transform:rotate(1.5deg);background:rgba(217,61,46,0.06);
   }
@@ -348,6 +352,7 @@
     font-family:'Caveat',cursive;font-size:1.35rem;color:var(--vermillion);transform:rotate(-1.2deg);display:inline-block;margin-bottom:14px;
   }
   .hero-kicker span{border-bottom:2px solid rgba(217,61,46,0.25);padding-bottom:2px}
+  .hero-kicker span span{white-space:nowrap}
   .hero-title{
     font-family:'Fraunces',serif;font-size:clamp(2.8rem,7vw,5.4rem);font-weight:800;letter-spacing:-0.04em;line-height:0.88;position:relative;
   }
@@ -381,9 +386,9 @@
   .meta-pill.social-gh:hover{background:#181717;color:#fff}
   .meta-pill.social-in{border-color:#0A66C2;color:#0A66C2;background:rgba(10,102,194,0.09)}
   .meta-pill.social-in:hover{background:#0A66C2;color:#fff}
-  .meta-pill.social-lc{border-color:#E8930C;color:#9A6300;background:rgba(255,161,22,0.13)}
+  .meta-pill.social-lc{border-color:#E8930C;color:var(--gold-text);background:rgba(255,161,22,0.13)}
   .meta-pill.social-lc:hover{background:#FFA116;color:#0F0E12}
-  .meta-pill.social-mail{border-color:var(--vermillion);color:var(--vermillion);background:rgba(217,61,46,0.08)}
+  .meta-pill.social-mail{border-color:var(--vermillion);color:var(--vermillion-text);background:rgba(217,61,46,0.08)}
   .meta-pill.social-mail:hover{background:var(--vermillion);color:#fff}
   .hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
   .btn-primary{
@@ -438,7 +443,7 @@
   .race-btn{
     position:relative;z-index:1;width:100%;cursor:pointer;
     font-family:'JetBrains Mono',monospace;font-size:0.72rem;font-weight:600;letter-spacing:0.05em;
-    padding:9px 12px;border:1.5px solid #C9A86A;background:transparent;color:#C9A86A;transition:background 0.2s,color 0.2s;
+    padding:9px 84px 9px 12px;text-align:left;border:1.5px solid #C9A86A;background:transparent;color:#C9A86A;transition:background 0.2s,color 0.2s;
   }
   .race-btn:hover{background:#C9A86A;color:#0F0E12}
   .race-btn:disabled{opacity:0.5;cursor:default;background:transparent;color:#C9A86A}
@@ -454,9 +459,9 @@
   .mini-stat b{font-family:'Fraunces',serif;font-size:1.35rem;line-height:1;display:block}
   .mini-stat span{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint)}
   .floating-seal{
-    position:absolute;right:6px;bottom:18px;width:84px;height:84px;border:2px solid var(--vermillion);color:var(--vermillion);
+    position:absolute;right:6px;bottom:18px;width:84px;height:84px;border:2px solid var(--vermillion);color:var(--vermillion-text);
     display:grid;place-items:center;text-align:center;font-family:'Fraunces',serif;font-weight:800;font-size:0.68rem;line-height:1.05;
-    letter-spacing:0.14em;text-transform:uppercase;background:var(--paper);transform:rotate(6deg);box-shadow:4px 4px 0 rgba(217,61,46,0.15);
+    letter-spacing:0.14em;text-transform:uppercase;background:var(--paper);transform:rotate(6deg);box-shadow:4px 4px 0 rgba(217,61,46,0.15);pointer-events:none;
   }
   /* experience — scroll blueprint */
   .exp-wrap{
@@ -469,6 +474,7 @@
   }
   .exp-ribbon b{font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:-0.02em}
   .exp-ribbon b em{color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:500}
+  html.dark .exp-ribbon b em{color:#8C7040}
   .exp-ribbon span{font-family:'JetBrains Mono',monospace;font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.9}
   .exp-body{padding:28px 28px 22px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:26px}
   .exp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
@@ -617,10 +623,12 @@
     background:radial-gradient(circle, rgba(201,168,106,0.18), transparent 70%);pointer-events:none;
   }
   .narrative h4{font-family:'Fraunces',serif;font-size:1.15rem;margin-bottom:8px}
-  .narrative p{font-size:0.92rem;line-height:1.6;color:rgba(253,251,247,0.78)}
+  .narrative p{font-size:0.92rem;line-height:1.6;color:var(--paper);opacity:0.78}
   .narrative ul{margin-top:12px;list-style:none;display:grid;gap:8px}
-  .narrative li{font-family:'JetBrains Mono',monospace;font-size:0.74rem;letter-spacing:0.02em;color:rgba(253,251,247,0.82);padding-left:16px;position:relative}
-  .narrative li::before{content:'▹';position:absolute;left:0;color:var(--gold)}
+  .narrative li{font-family:'JetBrains Mono',monospace;font-size:0.74rem;letter-spacing:0.02em;color:var(--paper);opacity:0.82;padding-left:16px;position:relative}
+  .narrative li::before{content:'▹';position:absolute;left:0;color:var(--gold);opacity:1}
+  .narrative .narrative-gold{color:var(--gold)}
+  html.dark .narrative li::before,html.dark .narrative .narrative-gold{color:#8C7040}
   /* footer */
   footer{padding:48px 0 32px;border-top:1.5px solid var(--ink);margin-top:48px;background:rgba(255,255,255,0.45)}
   .foot-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:24px;align-items:center}
@@ -660,6 +668,10 @@
     .exp-stats{grid-template-columns:repeat(2,1fr)}
     .desk-card{transform:none}
     .hero-title .ink-stroke{left:-8px;right:-8px}
+    .sec-head{flex-direction:column;gap:10px}
+    .sec-sub{max-width:100%}
+    .skill-wall h3{flex-wrap:wrap}
+    .skill-wall h3 span:not(.sec-dot){flex-basis:100%;margin-left:20px}
     section{padding-top:64px}
   }
   @media(prefers-reduced-motion:reduce){
@@ -678,9 +690,9 @@
 
 <nav aria-label="Main Navigation">
   <div class="nav-inner">
-    <a class="brand" href="#top" aria-label="Bhanu Teja Komma — Home">
+    <a class="brand" href="#top" aria-label="匠 Bhanu Teja Backend · Cloud-Native — Home">
       <span class="brand-mark" aria-hidden="true">匠</span>
-      <span class="brand-text"><b>Bhanu Teja</b><span>Backend · Cloud-Native</span></span>
+      <span class="brand-text"><b>Bhanu Teja</b> <span>Backend · Cloud-Native</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
@@ -730,7 +742,7 @@
             <path d="M 12 72 Q 90 18 180 62 T 360 58 T 520 66 Q 590 72 628 44" stroke="#0F0E12" stroke-width="34" stroke-linecap="round" fill="none" opacity="0.09"/>
             <path d="M 18 78 Q 95 32 185 68 T 365 64 T 525 72 Q 595 78 632 52" stroke="#D93D2E" stroke-width="3.2" stroke-linecap="round" fill="none" opacity="0.9" />
           </svg>
-          Bhanu Teja<br><span class="line2">Komma</span>
+          Bhanu Teja <br><span class="line2">Komma</span>
         </h1>
         <p class="hero-typing" id="typing"><span id="typeText"></span><span class="cursor">▌</span></p>
         <p class="hero-copy">
@@ -747,10 +759,10 @@
           <a class="btn-ghost" href="#experience">The Blueprint — PRAJNA ↓</a>
         </div>
         <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <a href="https://github.com/maczeo11" target="_blank" rel="noopener" class="meta-pill social social-gh" style="text-decoration:none" aria-label="GitHub profile">gh / maczeo11 ↗</a>
-          <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/" target="_blank" rel="noopener" class="meta-pill social social-in" style="text-decoration:none" aria-label="LinkedIn profile">in / bhanu-teja-komma ↗</a>
-          <a href="https://leetcode.com/u/GB2023002633/" target="_blank" rel="noopener" class="meta-pill social social-lc" style="text-decoration:none" aria-label="LeetCode profile">lc / GB2023002633 ↗</a>
-          <a href="mailto:bhanu0005a@gmail.com" class="meta-pill social social-mail" style="text-decoration:none" aria-label="Email Bhanu Teja Komma">✉ bhanu0005a@gmail.com ↗</a>
+          <a href="https://github.com/maczeo11" target="_blank" rel="noopener" class="meta-pill social social-gh" style="text-decoration:none" aria-label="GitHub profile — gh / maczeo11">gh / maczeo11 <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/bhanu-teja-komma-4b5547293/" target="_blank" rel="noopener" class="meta-pill social social-in" style="text-decoration:none" aria-label="LinkedIn profile — in / bhanu-teja-komma">in / bhanu-teja-komma <span aria-hidden="true">↗</span></a>
+          <a href="https://leetcode.com/u/GB2023002633/" target="_blank" rel="noopener" class="meta-pill social social-lc" style="text-decoration:none" aria-label="LeetCode profile — lc / GB2023002633">lc / GB2023002633 <span aria-hidden="true">↗</span></a>
+          <a href="mailto:bhanu0005a@gmail.com" class="meta-pill social social-mail" style="text-decoration:none" aria-label="Email Bhanu Teja Komma — bhanu0005a@gmail.com"><span aria-hidden="true">✉</span> bhanu0005a@gmail.com <span aria-hidden="true">↗</span></a>
         </div>
       </div>
 
@@ -931,7 +943,7 @@
           <g stroke="#3a3f52" stroke-width="1.2" fill="none" stroke-linecap="round"><path d="M54 32H72"/><path d="M118 32H136"/><path d="M200 32H218"/></g>
         </svg>
         <h3 class="proj-name">Apartment Maintenance Portal</h3>
-        <p class="proj-desc">Full-stack maintenance system for 50+ residents across 3 campuses — the project where I learned single-table design before PRAJNA.</p>
+        <p class="proj-desc">Full-stack maintenance system for campus residential blocks — the project where I learned single-table design before PRAJNA.</p>
         <ul class="proj-highlights">
           <li>8-service serverless: single-table DDB (2 GSIs), Cognito, API GW, S3</li>
           <li>15-min EventBridge SLA cron — 4 priority tiers → SNS</li>
@@ -941,11 +953,11 @@
       </article>
 
       <article class="proj-card reveal">
-        <div class="proj-kicker"><span>Python · Vision</span><a href="https://github.com/maczeo11/File_extractor" target="_blank" rel="noopener" aria-label="Open Universal Text Extractor repository on GitHub">↗</a></div>
+        <div class="proj-kicker"><span>Python · Vision</span><a href="https://github.com/maczeo11/universal-text-extractor" target="_blank" rel="noopener" aria-label="Open Universal Text Extractor repository on GitHub">↗</a></div>
         <svg class="proj-schema" viewBox="0 0 260 56" role="img" aria-label="Extractor pipeline: input, magic-byte detection, strategy selection, then standardized JSON; OpenCV to Tesseract OCR">
           <rect width="260" height="56" rx="4" fill="#0F0E12"/>
           <g font-family="JetBrains Mono,monospace" font-size="7" fill="#c9d1d9" text-anchor="middle">
-            <text x="130" y="12" fill="#8b90a8" font-size="6.4">OpenCV → Tesseract OCR · 6 formats → 1 shape</text>
+            <text x="130" y="12" fill="#8b90a8" font-size="6.4">OpenCV → Tesseract OCR · 8 formats → 1 shape</text>
             <rect x="8" y="22" width="46" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="31" y="35">input</text>
             <rect x="72" y="22" width="62" height="20" rx="3" fill="#161b2e" stroke="#C9A86A"/><text x="103" y="35" fill="#C9A86A">magic-byte</text>
             <rect x="152" y="22" width="48" height="20" rx="3" fill="#161b2e" stroke="#3a3f52"/><text x="176" y="35">strategy</text>
@@ -1084,12 +1096,12 @@
             <span class="chip-tag fluent">React</span>
             <span class="chip-tag fluent">Jest</span>
           </div>
-          <p style="margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--ink-faint)">Matches <code>Resume.pdf</code> 1:1 — CineFund extras (Kafka/Redis/FFmpeg) live on the project card, not the skills wall.</p>
+          <p style="margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--ink-faint)">Matches <a href="https://github.com/maczeo11/maczeo11/blob/main/resume.tex" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline"><code>resume.tex</code></a> 1:1 — CineFund extras (Kafka/Redis/FFmpeg) live on the project card, not the skills wall.</p>
         </div>
 
         <div class="narrative reveal">
           <h4>How I’d talk about this in an interview</h4>
-          <p>Pick any <b style="color:var(--gold)">Production</b> tag and I’ll walk you through a race condition it solved — not a tutorial, a real incident.</p>
+          <p>Pick any <b class="narrative-gold">Production</b> tag and I’ll walk you through a race condition it solved — not a tutorial, a real incident.</p>
           <ul>
             <li>Idempotency: Lambda retry → TransactWrite with idempotent_key</li>
             <li>Optimistic locking: version check → fail, don’t clobber</li>
@@ -1117,7 +1129,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2025 Bhanu Teja Komma · maczeo.me · Crafted in the atelier — ink, paper, and event-driven systems.</span>
+      <span>© 2026 Bhanu Teja Komma · maczeo.me · Crafted in the atelier — ink, paper, and event-driven systems.</span>
       <span style="display:flex;gap:8px;align-items:center"><span style="width:8px;height:8px;background:var(--vermillion);display:inline-block"></span> Windows 11 · WSL2 · Ubuntu 24.04</span>
     </div>
   </div>
