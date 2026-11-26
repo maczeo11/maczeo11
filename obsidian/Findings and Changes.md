@@ -21,6 +21,8 @@ tags: [lessons, capstone, honest-notes]
 | Ablation runs would overwrite the headline checkpoint | I nearly lost my best model | Every run now has an explicit tag suffix |
 | A4's queue-mask wrapper existed but had no CLI | The ablation could not be reproduced from one command | Wired `--zero_queue` through training and evaluation |
 | One controller pod means no HA | An honest limitation, not a hidden one | Scoped as a demonstrator; leader election and rollback are future work |
+| Final 10-seed run: only one of three PPO seeds beats HPA; all DQN seeds collapse | A general "DRL wins" claim would be false | Report per-seed results; DQN is documented as a weak baseline at this budget |
+| Removing the SLA term collapsed every seed (A2) | The reward design was load-bearing, not decoration | Kept the locked 6-term reward; A2 is the viva proof |
 
 ## Human quirks
 

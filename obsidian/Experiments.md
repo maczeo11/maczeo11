@@ -35,20 +35,36 @@ CSV by an SB3 callback and plotted with a shaded min/max band.
 
 ## Trained agents vs baselines
 
-The final 10-seed leaderboard, including IQM and confidence intervals, is written here once
-the evaluation completes. The earlier 5,000-step checkpoints are kept as a cautionary row:
-they were worse than almost every baseline. That was a training-budget finding, not an RL
-failure — see [[Findings and Changes]].
+Ten seeds, 500 steps, synthetic **sine** only. IQM with 95% bootstrap CI.
+
+| Controller | Reward IQM [CI] | SLA% | p95(p95) ms | Cost | Osc |
+|---|---|---|---|---|---|
+| EWMA-Predictor | 109.31 [106.64, 110.20] | 2.6 | 88.5 | 0.17367 | 12.5 |
+| **PPO seed 0** | **93.03 [90.48, 95.05]** | 2.6 | 88.6 | **0.17187** | **0.0** |
+| Native-HPA-v2 | −99.92 [−103.50, −97.75] | 2.6 | 82.4 | 0.24980 | 0.0 |
+| PPO seed 1 | −231.07 [−231.30, −230.89] | 2.6 | 69.7 | 0.32823 | 0.0 |
+| PPO seed 2 / all DQN seeds | ≈ −2260 to −2280 | 100.0 | 150k–292k | 0.02–0.07 | 0–1 |
+
+> [!warning] The honest sentence
+> One PPO seed beats HPA on reward and cost with SLA parity and zero flapping. The other two
+> PPO seeds and all three DQN seeds collapse. This is **not** "DRL beats HPA" as a general
+> claim. EWMA still has the highest reward, but flaps 12.5 times; PPO seed 0 gets close with
+> zero flapping. See [[How to Read the Numbers]].
 
 ## Ablations
 
-| ID | Change | Question |
-|---|---|---|
-| A1 | `w_cost = 0` | Does the policy still shed idle replicas when cost is free? |
-| A2 | `w_sla = 0` | If it still looks good, was the dominant SLA term decoration? |
-| A4 | Zero `obs[7]` (queue) | Is backlog awareness load-bearing? |
+Ten seeds each, synthetic sine. Three seeds trained per variant.
 
-Each ablation is trained with 3 seeds and evaluated with the same harness.
+| ID | Change | Result | Reading |
+|---|---|---|---|
+| A1 | `w_cost = 0` | 2 of 3 seeds cost **more** (0.27983 vs 0.17187) | Cost term matters, but variance is high |
+| A2 | `w_sla = 0` | **All 3 seeds: 100% SLA breach**, p95 ~198k–293k ms | Cleanest proof the SLA term is load-bearing |
+| A4 | Zero `obs[7]` (queue) | 2 of 3 seeds collapse; 1 survives with cost 0.31213 | Queue feature matters, evidence weaker than A2 |
+
+> [!quote] Human note
+> The ablation I expected to be scariest (A2) gave the cleanest answer. The one I thought
+> would be obvious (A1) was messy. The term I was most reluctant to remove was the one
+> holding the policy up.
 
 ## Figures available for reuse
 
