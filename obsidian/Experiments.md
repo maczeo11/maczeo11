@@ -66,6 +66,21 @@ Ten seeds each, synthetic sine. Three seeds trained per variant.
 > would be obvious (A1) was messy. The term I was most reluctant to remove was the one
 > holding the policy up.
 
+## Proportional scaling (Phase 1)
+
+A second opt-in environment (`ContinuousCloudEnv`) implements Decision #16:
+`Box([-0.3, 0.3])` with `round(a·replicas)`, a deadband for tiny actions, and
+bounds 1..20. 10 seeds × sine + spike + dual_freq:
+
+> [!warning] Honest verdict
+> PPO seed 1 beats the *simplified* HPA on reward and cost with SLA parity, but its reward
+> CI **overlaps** the faithful multi-pod HPA. It is worse on p95 (511.5 vs 459.2 ms) and
+> flaps 44.9 times/episode vs 0. Two of three PPO seeds collapse to 100% SLA breach.
+> Proportional scaling is now usable end-to-end; it is **not** proof of beating HPA.
+
+The next levers are training budget, action smoothing / a stronger oscillation penalty,
+then a live `kind` comparison. Leader election comes only after the Go controller exists.
+
 ## Figures available for reuse
 
 - ![[Figures/latency_sine_seed0.png]]
