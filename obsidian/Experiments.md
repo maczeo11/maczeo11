@@ -22,9 +22,16 @@ tags: [experiments, results, capstone]
 ## Learning curves
 
 PPO and DQN, 3 seeds each, 50,000 training steps on `sine`. Per-episode reward is logged to
-CSV by an SB3 callback and plotted with a shaded seed band.
+CSV by an SB3 callback and plotted with a shaded min/max band.
 
 ![[Figures/learning-curves.png]]
+
+> [!warning] What the curves actually say
+> PPO improves quickly in the first ~10k steps, but one of three seeds diverges to about
+> −4,500 final episode reward while the other two finish near −400. DQN stays essentially flat
+> near −4,545. This is a *learning* result, not yet a *beats-HPA* result — see
+> [[Findings and Changes]]. Three seeds are not enough to decide anything, which is why the
+> final table uses ten.
 
 ## Trained agents vs baselines
 
