@@ -401,6 +401,12 @@ def detect_file_type(buffer: bytes) -> str:
 
 <br/>
 
+## Research notes
+
+- **[Obsidian vault](obsidian/README.md)** — a sanitized, openable vault with the capstone problem, the Python → ONNX → Go architecture, experiment logs, and the mistakes that changed the design. Friends can clone the repo and open `obsidian/` as a vault in Obsidian.
+
+<br/>
+
 ## GitHub Activity
 
 <table width="100%">
